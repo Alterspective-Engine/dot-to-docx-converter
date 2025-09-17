@@ -16,6 +16,7 @@ func ServeLandingPage() gin.HandlerFunc {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOT to DOCX Converter Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,10 +25,10 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%%, #764ba2 100%%);
+            color: #17232D;
+            background: linear-gradient(135deg, #075156 0%%, #2C8248 100%%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -57,15 +58,23 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         h1 {
-            color: #667eea;
+            color: #075156;
             font-size: 2.5rem;
             margin-bottom: 10px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 50px;
         }
 
         .subtitle {
             text-align: center;
-            color: #666;
+            color: #075156;
             font-size: 1.2rem;
             margin-bottom: 40px;
         }
@@ -75,7 +84,7 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         h2 {
-            color: #764ba2;
+            color: #2C8248;
             font-size: 1.8rem;
             margin-bottom: 20px;
             border-bottom: 2px solid #f0f0f0;
@@ -91,18 +100,18 @@ func ServeLandingPage() gin.HandlerFunc {
 
         .feature {
             padding: 20px;
-            background: #f8f9fa;
+            background: #E5EEEF;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #075156;
         }
 
         .feature h3 {
-            color: #667eea;
+            color: #075156;
             margin-bottom: 10px;
         }
 
         .endpoints {
-            background: #f8f9fa;
+            background: #E5EEEF;
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
@@ -127,12 +136,12 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         .method.post {
-            background: #49cc90;
+            background: #2C8248;
             color: white;
         }
 
         .method.get {
-            background: #61affe;
+            background: #075156;
             color: white;
         }
 
@@ -142,7 +151,7 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         .description {
-            color: #666;
+            color: #075156;
             font-size: 0.9rem;
             margin-left: 15px;
         }
@@ -169,14 +178,14 @@ func ServeLandingPage() gin.HandlerFunc {
         }
 
         .button.primary {
-            background: linear-gradient(135deg, #667eea 0%%, #764ba2 100%%);
+            background: #075156;
             color: white;
         }
 
         .button.secondary {
             background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+            color: #075156;
+            border: 2px solid #075156;
         }
 
         .status {
@@ -189,7 +198,7 @@ func ServeLandingPage() gin.HandlerFunc {
         .status-indicator {
             width: 12px;
             height: 12px;
-            background: #49cc90;
+            background: #ABDD65;
             border-radius: 50%%;
             margin-right: 10px;
             animation: pulse 2s infinite;
@@ -245,7 +254,10 @@ func ServeLandingPage() gin.HandlerFunc {
             <span>Service is operational</span>
         </div>
 
-        <h1>DOT to DOCX Converter</h1>
+        <h1>
+            <img src="/static/alterspective-logo.png" alt="Alterspective" class="logo">
+            <span>DOT to DOCX Converter</span>
+        </h1>
         <p class="subtitle">High-performance document conversion service</p>
 
         <div class="section">
@@ -342,13 +354,14 @@ func ServeSwaggerUI() gin.HandlerFunc {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOT to DOCX Converter - API Documentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.9.0/swagger-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
         }
         .topbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #075156 0%, #2C8248 100%);
             color: white;
             padding: 15px 30px;
             display: flex;
@@ -359,7 +372,14 @@ func ServeSwaggerUI() gin.HandlerFunc {
         .topbar h1 {
             margin: 0;
             font-size: 1.5rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo {
+            height: 35px;
         }
         .topbar a {
             color: white;
@@ -371,7 +391,7 @@ func ServeSwaggerUI() gin.HandlerFunc {
         }
         .topbar a:hover {
             background: white;
-            color: #667eea;
+            color: #075156;
         }
         #swagger-ui {
             margin-top: 0;
@@ -383,7 +403,10 @@ func ServeSwaggerUI() gin.HandlerFunc {
 </head>
 <body>
     <div class="topbar">
-        <h1>DOT to DOCX Converter API</h1>
+        <h1>
+            <img src="/static/alterspective-logo.png" alt="Alterspective" class="logo">
+            <span>DOT to DOCX Converter API</span>
+        </h1>
         <a href="/">Back to Home</a>
     </div>
     <div id="swagger-ui"></div>

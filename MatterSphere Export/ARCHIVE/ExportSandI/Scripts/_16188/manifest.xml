@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_16188</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>4</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Friday, 23 July 2021 11:30:25 AM"&gt;DQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMNCnsNCiAgICB1c2luZyBTeXN0ZW07DQogICAgdXNpbmcgU3lzdGVtLkRhdGE7DQogICAgdXNpbmcgRldCUy5Db21tb24uVUk7DQogICAgdXNpbmcgRldCUy5Db21tb247DQogICAgdXNpbmcgRldCUy5PTVMuVUkuV2luZG93czsNCiAgICB1c2luZyBGV0JTLk9NUzsNCiAgICANCiAgICANCiAgICBwdWJsaWMgcGFydGlhbCBjbGFzcyBfMTYxODggOiBGV0JTLk9NUy5TY3JpcHQuUHJlY2VkZW50U2NyaXB0VHlwZQ0KICAgIHsNCgkJDQoJCQ0KCQkNCgkJDQoJCXByb3RlY3RlZCBvdmVycmlkZSB2b2lkIE1lcmdpbmcob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUHJlY2VkZW50TGlua0NhbmNlbEV2ZW50QXJncyBlKQ0KCQl7DQoJCQl2YXIgZmlsZSA9IGUuUHJlY0xpbmsuUGFyc2VyLkN1cnJlbnRGaWxlOw0KCQkJaWYgKGZpbGUuRmlsZVR5cGVDb2RlID09ICJFTlFTVVBFUiIpDQoJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfbGFzdHdvcmsiLGZpbGUuRXh0ZW5kZWREYXRhWyJVREVYVElOSkRFVEFJTFMiXS5HZXRFeHRlbmRlZERhdGEoIlVETEFTVFdPUktFRCIpKTsNCgkJCWVsc2UNCgkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl9sYXN0d29yayIsZmlsZS5FeHRlbmRlZERhdGFbIlVERVhUU1VQRU5RSU5KIl0uR2V0RXh0ZW5kZWREYXRhKCJVRExBU1RXT1JLRUQiKSk7DQoJCQkNCgkJCWUuUHJlY0xpbmsuQXBwbHlQYXJhbXMoKTsNCgkJfQ0KCQkNCgkJDQoJCXB1YmxpYyBvdmVycmlkZSB2b2lkIERvY3VtZW50U2F2ZWQob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUGh5c2ljYWxEb2N1bWVudFNhdmVkRXZlbnRBcmdzIGUpDQoJCXsNCgkJfQ0KCQkNCiAgICB9DQp9DQo=&lt;/units&gt;&lt;/units&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2021-07-23T01:21:32.99Z</Created>
+    <CreatedBy>33963</CreatedBy>
+    <Updated>2021-07-23T01:30:25.85Z</Updated>
+    <UpdatedBy>33963</UpdatedBy>
+    <rowguid>2f57adec-6cd5-40f4-aa81-ea8e1530b6dd</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>

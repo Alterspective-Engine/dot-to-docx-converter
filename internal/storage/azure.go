@@ -20,9 +20,13 @@ type AzureStorage struct {
 }
 
 // NewAzureStorage creates a new Azure Blob Storage instance
-func NewAzureStorage(connectionString string) (*AzureStorage, error) {
+func NewAzureStorage(connectionString string, containerName string) (*AzureStorage, error) {
 	if connectionString == "" {
 		return nil, fmt.Errorf("Azure Storage connection string is required")
+	}
+
+	if containerName == "" {
+		containerName = "conversions"
 	}
 
 	// Create client
@@ -35,11 +39,11 @@ func NewAzureStorage(connectionString string) (*AzureStorage, error) {
 	cacheDir := filepath.Join(os.TempDir(), "azure-cache")
 	os.MkdirAll(cacheDir, 0755)
 
-	log.Info("Connected to Azure Blob Storage")
+	log.Infof("Connected to Azure Blob Storage (container: %s)", containerName)
 
 	return &AzureStorage{
 		client:        client,
-		containerName: "conversions",
+		containerName: containerName,
 		localCache:    cacheDir,
 	}, nil
 }

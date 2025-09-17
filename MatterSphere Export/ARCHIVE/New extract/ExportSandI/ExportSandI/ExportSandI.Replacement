@@ -1,0 +1,415 @@
+<?xml version="1.0" standalone="yes"?>
+<FIELDREPLACER>
+  <xs:schema id="FIELDREPLACER" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="FIELDREPLACER" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="FIELDREPLACER">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" type="xs:int" />
+                <xs:element name="FieldName" type="xs:string" />
+                <xs:element name="FieldDesc" type="xs:string" minOccurs="0" />
+                <xs:element name="FieldHelp" type="xs:string" minOccurs="0" />
+                <xs:element name="Table" type="xs:string" />
+                <xs:element name="Select" type="xs:string" minOccurs="0" />
+                <xs:element name="Category" type="xs:string" />
+                <xs:element name="FieldValue" msdata:DataType="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:anyType" />
+                <xs:element name="FieldValueDesc" type="xs:string" minOccurs="0" />
+                <xs:element name="AllowNull" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//FIELDREPLACER" />
+        <xs:field xpath="FieldName" />
+        <xs:field xpath="Table" />
+        <xs:field xpath="Category" />
+        <xs:field xpath="FieldValue" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <FIELDREPLACER>
+    <ID>1</ID>
+    <FieldName>PrecTimeRecCode</FieldName>
+    <FieldDesc>Outbound Time Activity Code</FieldDesc>
+    <FieldHelp>The Precedent Time Activity Code for Outbound Documents</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT actCode, dbo.GetCodeLookupDesc('TIMEACTCODE', actCode, @UI) as actDesc FROM DBACTIVITIES</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <AllowNull>true</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>2</ID>
+    <FieldName>PrecTimeRecIncode</FieldName>
+    <FieldDesc>Inbound Time Activity Code</FieldDesc>
+    <FieldHelp>The Precedent Time Activity Code for Inbound Documents</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT actCode, dbo.GetCodeLookupDesc('TIMEACTCODE', actCode, @UI) as actDesc FROM DBACTIVITIES</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <AllowNull>true</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>4</ID>
+    <FieldName>PrecAddressee</FieldName>
+    <FieldDesc>Contact Type</FieldDesc>
+    <FieldHelp>The Contact Type (Addressee) for this Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('CONTTYPE', typeCode, @UI) as typeDesc FROM dbContactType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>5</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>6</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EMAIL</FieldValue>
+    <FieldValueDesc>Email</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>12</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BLANK</FieldValue>
+    <FieldValueDesc>Blank</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>18</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEAD</FieldValue>
+    <FieldValueDesc>Letterhead</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>24</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEAD2</FieldValue>
+    <FieldValueDesc>Letterhead2</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>40</ID>
+    <FieldName>PrecAddressee</FieldName>
+    <FieldDesc>Contact Type</FieldDesc>
+    <FieldHelp>The Contact Type (Addressee) for this Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('CONTTYPE', typeCode, @UI) as typeDesc FROM dbContactType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">CLIENT</FieldValue>
+    <FieldValueDesc>Client</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>42</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">COSTSAGDISC</FieldValue>
+    <FieldValueDesc>Costs Agmt Discl</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>47</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">5</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>48</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEADC2P</FieldValue>
+    <FieldValueDesc>LetterheadC2P</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>64</ID>
+    <FieldName>PrecAddressee</FieldName>
+    <FieldDesc>Contact Type</FieldDesc>
+    <FieldHelp>The Contact Type (Addressee) for this Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('CONTTYPE', typeCode, @UI) as typeDesc FROM dbContactType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORGANISATION</FieldValue>
+    <FieldValueDesc>Organisation</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>66</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEAD2E</FieldValue>
+    <FieldValueDesc>Letterhead2E</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>96</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEADC2</FieldValue>
+    <FieldValueDesc>LetterheadC2</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>401</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">8</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>504</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MEMO</FieldValue>
+    <FieldValueDesc>Memo</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>700</ID>
+    <FieldName>PrecAddressee</FieldName>
+    <FieldDesc>Contact Type</FieldDesc>
+    <FieldHelp>The Contact Type (Addressee) for this Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('CONTTYPE', typeCode, @UI) as typeDesc FROM dbContactType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">INDIVIDUAL</FieldValue>
+    <FieldValueDesc>Individual</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>773</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">22</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>911</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>929</ID>
+    <FieldName>PrecDirID</FieldName>
+    <FieldDesc>The Precedent Location</FieldDesc>
+    <FieldHelp>The Root Locations for the Precedent</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT dirID, dirPath FROM dbDirectory</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">4</FieldValue>
+    <FieldValueDesc>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>1188</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEADE</FieldValue>
+    <FieldValueDesc>LetterheadE</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>1218</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">VICCOUNTY</FieldValue>
+    <FieldValueDesc>Supreme/Vic County Court</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>2610</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">COSTSINTERP</FieldValue>
+    <FieldValueDesc>Costs Agreement2</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>2622</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">COSTSAGMT</FieldValue>
+    <FieldValueDesc>Costs Agreement3</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>2700</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">QLDCRTDOC</FieldValue>
+    <FieldValueDesc>Queensland Court Document</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>3552</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FAX</FieldValue>
+    <FieldValueDesc>Fax</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>3576</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FEDCRTDOC</FieldValue>
+    <FieldValueDesc>Federal Court Document</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>4104</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEADCP</FieldValue>
+    <FieldValueDesc>LetterheadCP</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>4692</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FILENOTE</FieldValue>
+    <FieldValueDesc>File Note</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>4710</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">COSTSAGMNT</FieldValue>
+    <FieldValueDesc>Costs Agreement</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+  <FIELDREPLACER>
+    <ID>4908</ID>
+    <FieldName>PrecType</FieldName>
+    <FieldDesc>The Precedent Type</FieldDesc>
+    <FieldHelp>The Precedent Type</FieldHelp>
+    <Table>PRECEDENT</Table>
+    <Select>SELECT typeCode, dbo.GetCodeLookupDesc('DOCTYPE', typeCode, @UI) as typeDesc FROM dbDocumentType</Select>
+    <Category>PRECEDENTS</Category>
+    <FieldValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LETTERHEADC</FieldValue>
+    <FieldValueDesc>LetterheadC</FieldValueDesc>
+    <AllowNull>false</AllowNull>
+  </FIELDREPLACER>
+</FIELDREPLACER>

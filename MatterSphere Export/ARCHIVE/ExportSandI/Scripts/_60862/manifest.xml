@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_60862</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>4</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Monday, 1 November 2021 10:19:26 AM"&gt;DQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMNCnsNCiAgICB1c2luZyBTeXN0ZW07DQogICAgdXNpbmcgU3lzdGVtLkRhdGE7DQogICAgdXNpbmcgRldCUy5Db21tb24uVUk7DQogICAgdXNpbmcgRldCUy5Db21tb247DQogICAgdXNpbmcgRldCUy5PTVMuVUkuV2luZG93czsNCiAgICB1c2luZyBGV0JTLk9NUzsNCiAgICANCiAgICANCiAgICBwdWJsaWMgcGFydGlhbCBjbGFzcyBfNjA4NjIgOiBGV0JTLk9NUy5TY3JpcHQuUHJlY2VkZW50U2NyaXB0VHlwZQ0KICAgIHsNCgkJcHJvdGVjdGVkIG92ZXJyaWRlIHZvaWQgTWVyZ2luZyhvYmplY3Qgc2VuZGVyLCBGV0JTLk9NUy5QcmVjZWRlbnRMaW5rQ2FuY2VsRXZlbnRBcmdzIGUpIHsNCgkJCUZXQlMuQ29tbW9uLktleVZhbHVlQ29sbGVjdGlvbiBrdmMgPSBuZXcgRldCUy5Db21tb24uS2V5VmFsdWVDb2xsZWN0aW9uKCk7DQoJCQlrdmMuQWRkKCJwcmVjTmFtZSIsICJTdXBlcmFubnVhdGlvbiIpOwkJDQoJCQkNCgkJCUZXQlMuQ29tbW9uLktleVZhbHVlQ29sbGVjdGlvbiBsYWJlbHMgPSBuZXcgRldCUy5Db21tb24uS2V5VmFsdWVDb2xsZWN0aW9uKCk7DQoJCQkNCgkJCVN5c3RlbS5EYXRhLkRhdGFUYWJsZSBkdCA9IEZXQlMuT01TLlVJLldpbmRvd3MuU2VydmljZXMuV2l6YXJkcy5HZXRXaXphcmQoInVkd2l6c3VwZXJ0cGQiLCBudWxsLCBGV0JTLk9NUy5FbnF1aXJ5RW5naW5lLkVucXVpcnlNb2RlLkFkZCwga3ZjKSBhcyBTeXN0ZW0uRGF0YS5EYXRhVGFibGU7DQoJCQkNCgkJCXN0cmluZyBtZXNzYWdlID0gIiI7DQoJCQlpZihkdCAhPSBudWxsKSB7DQoJCQkJZm9yZWFjaChEYXRhQ29sdW1uIGRjIGluIGR0LkNvbHVtbnMpIHsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKGRjLkNvbHVtbk5hbWUsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVtkY10pKTsJDQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiXyIrZGMuQ29sdW1uTmFtZSwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdW2RjXSkpOwkNCgkJCQkJaWYgKGRjLkNvbHVtbk5hbWUgPT0gImludGVycHJldGVyIiB8fCBkYy5Db2x1bW5OYW1lID09ICJpbnRlcnByZXRlcjEiIHx8IGRjLkNvbHVtbk5hbWUgPT0gImludGVycHJldGVyMiIgfHwgZGMuQ29sdW1uTmFtZSA9PSAiaW50ZXJwcmV0ZXIzIikNCgkJCQkJew0KCQkJCQkJaWYgKENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVtkY10pID09ICJVRFlFUyIpDQoJCQkJCQl7DQoJCQkJCQkJbWVzc2FnZSA9ICJZb3UgY2FuIG5vdCBzZW5kIHRoaXMgYXMgYW4gZS1zaWduYXR1cmUgZG9jdW1lbnQgYmVjYXVzZSB0aGVyZSBpcyBhbiBpbnRlcnByZXRlciBpbnZvbHZlZC4iOw0KCQkJCQkJfQ0KCQkJCQl9DQoJCQkJfQ0KCQkJCWUuUHJlY0xpbmsuQXBwbHlQYXJhbXMoKTsNCgkJCX0NCiAgICAgICAgfQ0KCQkNCgkJDQoJCXB1YmxpYyBvdmVycmlkZSB2b2lkIERvY3VtZW50U2F2ZWQob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUGh5c2ljYWxEb2N1bWVudFNhdmVkRXZlbnRBcmdzIGUpDQoJCXsNCgkJfQ0KCQkNCiAgICB9DQp9DQo=&lt;/units&gt;&lt;/units&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2020-02-17T00:26:08.003Z</Created>
+    <CreatedBy>-1</CreatedBy>
+    <Updated>2021-10-31T23:19:26.593Z</Updated>
+    <UpdatedBy>-1</UpdatedBy>
+    <rowguid>c22c5da2-fd4e-45fc-8c07-238de30b206c</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>

@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_2621</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>9</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;dynamicMethods /&gt;&lt;fields /&gt;&lt;customFields /&gt;&lt;staticMethods /&gt;&lt;references&gt;&lt;reference&gt;System.Xml.dll&lt;/reference&gt;&lt;/references&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Tuesday, 1 December 2020 4:22:11 PM"&gt;Ly8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCi8vIDxhdXRvLWdlbmVyYXRlZD4NCi8vICAgICBUaGlzIGNvZGUgd2FzIGdlbmVyYXRlZCBieSBhIHRvb2wuDQovLyAgICAgUnVudGltZSBWZXJzaW9uOjIuMC41MDcyNy41NDQ2DQovLw0KLy8gICAgIENoYW5nZXMgdG8gdGhpcyBmaWxlIG1heSBjYXVzZSBpbmNvcnJlY3QgYmVoYXZpb3IgYW5kIHdpbGwgYmUgbG9zdCBpZg0KLy8gICAgIHRoZSBjb2RlIGlzIHJlZ2VuZXJhdGVkLg0KLy8gPC9hdXRvLWdlbmVyYXRlZD4NCi8vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQoNClthc3NlbWJseTogU3lzdGVtLlJlZmxlY3Rpb24uQXNzZW1ibHlWZXJzaW9uKCIxLjAuMC4wIildDQpbYXNzZW1ibHk6IFN5c3RlbS5SZWZsZWN0aW9uLkFzc2VtYmx5VGl0bGUoIiIpXQ0KW2Fzc2VtYmx5OiBTeXN0ZW0uUmVmbGVjdGlvbi5Bc3NlbWJseURlc2NyaXB0aW9uKCJPTVMgU2NyaXB0bGV0IC0gIildDQpbYXNzZW1ibHk6IFN5c3RlbS5SZWZsZWN0aW9uLkFzc2VtYmx5Q29tcGFueSgiIildDQpbYXNzZW1ibHk6IFN5c3RlbS5SZWZsZWN0aW9uLkFzc2VtYmx5UHJvZHVjdCgiT01TLk5FVCIpXQ0KDQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMgew0KICAgIHVzaW5nIFN5c3RlbTsNCiAgICB1c2luZyBTeXN0ZW0uRGF0YTsNCiAgICB1c2luZyBGV0JTLkNvbW1vbi5VSTsNCiAgICB1c2luZyBGV0JTLkNvbW1vbjsNCiAgICB1c2luZyBGV0JTLk9NUy5VSS5XaW5kb3dzOw0KICAgIHVzaW5nIEZXQlMuT01TOw0KICAgIA0KICAgIA0KICAgIHB1YmxpYyBjbGFzcyBfMjYyMSA6IEZXQlMuT01TLlNjcmlwdC5QcmVjZWRlbnRTY3JpcHRUeXBlIHsNCg0KCQkNCgkJU3lzdGVtLkRhdGEuRGF0YVRhYmxlIGR0Ow0KCQlwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBWYWxpZGF0aW5nKG9iamVjdCBzZW5kZXIsIEZXQlMuT01TLlByZWNlZGVudExpbmtDYW5jZWxFdmVudEFyZ3MgZSkNCgkJew0KCQkJaWYgKGR0ID09IG51bGwpDQogICAgICAgICAgICB7DQoJCQkJS2V5VmFsdWVDb2xsZWN0aW9uIGt2YyA9IG5ldyBLZXlWYWx1ZUNvbGxlY3Rpb24oKTsNCgkJCQlrdmMuQ2xlYXIoKTsNCgkJCQlrdmMuQWRkKCJGSUxFSUQiLEZXQlMuT01TLlNlc3Npb24uQ3VycmVudFNlc3Npb24uQ3VycmVudEZpbGUuSUQpOw0KDQoJCQkgCWR0ID0gRldCUy5PTVMuVUkuV2luZG93cy5TZXJ2aWNlcy5XaXphcmRzLkdldFdpemFyZCgidWRTY3JXaXowMDk0U2VsIixudWxsLEZXQlMuT01TLkVucXVpcnlFbmdpbmUuRW5xdWlyeU1vZGUuQWRkLG51bGwgKSBhcyBTeXN0ZW0uRGF0YS5EYXRhVGFibGU7DQoJCQkJDQoJCQl9DQoJCX0NCgkJDQoJCXByb3RlY3RlZCBvdmVycmlkZSB2b2lkIE1lcmdpbmcob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUHJlY2VkZW50TGlua0NhbmNlbEV2ZW50QXJncyBlKSANCgkJew0KCQkJDQogICAgICAgICAgICAgICAgICBpZiAoZHQhPSBudWxsKQ0KICAgICAgICAgICAgICAgICAgew0KICAgICAgICAgICAgICAgICAgICAgICAgZS5QcmVjTGluay5QYXJhbXMuQWRkKCJMdW1wUGF5bWVudCIsQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJ4cGx1bXAiXSkpOw0KICAgICAgICAgICAgICAgICAgICAgICAgZS5QcmVjTGluay5QYXJhbXMuQWRkKCJEaXNhYmlsaXR5IixDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bInhwRGlzYWJpbGl0eSJdKSk7DQoJCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIkRpc0JlbmVmaXQiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImN1cmJlbmUiXSkpOw0KCQkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJNYXhEYXRlUGVuc2lvbiIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiZHRlbWF4Il0pKTsNCgkJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiUmVkdWN0TW9ydGdhZ2UiLENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsieHByZWR1Y3QiXSkpOw0KICAgICAgICAgICAgICAgICAgICAgICAgZS5QcmVjTGluay5QYXJhbXMuQWRkKCJQb3N0cG9uZU1vcnRnYWdlIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJ4cHBvc3Rwb25lIl0pKTsNCgkJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiUmVkdWN0UGF5IiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJjdXJwYXkiXSkpOw0KICAgICAgICAgICAgICAgICAgICAgICAgZS5QcmVjTGluay5BcHBseVBhcmFtcygpOw0KCQkJCQkJZHQgPSBudWxsOw0KICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgZWxzZSANCiAgICAgICAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybjsNCiAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KCQlwdWJsaWMgb3ZlcnJpZGUgdm9pZCBMb2FkKG9iamVjdCBzZW5kZXIsIFN5c3RlbS5FdmVudEFyZ3MgZSkgew0KCQkJDQogICAgICAgIH0NCg0KDQogICAgICAgIA0KICAgICAgICAvLyAqKioqKiogQXV0b21hdGljIE1ldGhvZHMgUGxhY2VkIEFib3ZlICoqKioqKg0KICAgICAgICBwcml2YXRlIHZvaWQgU3RhcnRpbmdQbGFjZUhvbGRlcigpIHsNCg0KICAgICAgICB9DQoJCQ0KCQlwdWJsaWMgb3ZlcnJpZGUgdm9pZCBEb2N1bWVudFNhdmVkKG9iamVjdCBzZW5kZXIsIEZXQlMuT01TLlBoeXNpY2FsRG9jdW1lbnRTYXZlZEV2ZW50QXJncyBlKQ0KCQl7DQoJCX0NCgkJDQogICAgfQ0KfQ0K&lt;/units&gt;&lt;/units&gt;&lt;distributions /&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2012-05-15T01:30:07.3Z</Created>
+    <CreatedBy>32184</CreatedBy>
+    <Updated>2020-12-01T05:22:12.31Z</Updated>
+    <UpdatedBy>35229</UpdatedBy>
+    <rowguid>37f1c0b3-d6fd-4816-9bf6-5b0998032975</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>

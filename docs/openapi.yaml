@@ -46,8 +46,8 @@ tags:
 paths:
   /api/v1/convert:
     post:
-      summary: Convert single DOT file to DOCX
-      description: Upload a .dot file for conversion to .docx format. The conversion is processed asynchronously.
+      summary: Convert single DOT file to DOCX (Asynchronous)
+      description: Upload a .dot file for conversion to .docx format. The conversion is processed asynchronously in a queue. Use this for large files or batch processing.
       tags:
         - Conversion
       requestBody:
@@ -87,6 +87,155 @@ paths:
                 $ref: '#/components/schemas/Error'
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/convert/sync:
+    post:
+      summary: Convert single DOT file to DOCX (Synchronous)
+      description: |
+        Upload a .dot file for immediate conversion to .docx format. The conversion is processed synchronously and the converted file is returned directly in the response.
+
+        **Limitations:**
+        - Maximum file size: 10MB (configurable via SYNC_MAX_FILE_SIZE)
+        - Maximum timeout: 30 seconds (configurable via SYNC_TIMEOUT)
+        - Not suitable for batch processing
+
+        **Use cases:**
+        - Small files that need immediate conversion
+        - Real-time conversion workflows
+        - Single document processing where waiting is acceptable
+      tags:
+        - Conversion
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The .dot file to convert (max 10MB)
+                timeout:
+                  type: integer
+                  default: 30
+                  minimum: 1
+                  maximum: 60
+                  description: Maximum time to wait for conversion (seconds)
+      responses:
+        '200':
+          description: Conversion successful, returns the converted DOCX file
+          content:
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+              schema:
+                type: string
+                format: binary
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+                example: 'attachment; filename="document.docx"'
+            X-Conversion-Time:
+              schema:
+                type: string
+                example: "2.5s"
+            X-Conversion-ID:
+              schema:
+                type: string
+                format: uuid
+                example: "550e8400-e29b-41d4-a716-446655440000"
+        '400':
+          description: Invalid request (file missing, wrong format, or too large)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '408':
+          description: Conversion timeout exceeded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "conversion timeout exceeded"
+                  timeout:
+                    type: number
+                    example: 30
+                  suggestion:
+                    type: string
+                    example: "use async endpoint /api/v1/convert for complex files"
+        '500':
+          description: Conversion failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/convert/sync/json:
+    post:
+      summary: Convert DOT to DOCX with JSON response (Synchronous)
+      description: |
+        Same as /convert/sync but returns a JSON response with conversion metadata instead of the binary file.
+        Useful for API clients that need structured responses.
+      tags:
+        - Conversion
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The .dot file to convert (max 10MB)
+      responses:
+        '200':
+          description: Conversion successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  conversion_id:
+                    type: string
+                    format: uuid
+                    example: "550e8400-e29b-41d4-a716-446655440000"
+                  filename:
+                    type: string
+                    example: "document.docx"
+                  size:
+                    type: integer
+                    example: 78249
+                    description: File size in bytes
+                  duration:
+                    type: string
+                    example: "2.5s"
+                  download_url:
+                    type: string
+                    example: "/api/v1/sync/download/550e8400-e29b-41d4-a716-446655440000"
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '408':
+          description: Timeout exceeded
           content:
             application/json:
               schema:

@@ -71,29 +71,19 @@ func ConvertHandler(q queue.Queue, s storage.Storage) gin.HandlerFunc {
 
 		// Save uploaded file
 		inputPath := fmt.Sprintf("uploads/%s/%s", jobID, header.Filename)
-		localPath := s.GetLocalPath(inputPath)
 
-		// Create upload directory
-		if err := s.EnsureDirectory(filepath.Dir(localPath)); err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to create upload directory"})
-			return
-		}
-
-		// Save file to local storage
+		// Save file to storage (handles both local and Azure)
 		data, err := io.ReadAll(file)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to read file"})
 			return
 		}
 
-		if err := s.WriteFile(localPath, data); err != nil {
+		// WriteFile handles upload to Azure automatically if Azure Storage is configured
+		if err := s.WriteFile(inputPath, data); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save file"})
+			log.Errorf("Failed to save file for job %s: %v", jobID, err)
 			return
-		}
-
-		// Upload to cloud storage if configured
-		if err := s.Upload(c, localPath, inputPath); err != nil {
-			log.Warnf("Failed to upload to cloud storage: %v", err)
 		}
 
 		// Create output path

@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_301011</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>1</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Tuesday, 3 December 2024 1:52:47 PM"&gt;DQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMNCnsNCiAgICB1c2luZyBTeXN0ZW07DQogICAgdXNpbmcgU3lzdGVtLkRhdGE7DQogICAgdXNpbmcgRldCUy5Db21tb24uVUk7DQogICAgdXNpbmcgRldCUy5Db21tb247DQogICAgdXNpbmcgRldCUy5PTVMuVUkuV2luZG93czsNCiAgICB1c2luZyBGV0JTLk9NUzsNCiAgICANCiAgICANCiAgICBwdWJsaWMgcGFydGlhbCBjbGFzcyBfMzAxMDExIDogRldCUy5PTVMuU2NyaXB0LlByZWNlZGVudFNjcmlwdFR5cGUNCiAgICB7DQoJCQ0KCQlwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBNZXJnaW5nKG9iamVjdCBzZW5kZXIsIEZXQlMuT01TLlByZWNlZGVudExpbmtDYW5jZWxFdmVudEFyZ3MgZSkgew0KCQkJaWYgKGUuUHJlY0xpbmsuUGFyYW1zLkNvdW50ID4gMTAwKSByZXR1cm47DQoJCQl0cnkgew0KCQkJCQ0KCQkJCUZXQlMuQ29tbW9uLktleVZhbHVlQ29sbGVjdGlvbiBrdmMgPSBuZXcgRldCUy5Db21tb24uS2V5VmFsdWVDb2xsZWN0aW9uKCk7DQoJCQkJa3ZjLkNsZWFyKCk7DQoJCQkJa3ZjLkFkZCgiRklMRSIsIGUuUHJlY0xpbmsuUGFyc2VyLkN1cnJlbnRGaWxlKTsNCgkJCQlrdmMuQWRkKCJBU1NPQyIsIGUuUHJlY0xpbmsuUGFyc2VyLkN1cnJlbnRBc3NvY2lhdGUpOw0KDQoJCQkJU3lzdGVtLkRhdGEuRGF0YVRhYmxlIGR0ID0gRldCUy5PTVMuVUkuV2luZG93cy5TZXJ2aWNlcy5XaXphcmRzLkdldFdpemFyZCgidWR3aXpzdXB2aWNhbmV3IiwgbnVsbCwgRldCUy5PTVMuRW5xdWlyeUVuZ2luZS5FbnF1aXJ5TW9kZS5BZGQsIGt2YykgYXMgU3lzdGVtLkRhdGEuRGF0YVRhYmxlOw0KCQkJDQoJCQkJaWYoZHQgIT0gbnVsbCkgew0KCQkJCQkNCgkJCQkJZm9yZWFjaChEYXRhQ29sdW1uIGRjIGluIGR0LkNvbHVtbnMpIA0KCQkJCQl7DQoJCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoZGMuQ29sdW1uTmFtZSwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdW2RjXSkpOwkNCgkJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiXyIgKyBkYy5Db2x1bW5OYW1lLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bZGNdKSk7DQoJCQkJCX0NCgkJCQkJDQoJCQkJCWUuUHJlY0xpbmsuQXBwbHlQYXJhbXMoKTsNCgkJCQkJZHQgPSBudWxsOw0KCQkJCX0NCgkJCQllbHNlDQoJCQkJew0KCQkJCQlGV0JTLk9NUy5VSS5XaW5kb3dzLk1lc3NhZ2VCb3guU2hvdygiUHJlY2VkZW50IG1lcmdlIGNhbmNlbGxlZC4iKTsNCgkJCQkJZS5DYW5jZWwgPSB0cnVlOw0KCQkJCX0NCgkJCX1jYXRjaChFeGNlcHRpb24gZXgpe0Vycm9yQm94LlNob3coZXgpO30NCiAgICAgICAgfQ0KDQoJCQ0KICAgIH0NCn0NCg==&lt;/units&gt;&lt;/units&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2024-12-03T02:49:58.763Z</Created>
+    <CreatedBy>35374</CreatedBy>
+    <Updated>2024-12-03T02:52:47.823Z</Updated>
+    <UpdatedBy>35374</UpdatedBy>
+    <rowguid>4efe4651-2fe2-4ede-97d2-27153bfd9d9e</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>

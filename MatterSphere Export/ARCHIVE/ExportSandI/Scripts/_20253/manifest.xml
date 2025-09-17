@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_20253</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>6</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Wednesday, 8 June 2022 2:38:29 PM"&gt;DQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMNCnsNCiAgICB1c2luZyBTeXN0ZW07DQogICAgdXNpbmcgU3lzdGVtLkRhdGE7DQogICAgdXNpbmcgRldCUy5Db21tb24uVUk7DQogICAgdXNpbmcgRldCUy5Db21tb247DQogICAgdXNpbmcgRldCUy5PTVMuVUkuV2luZG93czsNCiAgICB1c2luZyBGV0JTLk9NUzsNCiAgICANCiAgICANCiAgICBwdWJsaWMgcGFydGlhbCBjbGFzcyBfMjAyNTMgOiBGV0JTLk9NUy5TY3JpcHQuUHJlY2VkZW50U2NyaXB0VHlwZQ0KICAgIHsNCgkJDQoJCXByb3RlY3RlZCBvdmVycmlkZSB2b2lkIE1lcmdpbmcob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUHJlY2VkZW50TGlua0NhbmNlbEV2ZW50QXJncyBlKSB7DQoJCQlGV0JTLkNvbW1vbi5LZXlWYWx1ZUNvbGxlY3Rpb24ga3ZjID0gbmV3IEZXQlMuQ29tbW9uLktleVZhbHVlQ29sbGVjdGlvbigpOw0KCQkJa3ZjLkFkZCgicHJlY05hbWUiLCAiU3VwZXJhbm51YXRpb24iKTsJDQoJCQlrdmMuQWRkKCJjdXJyZW50RmlsZSIsZS5QcmVjTGluay5QYXJzZXIuQ3VycmVudEZpbGUpOwkNCgkJCQ0KCQkJRldCUy5Db21tb24uS2V5VmFsdWVDb2xsZWN0aW9uIGxhYmVscyA9IG5ldyBGV0JTLkNvbW1vbi5LZXlWYWx1ZUNvbGxlY3Rpb24oKTsNCgkJCQ0KCQkJU3lzdGVtLkRhdGEuRGF0YVRhYmxlIGR0ID0gRldCUy5PTVMuVUkuV2luZG93cy5TZXJ2aWNlcy5XaXphcmRzLkdldFdpemFyZCgidWR3aXpzdXBlcmNhNjEwIiwgbnVsbCwgRldCUy5PTVMuRW5xdWlyeUVuZ2luZS5FbnF1aXJ5TW9kZS5BZGQsIGt2YykgYXMgU3lzdGVtLkRhdGEuRGF0YVRhYmxlOw0KCQkJaWYoZHQgPT0gbnVsbCkgDQoJCQl7DQoJCQkJRldCUy5PTVMuVUkuV2luZG93cy5NZXNzYWdlQm94LlNob3coIlByZWNlZGVudCBtZXJnZSBoYXMgYmVlbiBjYW5jZWxsZWQiKTsNCgkJCQlDdXJyZW50U2Vzc2lvbi5TZXNzaW9uU3RhdGUuQWRkKCJjYW5jZWxBbGwiLCB0cnVlKTsNCgkJCQllLkNhbmNlbCA9IHRydWU7DQoJCQkJcmV0dXJuOw0KCQkJfQ0KCQkJZWxzZQ0KCQkJew0KCQkJCVN0cmluZ1tdIG1ibmFtZXMgPSB7Im1icGVyc29uIiwibWJwZXJzb24yIiwibWJwcmluY2lwYWwifTsNCgkJCQlmb3JlYWNoKERhdGFDb2x1bW4gZGMgaW4gZHQuQ29sdW1ucykgDQoJCQkJew0KCQkJCQlpZiAoQXJyYXkuRXhpc3RzKG1ibmFtZXMscyA9PiBzLkVxdWFscyhkYy5Db2x1bW5OYW1lKSkpDQoJCQkJCXsNCgkJCQkJCXN0cmluZyBuYW1lID0gIiI7DQoJCQkJCQl0cnl7bmFtZSA9IEZXQlMuT01TLlVzZXIuR2V0VXNlcihDb252ZXJ0LlRvSW50MzIoZHQuUm93c1swXVtkY10pKS5GdWxsTmFtZTt9Y2F0Y2h7fQ0KCQkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKGRjLkNvbHVtbk5hbWUsIG5hbWUpOwkNCgkJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiXyIgKyBkYy5Db2x1bW5OYW1lLCBuYW1lKTsNCgkJCQkJfQ0KCQkJCQllbHNlDQoJCQkJCXsNCgkJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZChkYy5Db2x1bW5OYW1lLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bZGNdKSk7CQ0KCQkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfIiArIGRjLkNvbHVtbk5hbWUsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVtkY10pKTsNCgkJCQkJfQ0KCQkJCX0NCgkJCQllLlByZWNMaW5rLkFwcGx5UGFyYW1zKCk7DQoJCQl9DQogICAgICAgIH0JCQ0KCQlwdWJsaWMgb3ZlcnJpZGUgdm9pZCBEb2N1bWVudFNhdmVkKG9iamVjdCBzZW5kZXIsIEZXQlMuT01TLlBoeXNpY2FsRG9jdW1lbnRTYXZlZEV2ZW50QXJncyBlKQ0KCQl7DQoJCX0NCgkJDQogICAgfQ0KfQ0K&lt;/units&gt;&lt;/units&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2018-07-10T02:28:04.623Z</Created>
+    <CreatedBy>-1</CreatedBy>
+    <Updated>2022-06-08T04:38:30.04Z</Updated>
+    <UpdatedBy>-1</UpdatedBy>
+    <rowguid>ddb07b91-177a-45fb-910c-f28b2aea5c6e</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>

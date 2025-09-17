@@ -1,0 +1,294 @@
+<?xml version="1.0" standalone="yes"?>
+<PRECEDENTS>
+  <xs:schema id="PRECEDENTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="PRECEDENTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="PRECEDENT">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PrecID" type="xs:long" minOccurs="0" />
+                <xs:element name="brID" type="xs:int" minOccurs="0" />
+                <xs:element name="PrecTitle" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecType" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecLibrary" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecCategory" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecSubCategory" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecLanguage" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecText" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecDesc" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecPubName" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecAddressee" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecAssocType" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecAutoName" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecPath" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecLocation" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecDirID" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecReminder" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecNoOfDays" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecRemComment" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecReviewNoOfDays" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecTimeRecUnits" type="xs:int" minOccurs="0" />
+                <xs:element name="PrecTimeRecDesc" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecTimeRecCode" type="xs:string" minOccurs="0" />
+                <xs:element name="precTimeRecInCode" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecInternalProcess" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecProgType" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecMS" type="xs:short" minOccurs="0" />
+                <xs:element name="PrecMoveMS" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecMSChangePrompt" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecMSNote" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecMSAuto" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecMSCode" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecGlossary" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecSMSMessage" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecUpdateSQL" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecMultiPrec" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PrecPassword" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecPasswordHint" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecScript" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecPreview" type="xs:string" minOccurs="0" />
+                <xs:element name="precExtension" type="xs:string" minOccurs="0" />
+                <xs:element name="precDirection" type="xs:boolean" minOccurs="0" />
+                <xs:element name="precXML" type="xs:string" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="precDeleted" type="xs:boolean" minOccurs="0" />
+                <xs:element name="precRetain" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="udPrecDocTitle" type="xs:string" minOccurs="0" />
+                <xs:element name="udPrecStartProc" type="xs:boolean" minOccurs="0" />
+                <xs:element name="udPrecNarrative" type="xs:string" minOccurs="0" />
+                <xs:element name="udPrecMedEvts" type="xs:boolean" minOccurs="0" />
+                <xs:element name="udPrecCrtEvts" type="xs:boolean" minOccurs="0" />
+                <xs:element name="udPrecRuleNo" type="xs:string" minOccurs="0" />
+                <xs:element name="udFormNo" type="xs:string" minOccurs="0" />
+                <xs:element name="udIsLinked" type="xs:boolean" minOccurs="0" />
+                <xs:element name="udLink1" type="xs:string" minOccurs="0" />
+                <xs:element name="udLink2" type="xs:string" minOccurs="0" />
+                <xs:element name="udLink3" type="xs:string" minOccurs="0" />
+                <xs:element name="precCurrentVersion" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="precChecksum" type="xs:string" minOccurs="0" />
+                <xs:element name="mdPrecInfo" type="xs:string" minOccurs="0" />
+                <xs:element name="udPrecEnclose" type="xs:boolean" minOccurs="0" />
+                <xs:element name="udiManageFolder" type="xs:string" minOccurs="0" />
+                <xs:element name="PrecMinorCategory" type="xs:string" minOccurs="0" />
+                <xs:element name="precCheckedOut" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="precCheckedOutBy" type="xs:int" minOccurs="0" />
+                <xs:element name="precCheckedOutlocation" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PRECEDENTSTORAGE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="precID" type="xs:long" minOccurs="0" />
+                <xs:element name="precBLOB" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ACTIVITIES">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="actCode" type="xs:string" minOccurs="0" />
+                <xs:element name="actAccCode" type="xs:string" minOccurs="0" />
+                <xs:element name="actChargeable" type="xs:boolean" minOccurs="0" />
+                <xs:element name="actFixedRateLegal" type="xs:boolean" minOccurs="0" />
+                <xs:element name="actTemplateMatch" type="xs:string" minOccurs="0" />
+                <xs:element name="actLegalAidFilter" type="xs:string" minOccurs="0" />
+                <xs:element name="actFixedValue" type="xs:decimal" minOccurs="0" />
+                <xs:element name="actActive" type="xs:boolean" minOccurs="0" />
+                <xs:element name="actcurISOCode" type="xs:string" minOccurs="0" />
+                <xs:element name="actfileTypecode" type="xs:string" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="actBillable" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CONTACTTYPES">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="typeCode" type="xs:string" minOccurs="0" />
+                <xs:element name="typeVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="typeXML" type="xs:string" minOccurs="0" />
+                <xs:element name="typeGlyph" type="xs:int" minOccurs="0" />
+                <xs:element name="typeActive" type="xs:boolean" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="DIRECTORY">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="dirID" type="xs:short" minOccurs="0" />
+                <xs:element name="brID" type="xs:int" minOccurs="0" />
+                <xs:element name="dirCode" type="xs:string" minOccurs="0" />
+                <xs:element name="dirPath" type="xs:string" minOccurs="0" />
+                <xs:element name="dirSystem" type="xs:boolean" minOccurs="0" />
+                <xs:element name="dirBrowsable" type="xs:boolean" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="DOCTYPE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="typeCode" type="xs:string" minOccurs="0" />
+                <xs:element name="typeDefaultStorage" type="xs:short" minOccurs="0" />
+                <xs:element name="typeFileExt" type="xs:string" minOccurs="0" />
+                <xs:element name="typePrecExt" type="xs:string" minOccurs="0" />
+                <xs:element name="typeDefaultApp" type="xs:short" minOccurs="0" />
+                <xs:element name="typeXml" type="xs:string" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="typeDocSupports" type="xs:int" minOccurs="0" />
+                <xs:element name="typePrecSupports" type="xs:int" minOccurs="0" />
+                <xs:element name="typeActive" type="xs:long" minOccurs="0" />
+                <xs:element name="typeGlyph" type="xs:long" minOccurs="0" />
+                <xs:element name="typeVersion" type="xs:long" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="LANGUAGE">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="langCode" type="xs:string" minOccurs="0" />
+                <xs:element name="langDesc" type="xs:string" minOccurs="0" />
+                <xs:element name="langSupported" type="xs:boolean" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="STORAGEPROVIDER">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="spID" type="xs:short" minOccurs="0" />
+                <xs:element name="spCode" type="xs:string" minOccurs="0" />
+                <xs:element name="spType" type="xs:string" minOccurs="0" />
+                <xs:element name="spGUID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="spType2" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PRECEDENTMULTI">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="multiID" type="xs:long" minOccurs="0" />
+                <xs:element name="multiMasterID" type="xs:long" minOccurs="0" />
+                <xs:element name="multiChildID" type="xs:long" minOccurs="0" />
+                <xs:element name="multiOrder" type="xs:int" minOccurs="0" />
+                <xs:element name="multiPrecType" type="xs:string" minOccurs="0" />
+                <xs:element name="multiPrecTitle" type="xs:string" minOccurs="0" />
+                <xs:element name="multiPrecLibrary" type="xs:string" minOccurs="0" />
+                <xs:element name="multiPrecCategory" type="xs:string" minOccurs="0" />
+                <xs:element name="multiPrecSubCategory" type="xs:string" minOccurs="0" />
+                <xs:element name="multiContactType" type="xs:string" minOccurs="0" />
+                <xs:element name="multiAssocType" type="xs:string" minOccurs="0" />
+                <xs:element name="multiSaveMode" type="xs:short" minOccurs="0" />
+                <xs:element name="multiPrintMode" type="xs:short" minOccurs="0" />
+                <xs:element name="multiNewTemplate" type="xs:boolean" minOccurs="0" />
+                <xs:element name="multiXML" type="xs:string" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="multiPrecMinorCategory" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <PRECEDENT>
+    <PrecID>15999</PrecID>
+    <PrecTitle>sup199c</PrecTitle>
+    <PrecType>LETTERHEADC2P</PrecType>
+    <PrecCategory>Superannuation</PrecCategory>
+    <PrecText>true</PrecText>
+    <PrecDesc>Letter to Client advsg claim successful and they will be paid insurance disability pension</PrecDesc>
+    <PrecPubName>Maurice Blackburn</PrecPubName>
+    <PrecAddressee>CLIENT</PrecAddressee>
+    <PrecAssocType>CLIENT</PrecAssocType>
+    <PrecPath>Company\3321.dot</PrecPath>
+    <PrecLocation>0</PrecLocation>
+    <PrecDirID>5</PrecDirID>
+    <PrecReminder>false</PrecReminder>
+    <PrecNoOfDays>0</PrecNoOfDays>
+    <PrecRemComment />
+    <PrecReviewNoOfDays>-1</PrecReviewNoOfDays>
+    <PrecTimeRecUnits>0</PrecTimeRecUnits>
+    <PrecTimeRecDesc />
+    <PrecInternalProcess>false</PrecInternalProcess>
+    <PrecProgType>0</PrecProgType>
+    <PrecMS>0</PrecMS>
+    <PrecMoveMS>false</PrecMoveMS>
+    <PrecMSChangePrompt />
+    <PrecMSNote />
+    <PrecMSAuto>false</PrecMSAuto>
+    <PrecMultiPrec>false</PrecMultiPrec>
+    <PrecPasswordHint />
+    <PrecScript />
+    <PrecPreview>We refer to your claim and are pleased to tell you that we won the disability claim.You will be paid the disability payments backdated to when you stopped work minus the waiting period.The disability benefits will be paid on an ongoing basis &#x13; IF &#x13; DOCVARIABLE "_maxyears" \* MERGEFORMAT &#x15;="UDYES" "for a maximum of &#x13; DOCVARIABLE "_years" \* MERGEFORMAT &#x15; years" "" &#x15;, although your disability benefits might be reviewed every so often.  If you have any problems with the disability payments, please let us know immediately.We have asked the insurance company to send us any further documents to make the payments, give us details of the calculation of the benefits and start the benefit and any back payments immediately.  We have also made a claim for interest.We will let you know when we hear from them, but if you get anything direct, including any payments, please let us know immediately.While the insurance payments don't affect any WorkCover weekly payments, if the insurance policy includes a WorkCover offset clause, your insurance disability payments will be reduced by WorkCover weekly payments (if any).If the superannuation policy includes a WorkCover offset clause, your superannuation benefits will be reduced by Workcover weekly payments (for any corresponding period).The disability payments might also affect any Centrelink entitlements and you should check with Centrelink.We confirm that we estimate our costs to the conclusion of the claim to be approximately &#x13; DOCVARIABLE "_costs" \# "$0.00"&#x15;.  We will account to you for the costs at the end of the claim.&#x13; IF &#x13; DOCVARIABLE "_referral" \* MERGEFORMAT &#x15;="UDYES" "We</PrecPreview>
+    <precExtension>dot</precExtension>
+    <precDirection>false</precDirection>
+    <precXML>&lt;config&gt;&lt;settings&gt;&lt;property name="DocVersioning" value="" /&gt;&lt;/settings&gt;&lt;/config&gt;</precXML>
+    <Created>2012-05-14T01:04:02.26Z</Created>
+    <CreatedBy>-1</CreatedBy>
+    <Updated>2021-03-21T23:48:27.837Z</Updated>
+    <UpdatedBy>33637</UpdatedBy>
+    <precDeleted>false</precDeleted>
+    <rowguid>e507087a-dd43-400b-ba9d-3679bb5b618f</rowguid>
+    <udPrecDocTitle />
+    <udPrecStartProc>false</udPrecStartProc>
+    <udPrecNarrative />
+    <udPrecMedEvts>false</udPrecMedEvts>
+    <udPrecCrtEvts>false</udPrecCrtEvts>
+    <udPrecRuleNo />
+    <udFormNo />
+    <udIsLinked>false</udIsLinked>
+    <udLink1 />
+    <udLink2 />
+    <udLink3 />
+    <udPrecEnclose>false</udPrecEnclose>
+  </PRECEDENT>
+  <CONTACTTYPES>
+    <typeCode>CLIENT</typeCode>
+    <typeVersion>1</typeVersion>
+    <typeXML>&lt;Config&gt;&lt;Dialog&gt;&lt;Form lookup="CONTCAPTION" /&gt;&lt;Buttons /&gt;&lt;Tabs&gt;&lt;Tab lookup="CONTDETAILS" glyph="23" source="SCRCONMAIN" /&gt;&lt;Tab lookup="-1609146310" glyph="19" source="SCHCONPERFRATE" /&gt;&lt;Tab lookup="SCHCONASSOC" source="SCHCONASSOC" tabtype="List" glyph="25" /&gt;&lt;Tab lookup="-1390301088" glyph="31" source="SCRCONREMACCINF" tabtype="Enquiry" /&gt;&lt;Tab lookup="CONTTYPESCLTAB" source="FDSCRCONLINKLST" tabtype="Enquiry" glyph="49" /&gt;&lt;/Tabs&gt;&lt;Panels width="180" brightness="60" backcolor="Silver"&gt;&lt;Panel lookup="CONTDETAILS" height="100" expanded="True" glyph="Grey" property="DefaultAddress" panelType="Property" /&gt;&lt;/Panels&gt;&lt;/Dialog&gt;&lt;ExtendedDataList&gt;&lt;ExtendedData code="EXTREMACCCONT" /&gt;&lt;/ExtendedDataList&gt;&lt;Settings /&gt;&lt;/Config&gt;</typeXML>
+    <typeGlyph>1</typeGlyph>
+    <typeActive>false</typeActive>
+    <rowguid>563fa74d-8339-412d-bffa-6ef84e252710</rowguid>
+  </CONTACTTYPES>
+  <DIRECTORY>
+    <dirID>5</dirID>
+    <brID>2</brID>
+    <dirCode>OMPRECEDENTS</dirCode>
+    <dirPath>\\dts3ebiz01\TE_3EMS_Share\MCMBDEV81\Precedents</dirPath>
+    <dirSystem>false</dirSystem>
+    <dirBrowsable>false</dirBrowsable>
+    <rowguid>2e328722-6e72-4c2c-9475-1cd48f33a367</rowguid>
+  </DIRECTORY>
+  <DOCTYPE>
+    <typeCode>LETTERHEADC2P</typeCode>
+    <typeDefaultStorage>0</typeDefaultStorage>
+    <typeFileExt>doc</typeFileExt>
+    <typePrecExt>dot</typePrecExt>
+    <typeDefaultApp>0</typeDefaultApp>
+    <typeXml>&lt;Config&gt;&lt;Dialog&gt;&lt;Form lookup="DOCTYPECAPTION" /&gt;&lt;Tabs&gt;&lt;Tab lookup="PROPERTIES" glyph="58" source="SCRDOCEDIT2" tabtype="Enquiry" /&gt;&lt;Tab lookup="VERSIONS" glyph="28" source="ADDDOCVERSIONS" tabtype="Addin" /&gt;&lt;Tab lookup="PREVIEW" glyph="0" source="ADDDOCPREVIEW" tabtype="Addin" /&gt;&lt;Tab lookup="HISTORY" glyph="1" source="SCHDOCLOG" tabtype="List" /&gt;&lt;Tab lookup="TIMEREC" glyph="33" source="SCHDOCTIME" tabtype="List" conditional="Ispackageinstalled(&amp;quot;TimeRecording&amp;quot;)&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;IsLicensedFor(&amp;quot;TIMEREC&amp;quot;)" /&gt;&lt;/Tabs&gt;&lt;Panels&gt;&lt;Panel lookup="DETAIL" panelType="Property" property="DocumentDetail" /&gt;&lt;/Panels&gt;&lt;/Dialog&gt;&lt;ExtendedDataList /&gt;&lt;Settings searchOnCreate="False" /&gt;&lt;defaultTemplates /&gt;&lt;DocumentDetail&gt;{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}  \viewkind4\uc1\pard\b\f0\fs17 Document Ref\b0\par  &amp;lt;&amp;lt;&amp;lt;DOCID&amp;gt;&amp;gt;&amp;gt;\par  \b\par  Our Ref \b0\par  &amp;lt;&amp;lt;&amp;lt;~OBJ.OMSFile.Client.ClientNo&amp;gt;&amp;gt;&amp;gt;/&amp;lt;&amp;lt;&amp;lt;~OBJ.OMSFile.FileNo&amp;gt;&amp;gt;&amp;gt;\b\par  \par  Document Type\par  \b0 &amp;lt;&amp;lt;&amp;lt;~OBJ.CurrentDocumentType.Description&amp;gt;&amp;gt;&amp;gt;\par  \b\par  Created\par  \b0 &amp;lt;&amp;lt;&amp;lt;~OBJ.TrackingStamp.Created&amp;gt;&amp;gt;&amp;gt;\par  \b\par  Created By\par  \b0 &amp;lt;&amp;lt;&amp;lt;~OBJ.TrackingStamp.CreatedBy&amp;gt;&amp;gt;&amp;gt;\par  \par  \b Updated\par  \b0 &amp;lt;&amp;lt;&amp;lt;~OBJ.TrackingStamp.Updated&amp;gt;&amp;gt;&amp;gt;\par  \b\par  Updated By\par  \b0 &amp;lt;&amp;lt;&amp;lt;~OBJ.TrackingStamp.UpdatedBy&amp;gt;&amp;gt;&amp;gt;\par  }  &lt;/DocumentDetail&gt;&lt;/Config&gt;</typeXml>
+    <rowguid>40eec18a-970c-4439-a9e5-65c71accb781</rowguid>
+    <typeDocSupports>0</typeDocSupports>
+    <typePrecSupports>0</typePrecSupports>
+    <typeActive>1</typeActive>
+    <typeGlyph>1</typeGlyph>
+    <typeVersion>5</typeVersion>
+  </DOCTYPE>
+  <STORAGEPROVIDER>
+    <spID>0</spID>
+    <spCode>SLPFS</spCode>
+    <spType>FWBS.OMS.Storage.FileSystemStorageLocationProvider</spType>
+    <spGUID>a0c3a270-d583-4c98-b0d3-6e5bab53c383</spGUID>
+    <rowguid>6cf97d95-c298-428b-b19a-3043ce05c934</rowguid>
+    <spType2>FWBS.OMS.DocumentManagement.Storage.Providers.FileSystemStorageProvider, OMS.Library</spType2>
+  </STORAGEPROVIDER>
+</PRECEDENTS>

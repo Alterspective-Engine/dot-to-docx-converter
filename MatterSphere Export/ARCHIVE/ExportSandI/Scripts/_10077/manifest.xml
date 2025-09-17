@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<SCRIPTS>
+  <xs:schema id="SCRIPTS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SCRIPTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SCRIPTS">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="scrCode" type="xs:string" minOccurs="0" />
+                <xs:element name="scrType" type="xs:string" minOccurs="0" />
+                <xs:element name="scrVersion" type="xs:long" minOccurs="0" />
+                <xs:element name="scrAuthor" type="xs:string" minOccurs="0" />
+                <xs:element name="scrText" type="xs:string" minOccurs="0" />
+                <xs:element name="scrBlob" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="scrFormat" type="xs:short" minOccurs="0" />
+                <xs:element name="Created" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="Updated" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="rowguid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="scrFlag" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SCRIPTS>
+    <scrCode>_10077</scrCode>
+    <scrType>PRECEDENT</scrType>
+    <scrVersion>18</scrVersion>
+    <scrText>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;config&gt;&lt;script&gt;&lt;units&gt;&lt;units filename="Editor.cs" modified="Wednesday, 2 December 2020 2:18:42 PM"&gt;DQpuYW1lc3BhY2UgT01TLlNjcmlwdGxldHMNCnsNCiAgICB1c2luZyBTeXN0ZW07DQogICAgdXNpbmcgU3lzdGVtLkRhdGE7DQogICAgdXNpbmcgRldCUy5Db21tb24uVUk7DQogICAgdXNpbmcgRldCUy5Db21tb247DQogICAgdXNpbmcgRldCUy5PTVMuVUkuV2luZG93czsNCiAgICB1c2luZyBGV0JTLk9NUzsNCiAgICANCiAgICANCiAgICBwdWJsaWMgcGFydGlhbCBjbGFzcyBfMTAwNzcgOiBGV0JTLk9NUy5TY3JpcHQuUHJlY2VkZW50U2NyaXB0VHlwZQ0KICAgIHsNCgkJU3lzdGVtLkRhdGEuRGF0YVRhYmxlIGR0Ow0KCQlwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBWYWxpZGF0aW5nKG9iamVjdCBzZW5kZXIsIEZXQlMuT01TLlByZWNlZGVudExpbmtDYW5jZWxFdmVudEFyZ3MgZSkNCgkJew0KCQkJaWYgKGR0ID09IG51bGwpIGR0ID0gICAgICAgRldCUy5PTVMuVUkuV2luZG93cy5TZXJ2aWNlcy5XaXphcmRzLkdldFdpemFyZCgiVURTQ1JXSVpTVVAwNDIiLG51bGwsCUZXQlMuT01TLkVucXVpcnlFbmdpbmUuRW5xdWlyeU1vZGUuQWRkLG51bGwpIGFzIFN5c3RlbS5EYXRhLkRhdGFUYWJsZTsNCgkJfQ0KCQkNCgkJcHJvdGVjdGVkIG92ZXJyaWRlIHZvaWQgTWVyZ2luZyhvYmplY3Qgc2VuZGVyLCBGV0JTLk9NUy5QcmVjZWRlbnRMaW5rQ2FuY2VsRXZlbnRBcmdzIGUpDQoJCXsNCgkJCQ0KICAgICAgICAgICAgICAgaWYgKGR0IT0gbnVsbCkNCiAgICAgICAgICAgICAgICAgew0KCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl9tYXR0ZXIiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bIm1hdHRlciJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2NsYWltdHlwZSIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiY2xhaW10eXBlIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfY2xhaW0iLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImNsYWltIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfY2xpZW50Zm9ybXMiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImNsaWVudGZvcm1zIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfdGF4ZmlsZSIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsidGF4ZmlsZSJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX21hcnJkZWVkcG9sbCIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsibWFycmRlZWRwb2xsIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfdHJlYXRpbmdkb2MiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bInRyZWF0aW5nZG9jIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfbWVkYXV0aCIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsibWVkYXV0aCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2l0ciIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiaXRyIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfaGljIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJoaWMiXSkpOw0KCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl9zdGF0ZGVjIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJzdGF0ZGVjIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfZG9jdG9yZm9ybXMiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImRvY3RvcmZvcm1zIl0pKTsNCi8vCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl90cmVhdGluZ3Byb2Zvcm1hIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJ0cmVhdGluZ3Byb2Zvcm1hIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfc3BlY2lhbGlzdGZvcm1zIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJzcGVjaWFsaXN0Zm9ybXMiXSkpOw0KLy8JCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX3NwZWNpYWxpc3Rwcm9mb3JtYSIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsic3BlY2lhbGlzdHByb2Zvcm1hIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfZW1wbG95ZXJmb3JtcyIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiZW1wbG95ZXJmb3JtcyJdKSk7DQovLwkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfZW1wbG95ZXJyZXBvcnQiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImVtcGxveWVycmVwb3J0Il0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfZW5jbCIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiZW5jbCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2FhdXRoIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJhYXV0aCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2JkaXMiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImJkaXMiXSkpOw0KCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl9jc3VwZXIiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImNzdXBlciJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2RhdXRoIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJkYXV0aCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2NvcHkiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImNvcHkiXSkpOw0KCQkJCQllLlByZWNMaW5rLlBhcmFtcy5BZGQoIl9hZGVhdGgiLCBDb252ZXJ0LlRvU3RyaW5nKGR0LlJvd3NbMF1bImFkZWF0aCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2J3aWxsIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJid2lsbCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2NzdGF0IiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJjc3RhdCJdKSk7DQoJCQkJCWUuUHJlY0xpbmsuUGFyYW1zLkFkZCgiX2RiaXJ0aCIsIENvbnZlcnQuVG9TdHJpbmcoZHQuUm93c1swXVsiZGJpcnRoIl0pKTsNCgkJCQkJZS5QcmVjTGluay5QYXJhbXMuQWRkKCJfcmVsYXRpb25zaGlwIiwgQ29udmVydC5Ub1N0cmluZyhkdC5Sb3dzWzBdWyJyZWxhdGlvbnNoaXAiXSkpOw0KCQkJCQkNCgkJCQkJZS5QcmVjTGluay5BcHBseVBhcmFtcygpOw0KCQkJCQkJZHQgPSBudWxsOw0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICBlbHNlIA0KICAgICAgICAgICAgICAgICAgew0KCQkJCQkNCiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybjsNCiAgICAgICAgICAgICAgICAgIH0NCgkJfQ0KCQkNCgkJDQoJCXB1YmxpYyBvdmVycmlkZSB2b2lkIERvY3VtZW50U2F2ZWQob2JqZWN0IHNlbmRlciwgRldCUy5PTVMuUGh5c2ljYWxEb2N1bWVudFNhdmVkRXZlbnRBcmdzIGUpDQoJCXsNCgkJfQ0KCQkNCiAgICB9DQp9&lt;/units&gt;&lt;/units&gt;&lt;/script&gt;&lt;/config&gt;</scrText>
+    <scrFormat>0</scrFormat>
+    <Created>2018-01-17T03:22:12.593Z</Created>
+    <CreatedBy>-1</CreatedBy>
+    <Updated>2020-12-02T03:18:43.487Z</Updated>
+    <UpdatedBy>33963</UpdatedBy>
+    <rowguid>45ec5489-32c1-4160-8b14-8acb1190f53b</rowguid>
+    <scrFlag>0</scrFlag>
+  </SCRIPTS>
+</SCRIPTS>
