@@ -17,11 +17,11 @@ COPY . .
 # Download and verify dependencies
 RUN go mod tidy && go mod download
 
-# Build the application
+# Build the application (include all Go files, not just main.go)
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
     -ldflags="-w -s" \
     -o converter \
-    main.go
+    .
 
 # Stage 2: Final image with LibreOffice
 FROM alpine:3.19
@@ -60,8 +60,14 @@ RUN addgroup -g 1000 converter && \
 RUN mkdir -p /tmp/conversions /app/logs /home/converter/.config \
     && chown -R converter:converter /tmp/conversions /app/logs /home/converter
 
-# Copy binary from builder (static files are embedded)
+# Copy binary from builder (with embedded files)
 COPY --from=builder /app/converter /app/converter
+
+# Copy web folder (fallback for dashboard)
+COPY web /app/web
+
+# Set proper ownership
+RUN chown -R converter:converter /app
 
 # Set working directory
 WORKDIR /app

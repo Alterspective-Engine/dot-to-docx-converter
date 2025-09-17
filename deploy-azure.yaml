@@ -1,0 +1,44 @@
+apiVersion: 2021-10-01
+location: eastus
+name: dot-to-docx-converter
+properties:
+  containers:
+  - name: dot-to-docx-converter
+    properties:
+      image: alterspectiveacr.azurecr.io/dot-to-docx-converter:latest
+      resources:
+        requests:
+          cpu: 2
+          memoryInGb: 4
+      ports:
+      - port: 8080
+        protocol: TCP
+      environmentVariables:
+      - name: PORT
+        value: "8080"
+      - name: WORKERS
+        value: "10"
+      - name: MAX_FILE_SIZE_MB
+        value: "50"
+      - name: CONVERSION_TIMEOUT
+        value: "60s"
+      - name: REDIS_URL
+        value: ""
+      - name: AZURE_STORAGE_CONNECTION_STRING
+        value: ""
+  osType: Linux
+  restartPolicy: Always
+  ipAddress:
+    type: Public
+    ports:
+    - port: 8080
+      protocol: TCP
+    dnsNameLabel: alterspective-converter
+  imageRegistryCredentials:
+  - server: alterspectiveacr.azurecr.io
+    username: alterspectiveacr
+tags:
+  app: dot-to-docx-converter
+  environment: production
+  owner: alterspective
+type: Microsoft.ContainerInstance/containerGroups

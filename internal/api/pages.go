@@ -601,8 +601,8 @@ func ServeLandingPage() gin.HandlerFunc {
                             <span>Code Samples</span>
                         </div>
                         <div class="api-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Authentication</span>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Real-time Metrics</span>
                         </div>
                     </div>
                     <div class="buttons">

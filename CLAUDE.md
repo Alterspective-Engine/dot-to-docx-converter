@@ -134,6 +134,25 @@ For every user instruction:
 - Maximum file size for sync: 10MB (configurable)
 - Worker pool size is configurable via environment variables
 
+## Azure Deployment Information
+
+**IMPORTANT: Deploy to AUSTRALIA EAST for better performance:**
+
+### Australia East Deployment (RECOMMENDED)
+- **Resource Group**: `DocSpective`
+- **Container App Name**: `dot-to-docx-converter-au`
+- **Container Apps Environment**: `dot-to-docx-converter-au-env`
+- **Container Registry**: `alterspectiveacr.azurecr.io`
+- **Region**: `australiaeast`
+- **Deployment Script**: `deploy-to-azure-australia.ps1`
+
+### Legacy East US Deployment (Existing)
+- **Container App Name**: `dot-to-docx-converter-prod`
+- **Container App URL**: `https://dot-to-docx-converter-prod.lemondesert-9ded9ffc.eastus.azurecontainerapps.io`
+- **Region**: East US
+- **Container Apps Environment**: `dot-to-docx-converter-prod-env`
+- **Note**: This deployment exists but should be migrated to Australia East
+
 ## Reflection Questions
 
 After each session, consider:

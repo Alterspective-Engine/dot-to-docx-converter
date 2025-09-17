@@ -2,6 +2,9 @@ package main
 
 import (
 	"context"
+	"embed"
+	"io/fs"
+	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
@@ -17,6 +20,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
 )
+
+//go:embed web/*
+var webFS embed.FS
 
 
 func main() {
@@ -114,12 +120,25 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage,
 	// Initialize metrics collection
 	api.InitMetricsCollector()
 
-	// Serve static files for dashboard
-	router.Static("/static", "./web")
+	// Serve static files for dashboard using embedded filesystem
+	// Try embedded files first, fallback to disk for development
+	webSubFS, err := fs.Sub(webFS, "web")
+	if err != nil {
+		log.Warn("Failed to create sub filesystem for web assets, using disk files")
+		router.Static("/static", "./web")
+	} else {
+		router.StaticFS("/static", http.FS(webSubFS))
+	}
 
-	// Dashboard page
+	// Dashboard page - try embedded first, fallback to disk
 	router.GET("/dashboard", func(c *gin.Context) {
-		c.File("./web/dashboard.html")
+		dashboardContent, err := webFS.ReadFile("web/dashboard.html")
+		if err != nil {
+			// Fallback to disk file for development
+			c.File("./web/dashboard.html")
+			return
+		}
+		c.Data(200, "text/html; charset=utf-8", dashboardContent)
 	})
 
 	// Static pages and documentation

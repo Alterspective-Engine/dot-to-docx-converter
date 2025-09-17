@@ -6,6 +6,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/alterspective-engine/dot-to-docx-converter/internal/api"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/converter"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/queue"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/storage"
@@ -133,6 +134,9 @@ func (p *Pool) processJob(ctx context.Context, workerID int, job *queue.Job) {
 	start := time.Now()
 	log.Infof("Worker %d: Processing job %s", workerID, job.ID)
 
+	// Record metrics for active processing
+	api.RecordProcessingStart()
+
 	// Update job status
 	job.Status = queue.StatusProcessing
 	job.StartedAt = &start
@@ -144,6 +148,7 @@ func (p *Pool) processJob(ctx context.Context, workerID int, job *queue.Job) {
 	localInput, err := p.storage.Download(ctx, job.InputPath)
 	if err != nil {
 		p.failJob(job, fmt.Errorf("failed to download input: %w", err))
+		api.RecordProcessingFailed()
 		return
 	}
 	defer p.storage.Cleanup(localInput)
@@ -155,6 +160,7 @@ func (p *Pool) processJob(ctx context.Context, workerID int, job *queue.Job) {
 	err = p.converter.Convert(ctx, localInput, localOutput)
 	if err != nil {
 		p.failJob(job, fmt.Errorf("conversion failed: %w", err))
+		api.RecordProcessingFailed()
 		jobsProcessed.WithLabelValues("failed").Inc()
 		jobDuration.WithLabelValues("failed").Observe(time.Since(start).Seconds())
 		return
@@ -163,6 +169,7 @@ func (p *Pool) processJob(ctx context.Context, workerID int, job *queue.Job) {
 	// Upload output file to storage
 	if err := p.storage.Upload(ctx, localOutput, job.OutputPath); err != nil {
 		p.failJob(job, fmt.Errorf("failed to upload output: %w", err))
+		api.RecordProcessingFailed()
 		return
 	}
 
@@ -176,6 +183,8 @@ func (p *Pool) processJob(ctx context.Context, workerID int, job *queue.Job) {
 		log.Errorf("Failed to update completed job: %v", err)
 	}
 
+	// Record metrics for completed job
+	api.RecordProcessingComplete(job.Duration)
 	jobsProcessed.WithLabelValues("success").Inc()
 	jobDuration.WithLabelValues("success").Observe(time.Since(start).Seconds())
 
