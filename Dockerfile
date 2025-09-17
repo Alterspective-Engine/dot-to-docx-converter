@@ -9,13 +9,13 @@ RUN apk add --no-cache git make
 WORKDIR /app
 
 # Copy go mod files
-COPY go.mod go.sum ./
+COPY go.mod ./
 
-# Download dependencies
-RUN go mod download
-
-# Copy source code
+# Copy source code first
 COPY . .
+
+# Download and verify dependencies
+RUN go mod tidy && go mod download
 
 # Build the application
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
@@ -63,8 +63,9 @@ RUN mkdir -p /tmp/conversions /app/logs /home/converter/.config \
 # Copy binary from builder
 COPY --from=builder /app/converter /app/converter
 
-# Copy configuration files if any
-COPY --from=builder /app/config /app/config
+# Copy static files and documentation
+COPY --chown=converter:converter ./static /app/static
+COPY --chown=converter:converter ./docs /app/docs
 
 # Set working directory
 WORKDIR /app

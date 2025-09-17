@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "dot-to-docx-converter"
+    },
+    "environment": {
+      "value": "prod"
+    },
+    "acrName": {
+      "value": "docspectiveacr"
+    },
+    "acrResourceGroup": {
+      "value": "DocSpective"
+    },
+    "createAcr": {
+      "value": false
+    },
+    "createRedis": {
+      "value": true
+    },
+    "cpu": {
+      "value": "2.0"
+    },
+    "memory": {
+      "value": "4.0Gi"
+    },
+    "minReplicas": {
+      "value": 1
+    },
+    "maxReplicas": {
+      "value": 10
+    },
+    "workerCount": {
+      "value": "10"
+    },
+    "maxFileSize": {
+      "value": "50"
+    },
+    "conversionTimeout": {
+      "value": "60"
+    },
+    "logLevel": {
+      "value": "info"
+    },
+    "enableAppInsights": {
+      "value": true
+    },
+    "logRetentionDays": {
+      "value": 30
+    }
+  }
+}

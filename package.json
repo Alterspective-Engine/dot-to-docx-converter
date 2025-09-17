@@ -1,0 +1,29 @@
+{
+  "name": "dot-to-docx-converter",
+  "version": "1.0.0",
+  "description": "High-performance document conversion service for converting legacy Word template files (.dot) to modern Word format (.docx)",
+  "scripts": {
+    "deploy:azure": "powershell -ExecutionPolicy Bypass -File ./azure/deploy-azure.ps1",
+    "deploy:azure:skip-build": "powershell -ExecutionPolicy Bypass -File ./azure/deploy-azure.ps1 -SkipBuild",
+    "publish:azure": "powershell -ExecutionPolicy Bypass -File ./azure/deploy.ps1",
+    "publish:azure:bash": "bash ./azure/deploy.sh",
+    "docker:build": "docker build -t dot-to-docx-converter .",
+    "docker:run": "docker run -p 8080:8080 -e REDIS_URL=redis://localhost:6379 -e WORKER_COUNT=10 dot-to-docx-converter",
+    "test": "go test ./...",
+    "build": "go build -o bin/converter main.go"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alterspective-Engine/dot-to-docx-converter.git"
+  },
+  "keywords": [
+    "document-conversion",
+    "dot",
+    "docx",
+    "azure",
+    "container-app",
+    "go"
+  ],
+  "author": "Alterspective-Engine",
+  "license": "MIT"
+}

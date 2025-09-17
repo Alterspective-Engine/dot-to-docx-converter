@@ -1,0 +1,48 @@
+apiVersion: apps.microsoft.com/v1alpha1
+kind: ContainerApp
+metadata:
+  name: dot-to-docx-converter
+  location: eastus
+properties:
+  managedEnvironmentId: /subscriptions/{subscription-id}/resourceGroups/DocSpective/providers/Microsoft.App/managedEnvironments/docspective-env
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8080
+      transport: http
+      allowInsecure: false
+    secrets:
+      - name: redis-url
+        value: redis://localhost:6379
+    registries:
+      - server: docspectiveacr.azurecr.io
+        username: docspectiveacr
+        passwordSecretRef: registry-password
+  template:
+    containers:
+      - image: docspectiveacr.azurecr.io/dot-to-docx-converter:latest
+        name: dot-to-docx-converter
+        resources:
+          cpu: 2
+          memory: 4Gi
+        env:
+          - name: PORT
+            value: "8080"
+          - name: WORKER_COUNT
+            value: "10"
+          - name: REDIS_URL
+            secretRef: redis-url
+          - name: MAX_FILE_SIZE
+            value: "50"
+          - name: CONVERSION_TIMEOUT
+            value: "60"
+          - name: LOG_LEVEL
+            value: "info"
+    scale:
+      minReplicas: 1
+      maxReplicas: 10
+      rules:
+        - name: http-rule
+          http:
+            metadata:
+              concurrentRequests: "100"

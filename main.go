@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -34,18 +33,30 @@ func main() {
 	defer cancel()
 
 	// Initialize storage
-	storageClient, err := storage.NewAzureStorage(cfg.AzureStorageConnectionString)
-	if err != nil && cfg.AzureStorageConnectionString != "" {
-		log.Warnf("Failed to initialize Azure Storage: %v", err)
-		storageClient = storage.NewLocalStorage("/tmp/conversions")
-	} else if cfg.AzureStorageConnectionString == "" {
+	var storageClient storage.Storage
+	if cfg.AzureStorageConnectionString != "" {
+		azStorage, err := storage.NewAzureStorage(cfg.AzureStorageConnectionString)
+		if err != nil {
+			log.Warnf("Failed to initialize Azure Storage: %v, falling back to local storage", err)
+			storageClient = storage.NewLocalStorage("/tmp/conversions")
+		} else {
+			storageClient = azStorage
+		}
+	} else {
 		storageClient = storage.NewLocalStorage("/tmp/conversions")
 	}
 
 	// Initialize queue
-	queueClient, err := queue.NewRedisQueue(cfg.RedisURL)
-	if err != nil {
-		log.Warnf("Failed to initialize Redis queue, using in-memory queue: %v", err)
+	var queueClient queue.Queue
+	if cfg.RedisURL != "" {
+		redisQueue, err := queue.NewRedisQueue(cfg.RedisURL)
+		if err != nil {
+			log.Warnf("Failed to initialize Redis queue, using in-memory queue: %v", err)
+			queueClient = queue.NewMemoryQueue()
+		} else {
+			queueClient = redisQueue
+		}
+	} else {
 		queueClient = queue.NewMemoryQueue()
 	}
 
@@ -98,6 +109,12 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage)
 	router := gin.New()
 	router.Use(gin.Recovery())
 	router.Use(gin.Logger())
+
+	// Static files and documentation
+	router.Static("/static", "./static")
+	router.StaticFile("/", "./static/index.html")
+	router.StaticFile("/swagger", "./static/swagger.html")
+	router.StaticFile("/docs/openapi.yaml", "./docs/openapi.yaml")
 
 	// Health checks
 	router.GET("/health", api.HealthCheck())
