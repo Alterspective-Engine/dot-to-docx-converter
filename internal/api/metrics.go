@@ -62,21 +62,13 @@ var metricsCollector = &MetricsCollector{
 
 // InitMetricsCollector initializes the metrics collection system
 func InitMetricsCollector() {
-	// Generate sample timeline data for the last 24 hours
 	go func() {
 		ticker := time.NewTicker(1 * time.Minute)
 		defer ticker.Stop()
 
-		// Initialize with sample data
+		// Initialize with empty timeline - will populate as jobs are processed
 		metricsCollector.mu.Lock()
-		now := time.Now()
-		for i := 23; i >= 0; i-- {
-			metricsCollector.timeline = append(metricsCollector.timeline, TimelineData{
-				Time:      now.Add(-time.Duration(i) * time.Hour),
-				Processed: 100 + (i * 5),
-				Failed:    i % 3,
-			})
-		}
+		metricsCollector.timeline = make([]TimelineData, 0)
 		metricsCollector.mu.Unlock()
 
 		// Update metrics every minute
@@ -147,8 +139,17 @@ func GetSystemMetrics() SystemMetrics {
 	var m runtime.MemStats
 	runtime.ReadMemStats(&m)
 
+	// Calculate actual CPU usage based on goroutines and system resources
+	numCPU := runtime.NumCPU()
+	numGoroutines := runtime.NumGoroutine()
+	// Estimate CPU usage more realistically (not a perfect metric but better than simulated)
+	cpuUsage := float64(numGoroutines) / float64(numCPU) * 10.0
+	if cpuUsage > 100 {
+		cpuUsage = 100
+	}
+
 	return SystemMetrics{
-		CPUUsage:          float64(runtime.NumGoroutine()) / 100.0 * 45, // Simulated CPU usage
+		CPUUsage:          cpuUsage,
 		MemoryUsage:       m.Alloc,
 		MemoryUsagePercent: float64(m.Alloc) / float64(m.Sys) * 100,
 		WorkersActive:     metricsCollector.processingNow,
@@ -165,7 +166,7 @@ func MetricsHandler(q queue.Queue) gin.HandlerFunc {
 
 		// Calculate success rate
 		total := metricsCollector.totalProcessed + metricsCollector.totalFailed
-		successRate := 0.998 // Default high rate
+		successRate := 0.0 // Default to 0 if no data
 		if total > 0 {
 			successRate = float64(metricsCollector.totalProcessed) / float64(total)
 		}
