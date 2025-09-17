@@ -60,12 +60,8 @@ RUN addgroup -g 1000 converter && \
 RUN mkdir -p /tmp/conversions /app/logs /home/converter/.config \
     && chown -R converter:converter /tmp/conversions /app/logs /home/converter
 
-# Copy binary from builder
+# Copy binary from builder (static files are embedded)
 COPY --from=builder /app/converter /app/converter
-
-# Copy static files and documentation
-COPY --chown=converter:converter ./static /app/static
-COPY --chown=converter:converter ./docs /app/docs
 
 # Set working directory
 WORKDIR /app

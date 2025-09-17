@@ -2,6 +2,9 @@ package main
 
 import (
 	"context"
+	"embed"
+	"io/fs"
+	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
@@ -17,6 +20,10 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
 )
+
+// Embed static files and documentation
+//go:embed static/* docs/*
+var embeddedFiles embed.FS
 
 func main() {
 	// Initialize configuration
@@ -110,11 +117,45 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage)
 	router.Use(gin.Recovery())
 	router.Use(gin.Logger())
 
-	// Static files and documentation
-	router.Static("/static", "./static")
-	router.StaticFile("/", "./static/index.html")
-	router.StaticFile("/swagger", "./static/swagger.html")
-	router.StaticFile("/docs/openapi.yaml", "./docs/openapi.yaml")
+	// Static files and documentation using embedded files
+	// Create a sub filesystem for static files
+	staticFS, err := fs.Sub(embeddedFiles, "static")
+	if err != nil {
+		log.Warnf("Failed to create static filesystem: %v", err)
+	} else {
+		// Serve static files
+		router.StaticFS("/static", http.FS(staticFS))
+
+		// Serve landing page at root
+		router.GET("/", func(c *gin.Context) {
+			data, err := embeddedFiles.ReadFile("static/index.html")
+			if err != nil {
+				c.JSON(404, gin.H{"error": "Page not found"})
+				return
+			}
+			c.Data(200, "text/html; charset=utf-8", data)
+		})
+
+		// Serve swagger page
+		router.GET("/swagger", func(c *gin.Context) {
+			data, err := embeddedFiles.ReadFile("static/swagger.html")
+			if err != nil {
+				c.JSON(404, gin.H{"error": "Page not found"})
+				return
+			}
+			c.Data(200, "text/html; charset=utf-8", data)
+		})
+	}
+
+	// Serve OpenAPI spec
+	router.GET("/docs/openapi.yaml", func(c *gin.Context) {
+		data, err := embeddedFiles.ReadFile("docs/openapi.yaml")
+		if err != nil {
+			c.JSON(404, gin.H{"error": "OpenAPI spec not found"})
+			return
+		}
+		c.Data(200, "application/x-yaml", data)
+	})
 
 	// Health checks
 	router.GET("/health", api.HealthCheck())
