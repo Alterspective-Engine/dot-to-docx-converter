@@ -36,7 +36,7 @@ func main() {
 	// Initialize storage
 	var storageClient storage.Storage
 	if cfg.AzureStorageConnectionString != "" {
-		azStorage, err := storage.NewAzureStorage(cfg.AzureStorageConnectionString)
+		azStorage, err := storage.NewAzureStorage(cfg.AzureStorageConnectionString, cfg.AzureStorageContainer)
 		if err != nil {
 			log.Warnf("Failed to initialize Azure Storage: %v, falling back to local storage", err)
 			storageClient = storage.NewLocalStorage("/tmp/conversions")
@@ -68,8 +68,8 @@ func main() {
 	workerPool := worker.NewPool(cfg.WorkerCount, queueClient, conv, storageClient)
 	go workerPool.Start(ctx)
 
-	// Setup HTTP server
-	router := setupRouter(cfg, queueClient, storageClient)
+	// Setup HTTP server with converter for sync endpoints
+	router := setupRouter(cfg, queueClient, storageClient, conv)
 
 	// Setup graceful shutdown
 	srv := &api.Server{
@@ -102,7 +102,7 @@ func main() {
 	log.Info("Service stopped")
 }
 
-func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage) *gin.Engine {
+func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage, conv converter.Converter) *gin.Engine {
 	if cfg.LogLevel != "debug" {
 		gin.SetMode(gin.ReleaseMode)
 	}
@@ -110,6 +110,17 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage)
 	router := gin.New()
 	router.Use(gin.Recovery())
 	router.Use(gin.Logger())
+
+	// Initialize metrics collection
+	api.InitMetricsCollector()
+
+	// Serve static files for dashboard
+	router.Static("/static", "./web")
+
+	// Dashboard page
+	router.GET("/dashboard", func(c *gin.Context) {
+		c.File("./web/dashboard.html")
+	})
 
 	// Static pages and documentation
 	router.GET("/", api.ServeLandingPage())
@@ -123,17 +134,21 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage)
 
 	// Metrics
 	router.GET("/metrics", gin.WrapH(promhttp.Handler()))
+	router.GET("/api/v1/metrics", api.MetricsHandler(queue))
+	router.GET("/ws/metrics", api.WebSocketMetricsHandler())
 
 	// API routes
 	v1 := router.Group("/api/v1")
 	{
-		// Single file conversion
+		// Asynchronous conversion (queue-based)
 		v1.POST("/convert", api.ConvertHandler(queue, storage))
-
-		// Batch conversion
 		v1.POST("/batch", api.BatchConvertHandler(queue, storage))
 
-		// Job management
+		// Synchronous conversion (immediate response)
+		v1.POST("/convert/sync", api.ConvertSyncHandler(conv, cfg.SyncMaxFileSize, cfg.SyncTimeout))
+		v1.POST("/convert/sync/json", api.ConvertSyncJSONHandler(conv, cfg.SyncMaxFileSize, cfg.SyncTimeout))
+
+		// Job management (for async)
 		v1.GET("/jobs/:id", api.GetJobStatus(queue))
 		v1.GET("/jobs", api.ListJobs(queue))
 		v1.DELETE("/jobs/:id", api.CancelJob(queue))

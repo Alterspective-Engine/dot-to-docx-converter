@@ -320,6 +320,7 @@ func ServeLandingPage() gin.HandlerFunc {
         </div>
 
         <div class="buttons">
+            <a href="/dashboard" class="button primary">View Dashboard</a>
             <a href="/swagger" class="button primary">View API Documentation</a>
             <a href="https://github.com/Alterspective-Engine/dot-to-docx-converter" class="button secondary">View on GitHub</a>
         </div>
