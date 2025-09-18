@@ -394,7 +394,54 @@ func AnalyzeComplexityWithConfig(ctx context.Context, content []byte, config *Co
 	default:
 	}
 
-	contentStr := string(content)
+	// Extract text from binary formats if needed
+	extractor := NewDocumentExtractor()
+	docInfo, err := extractor.AnalyzeDocument(content)
+
+	var contentStr string
+	if err != nil {
+		// If extraction fails, try to use raw content
+		contentStr = string(content)
+		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Document extraction warning: %v", err))
+	} else {
+		// Use extracted text for analysis
+		contentStr = docInfo.Text
+
+		// Add format information
+		formatName := "Unknown"
+		switch docInfo.Format {
+		case FormatZipBased:
+			formatName = "Modern Word (ZIP-based)"
+		case FormatOLEBased:
+			formatName = "Legacy Word (OLE-based)"
+		case FormatRTF:
+			formatName = "Rich Text Format"
+		case FormatPlainText:
+			formatName = "Plain Text"
+		}
+
+		// Check if we extracted meaningful content
+		if len(contentStr) < 100 && docInfo.Format != FormatPlainText {
+			report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Limited text extraction from %s format (only %d chars)", formatName, len(contentStr)))
+			// Try fallback extraction
+			fallbackText := extractor.extractReadableText(content)
+			if len(fallbackText) > len(contentStr) {
+				contentStr = fallbackText
+			}
+		}
+
+		// Add macro detection from document info
+		if docInfo.HasMacros {
+			report.Macros = append(report.Macros, "VBA Project detected in document")
+			report.NeedsReview = true
+		}
+
+		// Add extracted field codes
+		if len(docInfo.FieldCodes) > 0 {
+			report.FieldCodes = append(report.FieldCodes, docInfo.FieldCodes...)
+		}
+	}
+
 	analyzer := &complexityAnalyzer{
 		patterns:       patterns,
 		config:         config,

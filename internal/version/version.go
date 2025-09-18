@@ -8,7 +8,7 @@ import (
 // Version information set at build time or compile time
 var (
 	// Version is the semantic version of the application
-	Version = "2.0.0"
+	Version = "2.1.0"
 
 	// GitCommit is the git commit hash (set via ldflags)
 	GitCommit = "unknown"
