@@ -1,6 +1,7 @@
 package analyzer
 
 import (
+	"context"
 	"strings"
 	"testing"
 )
@@ -156,7 +157,11 @@ func TestCalculateIfNestingDepth(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			depth, err := calculateIfNestingDepth(tt.content)
+			analyzer := &complexityAnalyzer{
+				patterns: NewPatternRegistry(),
+				config: DefaultConfig(),
+			}
+			depth, err := analyzer.calculateIfNestingDepth(tt.content)
 			if err != nil {
 				t.Fatalf("Unexpected error: %v", err)
 			}
@@ -170,20 +175,22 @@ func TestCalculateIfNestingDepth(t *testing.T) {
 
 func TestPreCompiledPatterns(t *testing.T) {
 	// Test that patterns are pre-compiled (not nil)
-	if ifFieldStartPattern == nil {
-		t.Error("ifFieldStartPattern should be pre-compiled")
+	patterns := NewPatternRegistry()
+
+	if patterns.IFFieldStart == nil {
+		t.Error("IFFieldStart should be pre-compiled")
 	}
 
-	if len(mergeFieldPatterns) == 0 {
-		t.Error("mergeFieldPatterns should be pre-compiled")
+	if len(patterns.MergeFields) == 0 {
+		t.Error("MergeFields should be pre-compiled")
 	}
 
-	if len(formulaPatterns) == 0 {
-		t.Error("formulaPatterns should be pre-compiled")
+	if len(patterns.Formulas) == 0 {
+		t.Error("Formulas should be pre-compiled")
 	}
 
-	if len(macroPatterns) == 0 {
-		t.Error("macroPatterns should be pre-compiled")
+	if len(patterns.Macros) == 0 {
+		t.Error("Macros should be pre-compiled")
 	}
 }
 
@@ -206,7 +213,7 @@ func TestComplexityConfig(t *testing.T) {
 	}
 
 	content := `{IF a "{IF b "{IF c "{IF d "{IF e "deep" "e"}" "d"}" "c"}" "b"}" "a"}`
-	report := AnalyzeComplexityWithConfig([]byte(content), customConfig)
+	report := AnalyzeComplexityWithConfig(context.Background(), []byte(content), customConfig)
 
 	// With custom config, depth of 5 should not trigger critical
 	if report.Level == "critical" {
@@ -345,9 +352,13 @@ func BenchmarkAnalyzeComplexity(b *testing.B) {
 
 func BenchmarkIfNestingDepth(b *testing.B) {
 	content := `{IF a "{IF b "{IF c "deep" "c"}" "b"}" "a"}`
+	analyzer := &complexityAnalyzer{
+		patterns: NewPatternRegistry(),
+		config:   DefaultConfig(),
+	}
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, _ = calculateIfNestingDepth(content)
+		_, _ = analyzer.calculateIfNestingDepth(content)
 	}
 }

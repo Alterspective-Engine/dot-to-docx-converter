@@ -1,6 +1,18 @@
+// Package analyzer provides comprehensive complexity analysis for Microsoft Word DOT template files.
+// It detects nested conditionals, merge fields, formulas, macros, and other complexity indicators
+// that may affect the conversion process from DOT to DOCX format.
+//
+// Example usage:
+//
+//	content, _ := os.ReadFile("template.dot")
+//	report := analyzer.AnalyzeComplexity(content)
+//	if report.NeedsReview {
+//	    log.Printf("Document requires review: %s", report.Level)
+//	}
 package analyzer
 
 import (
+	"context"
 	"fmt"
 	"regexp"
 	"strings"
@@ -17,96 +29,152 @@ const (
 	IfCountHighThreshold = 10
 
 	// Merge field thresholds
-	MergeFieldHighCount = 15  // Reduced from 20
+	MergeFieldHighCount = 15
 
 	// Complexity score levels - ADJUSTED FOR BETTER DISTRIBUTION
-	ComplexityScoreCritical = 120  // Increased from 100
-	ComplexityScoreHigh     = 60   // Increased from 50
-	ComplexityScoreMedium   = 30   // Increased from 25
+	ComplexityScoreCritical = 120
+	ComplexityScoreHigh     = 60
+	ComplexityScoreMedium   = 30
 
 	// Score weights for different features - CALIBRATED
-	NestedIfHighWeight      = 15   // Increased from 10
-	NestedIfMediumWeight    = 8    // Increased from 5
-	MultipleIfWeight        = 3    // Increased from 2
-	ComplexMergeFieldWeight = 6    // Increased from 5
-	MacroDetectionWeight    = 40   // Increased from 30
-	FormulaWeight           = 5    // Reduced from 8 (was causing inflation)
-	NestedTableWeight       = 20   // Increased from 15
-	MultipleTableWeight     = 8    // Increased from 5
-	ActiveXControlWeight    = 35   // Increased from 25
+	NestedIfHighWeight      = 15
+	NestedIfMediumWeight    = 8
+	MultipleIfWeight        = 3
+	ComplexMergeFieldWeight = 6
+	MacroDetectionWeight    = 40
+	FormulaWeight           = 5
+	NestedTableWeight       = 20
+	MultipleTableWeight     = 8
+	ActiveXControlWeight    = 35
 
 	// Validation constants
-	MinFormulaLength        = 10   // Minimum length for valid formula
-	MaxNonPrintableRatio    = 0.3  // Maximum ratio of non-printable chars
+	MinFormulaLength     = 10
+	MaxNonPrintableRatio = 0.3
+
+	// Default collection limits
+	DefaultMaxStoredFormulas   = 10
+	DefaultMaxStoredFieldCodes = 20
 )
 
-// Pre-compiled regex patterns for better performance
-var (
+// PatternRegistry encapsulates all regex patterns used for analysis
+type PatternRegistry struct {
 	// IF statement patterns
-	ifFieldStartPattern = regexp.MustCompile(`(?i)\{[\s]*IF\b`)
-	ifFieldFullPattern  = regexp.MustCompile(`(?i)\{[\s]*IF\b[^}]*\}`)
+	IFFieldStart *regexp.Regexp
+	IFFieldFull  *regexp.Regexp
 
-	// Enhanced merge field patterns for DOT files
-	mergeFieldPatterns = []*regexp.Regexp{
-		regexp.MustCompile(`(?i)\{[\s]*MERGEFIELD\s+([^}]+)\}`),
-		regexp.MustCompile(`(?i)«([^»]+)»`),  // Alternative merge field format
-		regexp.MustCompile(`(?i)\{[\s]*DOCVARIABLE\s+([^}]+)\}`),
-		regexp.MustCompile(`(?i)\{[\s]*DOCPROPERTY\s+([^}]+)\}`),
-		regexp.MustCompile(`(?i)\{[\s]*ASK\s+([^}]+)\}`),
-		regexp.MustCompile(`(?i)\{[\s]*FILLIN\s+([^}]+)\}`),
-		regexp.MustCompile(`(?i)\{[\s]*REF\s+([^}]+)\}`),
-	}
+	// Merge field patterns
+	MergeFields        []*regexp.Regexp
+	ComplexMergeField  *regexp.Regexp
 
-	complexMergeFieldPattern = regexp.MustCompile(`(?i)\{[\s]*MERGEFIELD\s+[^}]*(\*|\\[\w]+|MERGEFORMAT)[^}]*\}`)
-
-	// Formula patterns with validation
-	formulaPatterns = []*regexp.Regexp{
-		regexp.MustCompile(`(?i)\{[\s]*=\s*[^}]+\}`),       // Field calculations
-		regexp.MustCompile(`(?i)\{[\s]*FORMULA\s+[^}]+\}`), // FORMULA fields
-		regexp.MustCompile(`(?i)\{[\s]*EQ\s+[^}]+\}`),      // Equation fields
-		regexp.MustCompile(`(?i)\{[\s]*CALC\s+[^}]+\}`),    // Calculation fields
-		regexp.MustCompile(`(?i)\{[\s]*SYMBOL\s+[^}]+\}`),  // Symbol fields
-	}
+	// Formula patterns
+	Formulas []*regexp.Regexp
 
 	// Macro patterns
-	macroPatterns = []*regexp.Regexp{
-		regexp.MustCompile(`(?i)Sub\s+\w+\s*\(`),
-		regexp.MustCompile(`(?i)Function\s+\w+\s*\(`),
-		regexp.MustCompile(`(?i)Private\s+Sub`),
-		regexp.MustCompile(`(?i)Public\s+Sub`),
-		regexp.MustCompile(`(?i)\.VBProject`),
-		regexp.MustCompile(`(?i)Macro\d+`),
-		regexp.MustCompile(`(?i)Auto(Open|Close|New|Exit)`),
-		regexp.MustCompile(`(?i)Document_Open`),
-	}
+	Macros []*regexp.Regexp
 
 	// Table patterns
-	tablePattern       = regexp.MustCompile(`(?i)<table[^>]*>`)
-	nestedTablePattern = regexp.MustCompile(`(?i)<table[^>]*>.*?<table[^>]*>`) // Non-greedy match
+	Table       *regexp.Regexp
+	NestedTable *regexp.Regexp
 
 	// ActiveX patterns
-	activeXPatterns = []*regexp.Regexp{
-		regexp.MustCompile(`(?i)ACTIVEX`),
-		regexp.MustCompile(`(?i)\.OCX`),
-		regexp.MustCompile(`(?i)CLSID:`),
-		regexp.MustCompile(`(?i)ComboBox\d+`),
-		regexp.MustCompile(`(?i)CheckBox\d+`),
-		regexp.MustCompile(`(?i)CommandButton\d+`),
-		regexp.MustCompile(`(?i)Forms\.`),
-	}
+	ActiveX []*regexp.Regexp
 
-	// Field code patterns for DOT files
-	fieldCodePatterns = []*regexp.Regexp{
-		regexp.MustCompile(`(?i)\{[\s]*AUTOTEXT\s+[^}]+\}`),
-		regexp.MustCompile(`(?i)\{[\s]*INCLUDETEXT\s+[^}]+\}`),
-		regexp.MustCompile(`(?i)\{[\s]*LINK\s+[^}]+\}`),
-		regexp.MustCompile(`(?i)\{[\s]*EMBED\s+[^}]+\}`),
-	}
-)
+	// Field code patterns
+	FieldCodes []*regexp.Regexp
+}
 
-// isValidContent checks if content is likely text and not binary data
-func isValidContent(content string) bool {
-	if len(content) < MinFormulaLength {
+// NewPatternRegistry creates and initializes all regex patterns
+func NewPatternRegistry() *PatternRegistry {
+	return &PatternRegistry{
+		// IF statement patterns
+		IFFieldStart: regexp.MustCompile(`(?i)\{[\s]*IF\b`),
+		IFFieldFull:  regexp.MustCompile(`(?i)\{[\s]*IF\b[^}]*\}`),
+
+		// Merge field patterns for DOT files
+		MergeFields: []*regexp.Regexp{
+			regexp.MustCompile(`(?i)\{[\s]*MERGEFIELD\s+([^}]+)\}`),
+			regexp.MustCompile(`(?i)«([^»]+)»`), // Alternative merge field format
+			regexp.MustCompile(`(?i)\{[\s]*DOCVARIABLE\s+([^}]+)\}`),
+			regexp.MustCompile(`(?i)\{[\s]*DOCPROPERTY\s+([^}]+)\}`),
+			regexp.MustCompile(`(?i)\{[\s]*ASK\s+([^}]+)\}`),
+			regexp.MustCompile(`(?i)\{[\s]*FILLIN\s+([^}]+)\}`),
+			regexp.MustCompile(`(?i)\{[\s]*REF\s+([^}]+)\}`),
+		},
+		ComplexMergeField: regexp.MustCompile(`(?i)\{[\s]*MERGEFIELD\s+[^}]*(\*|\\[\w]+|MERGEFORMAT)[^}]*\}`),
+
+		// Formula patterns
+		Formulas: []*regexp.Regexp{
+			regexp.MustCompile(`(?i)\{[\s]*=\s*[^}]+\}`),       // Field calculations
+			regexp.MustCompile(`(?i)\{[\s]*FORMULA\s+[^}]+\}`), // FORMULA fields
+			regexp.MustCompile(`(?i)\{[\s]*EQ\s+[^}]+\}`),      // Equation fields
+			regexp.MustCompile(`(?i)\{[\s]*CALC\s+[^}]+\}`),    // Calculation fields
+			regexp.MustCompile(`(?i)\{[\s]*SYMBOL\s+[^}]+\}`),  // Symbol fields
+		},
+
+		// Macro patterns
+		Macros: []*regexp.Regexp{
+			regexp.MustCompile(`(?i)Sub\s+\w+\s*\(`),
+			regexp.MustCompile(`(?i)Function\s+\w+\s*\(`),
+			regexp.MustCompile(`(?i)Private\s+Sub`),
+			regexp.MustCompile(`(?i)Public\s+Sub`),
+			regexp.MustCompile(`(?i)\.VBProject`),
+			regexp.MustCompile(`(?i)Macro\d+`),
+			regexp.MustCompile(`(?i)Auto(Open|Close|New|Exit)`),
+			regexp.MustCompile(`(?i)Document_Open`),
+		},
+
+		// Table patterns
+		Table:       regexp.MustCompile(`(?i)<table[^>]*>`),
+		NestedTable: regexp.MustCompile(`(?i)<table[^>]*>.*?<table[^>]*>`),
+
+		// ActiveX patterns
+		ActiveX: []*regexp.Regexp{
+			regexp.MustCompile(`(?i)ACTIVEX`),
+			regexp.MustCompile(`(?i)\.OCX`),
+			regexp.MustCompile(`(?i)CLSID:`),
+			regexp.MustCompile(`(?i)ComboBox\d+`),
+			regexp.MustCompile(`(?i)CheckBox\d+`),
+			regexp.MustCompile(`(?i)CommandButton\d+`),
+			regexp.MustCompile(`(?i)Forms\.`),
+		},
+
+		// Field code patterns
+		FieldCodes: []*regexp.Regexp{
+			regexp.MustCompile(`(?i)\{[\s]*AUTOTEXT\s+[^}]+\}`),
+			regexp.MustCompile(`(?i)\{[\s]*INCLUDETEXT\s+[^}]+\}`),
+			regexp.MustCompile(`(?i)\{[\s]*LINK\s+[^}]+\}`),
+			regexp.MustCompile(`(?i)\{[\s]*EMBED\s+[^}]+\}`),
+		},
+	}
+}
+
+// Global pattern registry (lazy initialization)
+var defaultPatterns *PatternRegistry
+
+func getPatterns() *PatternRegistry {
+	if defaultPatterns == nil {
+		defaultPatterns = NewPatternRegistry()
+	}
+	return defaultPatterns
+}
+
+// ContentValidator provides methods to validate content
+type ContentValidator struct {
+	MinLength            int
+	MaxNonPrintableRatio float64
+}
+
+// NewContentValidator creates a validator with default settings
+func NewContentValidator() *ContentValidator {
+	return &ContentValidator{
+		MinLength:            MinFormulaLength,
+		MaxNonPrintableRatio: MaxNonPrintableRatio,
+	}
+}
+
+// IsValid checks if content is likely text and not binary data
+func (v *ContentValidator) IsValid(content string) bool {
+	if len(content) < v.MinLength {
 		return false
 	}
 
@@ -116,7 +184,7 @@ func isValidContent(content string) bool {
 
 	for _, r := range content {
 		totalChars++
-		if r == '\ufffd' {  // Unicode replacement character
+		if r == '\ufffd' { // Unicode replacement character
 			replacementChars++
 		} else if !unicode.IsPrint(r) && !unicode.IsSpace(r) {
 			nonPrintable++
@@ -129,15 +197,15 @@ func isValidContent(content string) bool {
 	}
 
 	// If more than MaxNonPrintableRatio non-printable, likely binary
-	if float64(nonPrintable)/float64(totalChars) > MaxNonPrintableRatio {
+	if float64(nonPrintable)/float64(totalChars) > v.MaxNonPrintableRatio {
 		return false
 	}
 
 	return true
 }
 
-// extractCleanText attempts to extract readable text from potentially binary content
-func extractCleanText(content string) string {
+// ExtractClean extracts readable text from potentially binary content
+func (v *ContentValidator) ExtractClean(content string) string {
 	var result strings.Builder
 	for _, r := range content {
 		if unicode.IsPrint(r) || unicode.IsSpace(r) {
@@ -147,23 +215,81 @@ func extractCleanText(content string) string {
 	return result.String()
 }
 
+// PatternMatcher provides generic pattern matching functionality
+type PatternMatcher struct {
+	validator *ContentValidator
+}
+
+// NewPatternMatcher creates a new pattern matcher
+func NewPatternMatcher() *PatternMatcher {
+	return &PatternMatcher{
+		validator: NewContentValidator(),
+	}
+}
+
+// MatchPatterns extracts matches from content using provided patterns
+func (m *PatternMatcher) MatchPatterns(
+	content string,
+	patterns []*regexp.Regexp,
+	limit int,
+	validate bool,
+) (matches []string, validCount, invalidCount int) {
+	matches = make([]string, 0, limit)
+	seen := make(map[string]bool)
+
+	for _, pattern := range patterns {
+		found := pattern.FindAllString(content, -1)
+		for _, match := range found {
+			// Skip duplicates
+			if seen[match] {
+				continue
+			}
+			seen[match] = true
+
+			if validate {
+				if m.validator.IsValid(match) {
+					validCount++
+					if len(matches) < limit {
+						cleanMatch := m.validator.ExtractClean(match)
+						if len(cleanMatch) > 100 {
+							cleanMatch = cleanMatch[:100] + "..."
+						}
+						matches = append(matches, cleanMatch)
+					}
+				} else {
+					invalidCount++
+				}
+			} else {
+				if len(matches) < limit {
+					if len(match) > 100 {
+						match = match[:100] + "..."
+					}
+					matches = append(matches, match)
+				}
+			}
+		}
+	}
+
+	return matches, validCount, invalidCount
+}
+
 // ComplexityReport contains metrics about document complexity
 type ComplexityReport struct {
-	Score              int                 `json:"complexity_score"`
-	Level              string              `json:"complexity_level"` // low, medium, high, critical
-	NeedsReview        bool                `json:"needs_human_review"`
-	NestedIfDepth      int                 `json:"nested_if_depth"`
-	TotalIfStatements  int                 `json:"total_if_statements"`
-	TotalMergeFields   int                 `json:"total_merge_fields"`
-	ComplexMergeFields []string            `json:"complex_merge_fields"`
-	Macros             []string            `json:"macros_found"`
-	Formulas           []string            `json:"formulas_found"`
-	Issues             []ComplexityIssue   `json:"potential_issues"`
-	Recommendations    []string            `json:"recommendations"`
-	ParseErrors        []string            `json:"parse_errors,omitempty"`
-	FieldCodes         []string            `json:"field_codes,omitempty"`
-	ValidFormulas      int                 `json:"valid_formulas_count"`
-	InvalidFormulas    int                 `json:"invalid_formulas_count"`
+	Score              int                `json:"complexity_score"`
+	Level              string             `json:"complexity_level"` // low, medium, high, critical
+	NeedsReview        bool               `json:"needs_human_review"`
+	NestedIfDepth      int                `json:"nested_if_depth"`
+	TotalIfStatements  int                `json:"total_if_statements"`
+	TotalMergeFields   int                `json:"total_merge_fields"`
+	ComplexMergeFields []string           `json:"complex_merge_fields"`
+	Macros             []string           `json:"macros_found"`
+	Formulas           []string           `json:"formulas_found"`
+	Issues             []ComplexityIssue  `json:"potential_issues"`
+	Recommendations    []string           `json:"recommendations"`
+	ParseErrors        []string           `json:"parse_errors,omitempty"`
+	FieldCodes         []string           `json:"field_codes,omitempty"`
+	ValidFormulas      int                `json:"valid_formulas_count"`
+	InvalidFormulas    int                `json:"invalid_formulas_count"`
 }
 
 // ComplexityIssue represents a specific complexity concern
@@ -174,7 +300,7 @@ type ComplexityIssue struct {
 	Severity    string `json:"severity"` // low, medium, high
 }
 
-// ComplexityConfig allows customization of thresholds
+// ComplexityConfig allows customization of thresholds and limits
 type ComplexityConfig struct {
 	// IF statement thresholds
 	NestedIfHighThreshold   int
@@ -189,9 +315,16 @@ type ComplexityConfig struct {
 	HighScore     int
 	MediumScore   int
 
+	// Collection limits
+	MaxStoredFormulas   int
+	MaxStoredFieldCodes int
+
 	// Feature flags
-	ValidateFormulas bool
+	ValidateFormulas  bool
 	ExtractFieldCodes bool
+
+	// Pattern registry (optional custom patterns)
+	Patterns *PatternRegistry
 }
 
 // DefaultConfig returns the default configuration
@@ -204,18 +337,40 @@ func DefaultConfig() *ComplexityConfig {
 		CriticalScore:           ComplexityScoreCritical,
 		HighScore:               ComplexityScoreHigh,
 		MediumScore:             ComplexityScoreMedium,
+		MaxStoredFormulas:       DefaultMaxStoredFormulas,
+		MaxStoredFieldCodes:     DefaultMaxStoredFieldCodes,
 		ValidateFormulas:        true,
 		ExtractFieldCodes:       true,
+		Patterns:                nil, // Use default patterns
 	}
 }
 
 // AnalyzeComplexity analyzes a DOT file content for complexity indicators
+//
+// Example:
+//
+//	content, err := os.ReadFile("template.dot")
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
+//	report := analyzer.AnalyzeComplexity(content)
 func AnalyzeComplexity(content []byte) *ComplexityReport {
-	return AnalyzeComplexityWithConfig(content, DefaultConfig())
+	return AnalyzeComplexityWithConfig(context.Background(), content, DefaultConfig())
 }
 
-// AnalyzeComplexityWithConfig analyzes with custom configuration
-func AnalyzeComplexityWithConfig(content []byte, config *ComplexityConfig) *ComplexityReport {
+// AnalyzeComplexityWithContext analyzes with context support for cancellation
+func AnalyzeComplexityWithContext(ctx context.Context, content []byte) *ComplexityReport {
+	return AnalyzeComplexityWithConfig(ctx, content, DefaultConfig())
+}
+
+// AnalyzeComplexityWithConfig analyzes with custom configuration and context
+func AnalyzeComplexityWithConfig(ctx context.Context, content []byte, config *ComplexityConfig) *ComplexityReport {
+	// Use custom patterns if provided, otherwise use defaults
+	patterns := config.Patterns
+	if patterns == nil {
+		patterns = getPatterns()
+	}
+
 	report := &ComplexityReport{
 		Score:              0,
 		Level:              "low",
@@ -231,115 +386,133 @@ func AnalyzeComplexityWithConfig(content []byte, config *ComplexityConfig) *Comp
 		InvalidFormulas:    0,
 	}
 
+	// Check context cancellation
+	select {
+	case <-ctx.Done():
+		report.ParseErrors = append(report.ParseErrors, "Analysis cancelled")
+		return report
+	default:
+	}
+
 	contentStr := string(content)
+	analyzer := &complexityAnalyzer{
+		patterns:       patterns,
+		config:         config,
+		patternMatcher: NewPatternMatcher(),
+		validator:      NewContentValidator(),
+	}
 
 	// Run all analyzers with error handling
-	if err := analyzeNestedIfs(contentStr, report, config); err != nil {
+	if err := analyzer.analyzeNestedIfs(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("IF analysis error: %v", err))
 	}
 
-	if err := analyzeMergeFieldsEnhanced(contentStr, report, config); err != nil {
+	if err := analyzer.analyzeMergeFields(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Merge field analysis error: %v", err))
 	}
 
-	if err := detectMacros(contentStr, report); err != nil {
+	if err := analyzer.detectMacros(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Macro detection error: %v", err))
 	}
 
-	if err := detectFormulasWithValidation(contentStr, report, config); err != nil {
+	if err := analyzer.detectFormulas(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Formula detection error: %v", err))
 	}
 
-	if err := detectComplexTables(contentStr, report); err != nil {
+	if err := analyzer.detectTables(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("Table detection error: %v", err))
 	}
 
-	if err := detectActiveXControls(contentStr, report); err != nil {
+	if err := analyzer.detectActiveX(ctx, contentStr, report); err != nil {
 		report.ParseErrors = append(report.ParseErrors, fmt.Sprintf("ActiveX detection error: %v", err))
 	}
 
 	if config.ExtractFieldCodes {
-		detectFieldCodes(contentStr, report)
+		analyzer.detectFieldCodes(ctx, contentStr, report)
 	}
 
 	// Calculate final score and determine review needs
-	calculateComplexityScore(report, config)
-
-	// Generate recommendations
-	generateRecommendations(report, config)
+	analyzer.calculateScore(report)
+	analyzer.generateRecommendations(report)
 
 	return report
 }
 
-// analyzeNestedIfs detects and measures nested IF statement depth using proper parsing
-func analyzeNestedIfs(content string, report *ComplexityReport, config *ComplexityConfig) error {
+// complexityAnalyzer encapsulates the analysis logic
+type complexityAnalyzer struct {
+	patterns       *PatternRegistry
+	config         *ComplexityConfig
+	patternMatcher *PatternMatcher
+	validator      *ContentValidator
+}
+
+// analyzeNestedIfs detects and measures nested IF statement depth
+func (a *complexityAnalyzer) analyzeNestedIfs(ctx context.Context, content string, report *ComplexityReport) error {
+	// Check context
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
+	}
+
 	// Find all IF field occurrences
-	ifMatches := ifFieldFullPattern.FindAllString(content, -1)
+	ifMatches := a.patterns.IFFieldFull.FindAllString(content, -1)
 	report.TotalIfStatements = len(ifMatches)
 
-	// Properly analyze nesting depth using a more accurate algorithm
-	maxDepth, err := calculateIfNestingDepth(content)
+	// Analyze nesting depth with improved algorithm
+	maxDepth, err := a.calculateIfNestingDepth(content)
 	if err != nil {
 		return fmt.Errorf("failed to calculate IF nesting depth: %w", err)
 	}
 
 	report.NestedIfDepth = maxDepth
 
-	// Evaluate complexity based on nesting depth
-	if maxDepth > config.NestedIfHighThreshold {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "nested_conditionals",
-			Description: fmt.Sprintf("Deep nesting of IF statements detected (depth: %d)", maxDepth),
-			Severity:    "high",
-		})
-		report.Score += maxDepth * NestedIfHighWeight
-	} else if maxDepth > config.NestedIfMediumThreshold {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "nested_conditionals",
-			Description: fmt.Sprintf("Moderate nesting of IF statements detected (depth: %d)", maxDepth),
-			Severity:    "medium",
-		})
-		report.Score += maxDepth * NestedIfMediumWeight
+	// Add issue for nested conditionals
+	if maxDepth > a.config.NestedIfHighThreshold {
+		a.addIssue(report, "nested_conditionals",
+			fmt.Sprintf("Deep nesting of IF statements detected (depth: %d)", maxDepth),
+			"high", maxDepth*NestedIfHighWeight)
+	} else if maxDepth > a.config.NestedIfMediumThreshold {
+		a.addIssue(report, "nested_conditionals",
+			fmt.Sprintf("Moderate nesting of IF statements detected (depth: %d)", maxDepth),
+			"medium", maxDepth*NestedIfMediumWeight)
 	}
 
 	// Check for high number of IF statements
-	if report.TotalIfStatements > config.IfCountHighThreshold {
-		report.Score += report.TotalIfStatements * MultipleIfWeight
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "multiple_conditionals",
-			Description: fmt.Sprintf("High number of conditional statements (%d)", report.TotalIfStatements),
-			Severity:    "medium",
-		})
+	if report.TotalIfStatements > a.config.IfCountHighThreshold {
+		a.addIssue(report, "multiple_conditionals",
+			fmt.Sprintf("High number of conditional statements (%d)", report.TotalIfStatements),
+			"medium", report.TotalIfStatements*MultipleIfWeight)
 	}
 
 	return nil
 }
 
-// calculateIfNestingDepth properly calculates the nesting depth of IF fields
-func calculateIfNestingDepth(content string) (int, error) {
-	// Find all IF field start positions
-	ifStarts := ifFieldStartPattern.FindAllStringIndex(content, -1)
+// calculateIfNestingDepth calculates IF nesting with improved accuracy
+func (a *complexityAnalyzer) calculateIfNestingDepth(content string) (int, error) {
+	// Find all IF field start positions using proper regex
+	ifStarts := a.patterns.IFFieldStart.FindAllStringIndex(content, -1)
 	if len(ifStarts) == 0 {
 		return 0, nil
 	}
 
 	maxDepth := 0
+	ifNestPattern := a.patterns.IFFieldStart
 
-	// For each IF field, calculate its nesting level
 	for _, ifStart := range ifStarts {
 		depth := 1
 		braceCount := 1
-		position := ifStart[1] // Start after the IF field opening
+		position := ifStart[1]
 
 		// Track brace depth to find the end of this IF field
 		for position < len(content) && braceCount > 0 {
 			switch content[position] {
 			case '{':
 				braceCount++
-				// Check if this is another IF field
-				if position+5 < len(content) {
-					nextPart := content[position:min(position+10, len(content))]
-					if strings.Contains(strings.ToUpper(nextPart), "IF") {
+				// Check if this is another IF field using regex
+				if position+10 < len(content) {
+					testStr := content[position:minInt(position+20, len(content))]
+					if ifNestPattern.MatchString(testStr) {
 						depth++
 					}
 				}
@@ -357,233 +530,205 @@ func calculateIfNestingDepth(content string) (int, error) {
 	return maxDepth, nil
 }
 
-// analyzeMergeFieldsEnhanced detects and analyzes merge fields with DOT-specific patterns
-func analyzeMergeFieldsEnhanced(content string, report *ComplexityReport, config *ComplexityConfig) error {
-	totalMergeFields := 0
-	mergeFieldNames := make(map[string]bool)
+// analyzeMergeFields detects and analyzes merge fields
+func (a *complexityAnalyzer) analyzeMergeFields(ctx context.Context, content string, report *ComplexityReport) error {
+	// Check context
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
+	}
 
-	// Check all merge field patterns
-	for _, pattern := range mergeFieldPatterns {
+	totalMergeFields := 0
+
+	// Use pattern matcher for merge fields
+	for _, pattern := range a.patterns.MergeFields {
 		matches := pattern.FindAllStringSubmatch(content, -1)
 		for _, match := range matches {
 			totalMergeFields++
-			if len(match) > 1 && isValidContent(match[1]) {
-				mergeFieldNames[match[1]] = true
+			if len(match) > 1 && a.validator.IsValid(match[1]) {
+				// Field name is valid
 			}
 		}
 	}
 
 	report.TotalMergeFields = totalMergeFields
 
-	// Find complex merge fields (with formatting or switches)
-	complexMatches := complexMergeFieldPattern.FindAllString(content, -1)
-	for _, match := range complexMatches {
-		if isValidContent(match) {
-			// Store only first 100 chars to avoid memory issues
-			if len(match) > 100 {
-				match = match[:100] + "..."
-			}
-			report.ComplexMergeFields = append(report.ComplexMergeFields, match)
-		}
-	}
+	// Find complex merge fields
+	complexMatches, _, _ := a.patternMatcher.MatchPatterns(
+		content,
+		[]*regexp.Regexp{a.patterns.ComplexMergeField},
+		a.config.MaxStoredFormulas,
+		true,
+	)
+	report.ComplexMergeFields = complexMatches
 
 	if len(report.ComplexMergeFields) > 0 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "complex_merge_fields",
-			Description: fmt.Sprintf("Complex merge fields with formatting detected (%d)", len(report.ComplexMergeFields)),
-			Severity:    "medium",
-		})
-		report.Score += len(report.ComplexMergeFields) * ComplexMergeFieldWeight
+		a.addIssue(report, "complex_merge_fields",
+			fmt.Sprintf("Complex merge fields with formatting detected (%d)", len(report.ComplexMergeFields)),
+			"medium", len(report.ComplexMergeFields)*ComplexMergeFieldWeight)
 	}
 
-	if report.TotalMergeFields > config.MergeFieldHighCount {
-		report.Score += report.TotalMergeFields
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "numerous_merge_fields",
-			Description: fmt.Sprintf("Large number of merge fields detected (%d)", report.TotalMergeFields),
-			Severity:    "low",
-		})
+	if report.TotalMergeFields > a.config.MergeFieldHighCount {
+		a.addIssue(report, "numerous_merge_fields",
+			fmt.Sprintf("Large number of merge fields detected (%d)", report.TotalMergeFields),
+			"low", report.TotalMergeFields)
 	}
 
 	return nil
 }
 
-// detectFormulasWithValidation detects formulas and validates they're not binary data
-func detectFormulasWithValidation(content string, report *ComplexityReport, config *ComplexityConfig) error {
-	formulasFound := []string{}
-	invalidCount := 0
-
-	for _, pattern := range formulaPatterns {
-		matches := pattern.FindAllString(content, -1)
-		for _, match := range matches {
-			if config.ValidateFormulas {
-				if isValidContent(match) {
-					// Store only first 10 valid formulas to prevent memory issues
-					if len(formulasFound) < 10 {
-						// Clean and truncate formula for storage
-						cleanFormula := extractCleanText(match)
-						if len(cleanFormula) > 100 {
-							cleanFormula = cleanFormula[:100] + "..."
-						}
-						formulasFound = append(formulasFound, cleanFormula)
-					}
-					report.ValidFormulas++
-				} else {
-					invalidCount++
-					report.InvalidFormulas++
-				}
-			} else {
-				// No validation, store as-is (limited)
-				if len(formulasFound) < 10 {
-					formulasFound = append(formulasFound, match)
-				}
-			}
-		}
+// detectMacros detects VBA macros
+func (a *complexityAnalyzer) detectMacros(ctx context.Context, content string, report *ComplexityReport) error {
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
 	}
 
-	report.Formulas = formulasFound
-
-	// Only count valid formulas for scoring
-	validFormulaCount := report.ValidFormulas
-	if validFormulaCount > 0 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "formulas",
-			Description: fmt.Sprintf("Valid formulas and calculations detected (%d valid, %d invalid)", validFormulaCount, invalidCount),
-			Severity:    "medium",
-		})
-		// Use calibrated weight
-		report.Score += validFormulaCount * FormulaWeight
-	}
-
-	return nil
-}
-
-// detectFieldCodes detects special field codes in DOT files
-func detectFieldCodes(content string, report *ComplexityReport) {
-	for _, pattern := range fieldCodePatterns {
-		matches := pattern.FindAllString(content, -1)
-		for _, match := range matches {
-			if isValidContent(match) && len(report.FieldCodes) < 20 {
-				report.FieldCodes = append(report.FieldCodes, match)
-			}
-		}
-	}
-
-	if len(report.FieldCodes) > 0 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "field_codes",
-			Description: fmt.Sprintf("Special field codes detected (%d)", len(report.FieldCodes)),
-			Severity:    "low",
-		})
-		report.Score += len(report.FieldCodes) * 2
-	}
-}
-
-// detectMacros detects VBA macros with error handling
-func detectMacros(content string, report *ComplexityReport) error {
-	macrosFound := []string{}
-
-	for _, pattern := range macroPatterns {
-		matches := pattern.FindAllString(content, -1)
-		if len(matches) > 0 {
-			macrosFound = append(macrosFound, matches...)
-		}
-	}
-
-	// Deduplicate macros
-	seen := make(map[string]bool)
-	for _, macro := range macrosFound {
-		if !seen[macro] && isValidContent(macro) {
-			seen[macro] = true
-			report.Macros = append(report.Macros, macro)
-		}
-	}
+	macros, _, _ := a.patternMatcher.MatchPatterns(
+		content, a.patterns.Macros, a.config.MaxStoredFormulas, true,
+	)
+	report.Macros = macros
 
 	if len(report.Macros) > 0 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "vba_macros",
-			Description: fmt.Sprintf("VBA macros detected in document (%d unique)", len(report.Macros)),
-			Severity:    "high",
-		})
-		report.Score += MacroDetectionWeight
+		a.addIssue(report, "vba_macros",
+			fmt.Sprintf("VBA macros detected in document (%d unique)", len(report.Macros)),
+			"high", MacroDetectionWeight)
 		report.NeedsReview = true
 	}
 
 	return nil
 }
 
-// detectComplexTables looks for complex table structures
-func detectComplexTables(content string, report *ComplexityReport) error {
-	tables := tablePattern.FindAllString(content, -1)
-	nestedTables := nestedTablePattern.FindAllString(content, -1)
-
-	if len(nestedTables) > 0 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "nested_tables",
-			Description: fmt.Sprintf("Nested table structures detected (%d)", len(nestedTables)),
-			Severity:    "medium",
-		})
-		report.Score += NestedTableWeight
+// detectFormulas detects formulas with validation
+func (a *complexityAnalyzer) detectFormulas(ctx context.Context, content string, report *ComplexityReport) error {
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
 	}
 
-	if len(tables) > 10 {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "multiple_tables",
-			Description: fmt.Sprintf("Multiple table structures detected (%d)", len(tables)),
-			Severity:    "low",
-		})
-		report.Score += MultipleTableWeight
+	formulas, validCount, invalidCount := a.patternMatcher.MatchPatterns(
+		content, a.patterns.Formulas, a.config.MaxStoredFormulas, a.config.ValidateFormulas,
+	)
+
+	report.Formulas = formulas
+	report.ValidFormulas = validCount
+	report.InvalidFormulas = invalidCount
+
+	if validCount > 0 {
+		a.addIssue(report, "formulas",
+			fmt.Sprintf("Valid formulas and calculations detected (%d valid, %d invalid)", validCount, invalidCount),
+			"medium", validCount*FormulaWeight)
 	}
 
 	return nil
 }
 
-// detectActiveXControls looks for ActiveX controls
-func detectActiveXControls(content string, report *ComplexityReport) error {
-	hasActiveX := false
-	detectedControls := []string{}
+// detectTables detects complex table structures
+func (a *complexityAnalyzer) detectTables(ctx context.Context, content string, report *ComplexityReport) error {
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
+	}
 
-	for _, pattern := range activeXPatterns {
+	tables := a.patterns.Table.FindAllString(content, -1)
+	nestedTables := a.patterns.NestedTable.FindAllString(content, -1)
+
+	if len(nestedTables) > 0 {
+		a.addIssue(report, "nested_tables",
+			fmt.Sprintf("Nested table structures detected (%d)", len(nestedTables)),
+			"medium", NestedTableWeight)
+	}
+
+	if len(tables) > 10 {
+		a.addIssue(report, "multiple_tables",
+			fmt.Sprintf("Multiple table structures detected (%d)", len(tables)),
+			"low", MultipleTableWeight)
+	}
+
+	return nil
+}
+
+// detectActiveX detects ActiveX controls
+func (a *complexityAnalyzer) detectActiveX(ctx context.Context, content string, report *ComplexityReport) error {
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	default:
+	}
+
+	hasActiveX := false
+	for _, pattern := range a.patterns.ActiveX {
 		if matches := pattern.FindAllString(content, 1); len(matches) > 0 {
-			if isValidContent(matches[0]) {
+			if a.validator.IsValid(matches[0]) {
 				hasActiveX = true
-				detectedControls = append(detectedControls, matches[0])
+				break
 			}
 		}
 	}
 
 	if hasActiveX {
-		report.Issues = append(report.Issues, ComplexityIssue{
-			Type:        "activex_controls",
-			Description: fmt.Sprintf("ActiveX controls detected (%d types)", len(detectedControls)),
-			Severity:    "high",
-		})
-		report.Score += ActiveXControlWeight
+		a.addIssue(report, "activex_controls",
+			"ActiveX controls detected",
+			"high", ActiveXControlWeight)
 		report.NeedsReview = true
 	}
 
 	return nil
 }
 
-// calculateComplexityScore determines final score and complexity level
-func calculateComplexityScore(report *ComplexityReport, config *ComplexityConfig) {
-	// Apply bonus/penalty based on validation results
-	if report.InvalidFormulas > report.ValidFormulas*2 {
-		// Reduce score if mostly invalid formulas (likely binary data)
-		report.Score = report.Score * report.ValidFormulas / (report.ValidFormulas + report.InvalidFormulas + 1)
+// detectFieldCodes detects special field codes
+func (a *complexityAnalyzer) detectFieldCodes(ctx context.Context, content string, report *ComplexityReport) {
+	select {
+	case <-ctx.Done():
+		return
+	default:
 	}
 
-	// Determine complexity level based on score
+	fieldCodes, _, _ := a.patternMatcher.MatchPatterns(
+		content, a.patterns.FieldCodes, a.config.MaxStoredFieldCodes, true,
+	)
+	report.FieldCodes = fieldCodes
+
+	if len(report.FieldCodes) > 0 {
+		a.addIssue(report, "field_codes",
+			fmt.Sprintf("Special field codes detected (%d)", len(report.FieldCodes)),
+			"low", len(report.FieldCodes)*2)
+	}
+}
+
+// addIssue adds an issue to the report and updates the score
+func (a *complexityAnalyzer) addIssue(report *ComplexityReport, issueType, description, severity string, scoreIncrease int) {
+	report.Issues = append(report.Issues, ComplexityIssue{
+		Type:        issueType,
+		Description: description,
+		Severity:    severity,
+	})
+	report.Score += scoreIncrease
+}
+
+// calculateScore determines final score and complexity level
+func (a *complexityAnalyzer) calculateScore(report *ComplexityReport) {
+	// Apply penalty for invalid formulas
+	if report.InvalidFormulas > report.ValidFormulas*2 {
+		if divisor := report.ValidFormulas + report.InvalidFormulas + 1; divisor > 0 {
+			report.Score = report.Score * report.ValidFormulas / divisor
+		}
+	}
+
+	// Determine complexity level
 	switch {
-	case report.Score >= config.CriticalScore:
+	case report.Score >= a.config.CriticalScore:
 		report.Level = "critical"
 		report.NeedsReview = true
-	case report.Score >= config.HighScore:
+	case report.Score >= a.config.HighScore:
 		report.Level = "high"
 		report.NeedsReview = true
-	case report.Score >= config.MediumScore:
+	case report.Score >= a.config.MediumScore:
 		report.Level = "medium"
-		// Check for high severity issues
 		for _, issue := range report.Issues {
 			if issue.Severity == "high" {
 				report.NeedsReview = true
@@ -595,19 +740,19 @@ func calculateComplexityScore(report *ComplexityReport, config *ComplexityConfig
 	}
 
 	// Force review for certain conditions
-	if report.NestedIfDepth > config.NestedIfHighThreshold || len(report.Macros) > 0 {
+	if report.NestedIfDepth > a.config.NestedIfHighThreshold || len(report.Macros) > 0 {
 		report.NeedsReview = true
 	}
 }
 
 // generateRecommendations creates actionable recommendations
-func generateRecommendations(report *ComplexityReport, config *ComplexityConfig) {
+func (a *complexityAnalyzer) generateRecommendations(report *ComplexityReport) {
 	if report.NeedsReview {
 		report.Recommendations = append(report.Recommendations,
 			"This document requires human review after conversion")
 	}
 
-	if report.NestedIfDepth > config.NestedIfMediumThreshold {
+	if report.NestedIfDepth > a.config.NestedIfMediumThreshold {
 		report.Recommendations = append(report.Recommendations,
 			fmt.Sprintf("Review nested conditional logic for accuracy (depth: %d)", report.NestedIfDepth))
 	}
@@ -657,8 +802,8 @@ func generateRecommendations(report *ComplexityReport, config *ComplexityConfig)
 	}
 }
 
-// Helper function for min
-func min(a, b int) int {
+// Helper function for minimum integer
+func minInt(a, b int) int {
 	if a < b {
 		return a
 	}
