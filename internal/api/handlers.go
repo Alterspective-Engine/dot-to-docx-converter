@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/alterspective-engine/dot-to-docx-converter/internal/analyzer"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/queue"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/storage"
 	"github.com/gin-gonic/gin"
@@ -30,16 +31,17 @@ type BatchConvertRequest struct {
 
 // JobResponse represents a job response
 type JobResponse struct {
-	JobID       string    `json:"job_id"`
-	Status      string    `json:"status"`
-	InputPath   string    `json:"input_path"`
-	OutputPath  string    `json:"output_path,omitempty"`
-	CreatedAt   time.Time `json:"created_at"`
-	StartedAt   *time.Time `json:"started_at,omitempty"`
-	CompletedAt *time.Time `json:"completed_at,omitempty"`
-	Duration    string    `json:"duration,omitempty"`
-	Error       string    `json:"error,omitempty"`
-	DownloadURL string    `json:"download_url,omitempty"`
+	JobID           string                       `json:"job_id"`
+	Status          string                       `json:"status"`
+	InputPath       string                       `json:"input_path"`
+	OutputPath      string                       `json:"output_path,omitempty"`
+	CreatedAt       time.Time                    `json:"created_at"`
+	StartedAt       *time.Time                   `json:"started_at,omitempty"`
+	CompletedAt     *time.Time                   `json:"completed_at,omitempty"`
+	Duration        string                       `json:"duration,omitempty"`
+	Error           string                       `json:"error,omitempty"`
+	DownloadURL     string                       `json:"download_url,omitempty"`
+	ComplexityReport *analyzer.ComplexityReport  `json:"complexity_report,omitempty"`
 }
 
 // ConvertHandler handles single file conversion
@@ -79,6 +81,11 @@ func ConvertHandler(q queue.Queue, s storage.Storage) gin.HandlerFunc {
 			return
 		}
 
+		// Analyze document complexity before queuing
+		complexityReport := analyzer.AnalyzeComplexity(data)
+		log.Infof("Document complexity for job %s: Level=%s, Score=%d, NeedsReview=%v",
+			jobID, complexityReport.Level, complexityReport.Score, complexityReport.NeedsReview)
+
 		// WriteFile handles upload to Azure automatically if Azure Storage is configured
 		if err := s.WriteFile(inputPath, data); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save file"})
@@ -107,13 +114,24 @@ func ConvertHandler(q queue.Queue, s storage.Storage) gin.HandlerFunc {
 			return
 		}
 
+		// Store complexity report in job metadata
+		if job.Metadata == nil {
+			job.Metadata = make(map[string]string)
+		}
+		job.Metadata["complexity_level"] = complexityReport.Level
+		job.Metadata["complexity_score"] = fmt.Sprintf("%d", complexityReport.Score)
+		if complexityReport.NeedsReview {
+			job.Metadata["needs_review"] = "true"
+		}
+
 		// Return job response
 		response := JobResponse{
-			JobID:      job.ID,
-			Status:     job.Status,
-			InputPath:  job.InputPath,
-			OutputPath: job.OutputPath,
-			CreatedAt:  job.CreatedAt,
+			JobID:           job.ID,
+			Status:          job.Status,
+			InputPath:       job.InputPath,
+			OutputPath:      job.OutputPath,
+			CreatedAt:       job.CreatedAt,
+			ComplexityReport: complexityReport,
 		}
 
 		c.JSON(http.StatusAccepted, response)

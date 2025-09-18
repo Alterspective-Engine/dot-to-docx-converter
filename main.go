@@ -167,6 +167,10 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage,
 		v1.POST("/convert/sync", api.ConvertSyncHandler(conv, cfg.SyncMaxFileSize, cfg.SyncTimeout))
 		v1.POST("/convert/sync/json", api.ConvertSyncJSONHandler(conv, cfg.SyncMaxFileSize, cfg.SyncTimeout))
 
+		// Complexity analysis endpoints (no conversion)
+		v1.POST("/analyze", api.AnalyzeHandler())
+		v1.POST("/analyze/batch", api.AnalyzeBatchHandler())
+
 		// Job management (for async)
 		v1.GET("/jobs/:id", api.GetJobStatus(queue))
 		v1.GET("/jobs", api.ListJobs(queue))

@@ -9,6 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/alterspective-engine/dot-to-docx-converter/internal/analyzer"
 	"github.com/alterspective-engine/dot-to-docx-converter/internal/converter"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -83,12 +84,24 @@ func ConvertSyncHandler(conv converter.Converter, maxFileSize int64, syncTimeout
 		}
 		defer inputFile.Close()
 
-		// Copy uploaded file to temp location
-		if _, err := io.Copy(inputFile, file); err != nil {
+		// Read file data for analysis
+		fileData, err := io.ReadAll(file)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to read uploaded file"})
+			return
+		}
+
+		// Write file data to temp location
+		if _, err := inputFile.Write(fileData); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save uploaded file"})
 			return
 		}
 		inputFile.Close()
+
+		// Analyze document complexity
+		complexityReport := analyzer.AnalyzeComplexity(fileData)
+		log.Infof("Document complexity for sync conversion %s: Level=%s, Score=%d, NeedsReview=%v",
+			conversionID, complexityReport.Level, complexityReport.Score, complexityReport.NeedsReview)
 
 		// Set up output path
 		outputFilename := header.Filename[:len(header.Filename)-len(ext)] + ".docx"
@@ -137,6 +150,11 @@ func ConvertSyncHandler(conv converter.Converter, maxFileSize int64, syncTimeout
 		c.Header("Content-Disposition", fmt.Sprintf("attachment; filename=%q", outputFilename))
 		c.Header("X-Conversion-Time", duration.String())
 		c.Header("X-Conversion-ID", conversionID)
+		c.Header("X-Complexity-Level", complexityReport.Level)
+		c.Header("X-Complexity-Score", fmt.Sprintf("%d", complexityReport.Score))
+		if complexityReport.NeedsReview {
+			c.Header("X-Needs-Human-Review", "true")
+		}
 
 		// Return the converted file directly
 		c.Data(http.StatusOK, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", convertedData)
@@ -191,12 +209,26 @@ func ConvertSyncJSONHandler(conv converter.Converter, maxFileSize int64, syncTim
 			return
 		}
 
-		if _, err := io.Copy(inputFile, file); err != nil {
+		// Read file data for analysis
+		fileData, err := io.ReadAll(file)
+		if err != nil {
+			inputFile.Close()
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to read uploaded file"})
+			return
+		}
+
+		// Write file data to temp location
+		if _, err := inputFile.Write(fileData); err != nil {
 			inputFile.Close()
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save uploaded file"})
 			return
 		}
 		inputFile.Close()
+
+		// Analyze document complexity
+		complexityReport := analyzer.AnalyzeComplexity(fileData)
+		log.Infof("Document complexity for sync JSON conversion %s: Level=%s, Score=%d, NeedsReview=%v",
+			conversionID, complexityReport.Level, complexityReport.Score, complexityReport.NeedsReview)
 
 		// Set up output
 		outputFilename := header.Filename[:len(header.Filename)-len(ext)] + ".docx"
@@ -225,7 +257,7 @@ func ConvertSyncJSONHandler(conv converter.Converter, maxFileSize int64, syncTim
 
 		duration := time.Since(start)
 
-		// Return JSON response with file info
+		// Return JSON response with file info and complexity report
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,
 			"conversion_id": conversionID,
@@ -233,6 +265,7 @@ func ConvertSyncJSONHandler(conv converter.Converter, maxFileSize int64, syncTim
 			"size": len(convertedData),
 			"duration": duration.String(),
 			"download_url": fmt.Sprintf("/api/v1/sync/download/%s", conversionID),
+			"complexity_report": complexityReport,
 		})
 	}
 }
