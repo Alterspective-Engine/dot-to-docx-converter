@@ -4,12 +4,14 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/alterspective-engine/dot-to-docx-converter/internal/version"
 	"github.com/gin-gonic/gin"
 )
 
 // ServeLandingPage serves the main landing page
 func ServeLandingPage() gin.HandlerFunc {
 	return func(c *gin.Context) {
+		versionInfo := version.GetInfo()
 		html := fmt.Sprintf(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -519,7 +521,7 @@ func ServeLandingPage() gin.HandlerFunc {
                 <div class="logo-container">
                     <img src="/static/alterspective-logo.png" alt="Alterspective" class="logo">
                 </div>
-                <h1>DOT to DOCX Converter</h1>
+                <h1>DOT to DOCX Converter <span style="font-size: 0.5em; color: #ABDD65; margin-left: 10px;">v%s</span></h1>
                 <p class="tagline">Enterprise Document Conversion Service</p>
                 <p class="subtitle">Powered by Alterspective Technology</p>
                 <div class="status-badge">
@@ -619,15 +621,27 @@ func ServeLandingPage() gin.HandlerFunc {
                     <i class="fas fa-tachometer-alt"></i>
                     View Dashboard
                 </a>
+                <a href="/api/v1/changelog" class="button secondary">
+                    <i class="fas fa-list"></i>
+                    View Changelog
+                </a>
                 <a href="https://github.com/Alterspective-Engine/dot-to-docx-converter" class="button secondary">
                     <i class="fab fa-github"></i>
                     View on GitHub
                 </a>
             </div>
+
+            <!-- Version Footer -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(23,35,45,0.1);">
+                <p style="color: #075156; font-size: 0.9rem; font-weight: 500;">
+                    <i class="fas fa-code-branch"></i>
+                    Version %s | Build: %s
+                </p>
+            </div>
         </div>
     </div>
 </body>
-</html>`, c.Request.Host)
+</html>`, c.Request.Host, versionInfo.Version, versionInfo.Version, versionInfo.GitCommit)
 
 		c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(html))
 	}
@@ -636,15 +650,16 @@ func ServeLandingPage() gin.HandlerFunc {
 // ServeSwaggerUI serves the Swagger UI page
 func ServeSwaggerUI() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		html := `<!DOCTYPE html>
+		versionInfo := version.GetInfo()
+		html := fmt.Sprintf(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOT to DOCX Converter - API Documentation</title>
+    <title>DOT to DOCX Converter API v%s - Documentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.9.0/swagger-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <style>`, versionInfo.Version) + `
         body {
             margin: 0;
             padding: 0;

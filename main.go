@@ -146,6 +146,10 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage,
 	router.GET("/swagger", api.ServeSwaggerUI())
 	router.GET("/api/v1/openapi.yaml", api.ServeOpenAPISpec())
 
+	// Version and changelog endpoints
+	router.GET("/api/v1/version", api.VersionHandler())
+	router.GET("/api/v1/changelog", api.ChangelogHandler())
+
 	// Health checks
 	router.GET("/health", api.HealthCheck())
 	router.GET("/health/live", api.LivenessCheck())

@@ -685,7 +685,7 @@
             <div class="header-brand">
                 <img src="/static/alterspective-logo.png" alt="Alterspective" class="logo">
                 <div class="header-info">
-                    <h1>DOT to DOCX Converter</h1>
+                    <h1>DOT to DOCX Converter <span id="version-badge" style="font-size: 0.5em; color: var(--color-citrus); margin-left: 10px;"></span></h1>
                     <div class="header-subtitle">Enterprise Document Conversion Analytics</div>
                 </div>
             </div>
@@ -697,6 +697,10 @@
                 <div class="trust-badge">
                     <span class="material-icons-round trust-badge-icon">description</span>
                     <span class="trust-badge-text" id="total-badge">0 Converted</span>
+                </div>
+                <div class="trust-badge" onclick="window.location.href='/api/v1/changelog'" style="cursor: pointer;">
+                    <span class="material-icons-round trust-badge-icon">history</span>
+                    <span class="trust-badge-text" id="changelog-link">Changelog</span>
                 </div>
                 <div class="trust-badge">
                     <span class="material-icons-round trust-badge-icon pulse" id="status-icon">circle</span>
@@ -1827,6 +1831,17 @@
 
         // Initialize dashboard
         document.addEventListener('DOMContentLoaded', () => {
+            // Fetch and display version
+            fetch('/api/v1/version')
+                .then(response => response.json())
+                .then(data => {
+                    const versionBadge = document.getElementById('version-badge');
+                    if (versionBadge) {
+                        versionBadge.textContent = `v${data.version}`;
+                    }
+                })
+                .catch(error => console.error('Failed to fetch version:', error));
+
             // Initialize all charts
             initTimelineChart();
             initQueueChart();
