@@ -34,7 +34,7 @@ func TestAnalyzeComplexity(t *testing.T) {
 		{
 			name:            "Nested IF fields",
 			content:         `{IF condition1 "{IF condition2 "nested true" "nested false"}" "outer false"}`,
-			expectedLevel:   "low",  // Depth 2 with score 10 is still low
+			expectedLevel:   "low", // Depth 2 with score 10 is still low
 			expectedReview:  false,
 			expectedIfDepth: 2,
 			description:     "Should detect nested IF fields",
@@ -42,7 +42,7 @@ func TestAnalyzeComplexity(t *testing.T) {
 		{
 			name:            "Deep nested IF fields",
 			content:         `{IF a "{IF b "{IF c "{IF d "deep" "d"}" "c"}" "b"}" "a"}`,
-			expectedLevel:   "high",  // With calibrated weights, depth 4 is high
+			expectedLevel:   "high", // With calibrated weights, depth 4 is high
 			expectedReview:  true,
 			expectedIfDepth: 4,
 			description:     "Should trigger review for deeply nested IFs",
@@ -74,8 +74,8 @@ func TestAnalyzeComplexity(t *testing.T) {
 		{
 			name:            "Document with ActiveX",
 			content:         `This document contains an ACTIVEX ComboBox1 control with CLSID:8BD21D40-EC42-11CE-9E0D-00AA006002F3`,
-			expectedLevel:   "low",  // ActiveX alone might not be enough with validation
-			expectedReview:  false,  // May not trigger review if validation filters it
+			expectedLevel:   "low", // ActiveX alone might not be enough with validation
+			expectedReview:  false, // May not trigger review if validation filters it
 			expectedIfDepth: 0,
 			description:     "Should handle ActiveX controls",
 		},
@@ -159,7 +159,7 @@ func TestCalculateIfNestingDepth(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			analyzer := &complexityAnalyzer{
 				patterns: NewPatternRegistry(),
-				config: DefaultConfig(),
+				config:   DefaultConfig(),
 			}
 			depth, err := analyzer.calculateIfNestingDepth(tt.content)
 			if err != nil {

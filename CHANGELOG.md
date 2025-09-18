@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2025-09-18
+
+### Added
+- **Sharedo Migration System** - Complete intelligent migration capabilities for converting legacy DOT templates to Sharedo format
+- **Document Analysis Engine** (`internal/cataloger/`) - Comprehensive document analysis with field extraction, pattern recognition, and complexity assessment
+- **Migration Handlers** - 7 new REST API endpoints for migration operations (`/api/v1/migration/*`)
+- **Field Mapping System** - Intelligent field mapping with learning capabilities and confidence scoring
+- **Content Block Generator** - Automatic detection and generation of reusable Sharedo content blocks
+- **Migration Pipeline** - End-to-end orchestration of the complete migration process
+- **Implementation Planning** - Quality rubrics and recommendations system
+
+### API Endpoints
+- `POST /api/v1/migration/analyze` - Analyze documents for Sharedo migration
+- `POST /api/v1/migration/fields/map` - Map fields to Sharedo format
+- `POST /api/v1/migration/fields/learn` - Teach field mapping system
+- `POST /api/v1/migration/blocks/generate` - Generate reusable content blocks
+- `POST /api/v1/migration/pipeline` - Execute migration pipeline
+- `GET /api/v1/migration/plan` - Get implementation plan
+- `GET /api/v1/migration/stats` - Get migration system statistics
+
+### Fixed
+- **Critical**: Fixed OpenAPI specification serving to include migration endpoints in Swagger UI
+- OpenAPI spec now properly reads from embedded `web/openapi.yaml` instead of fallback hardcoded specification
+- Migration endpoints are now visible and interactive in Swagger documentation
+
+### Improved
+- **Swagger Documentation** - Complete OpenAPI 3.0.3 specification with detailed migration endpoint documentation
+- **Service Discovery** - Migration capabilities are now fully discoverable through interactive API documentation
+- **Developer Experience** - All migration features accessible through comprehensive Swagger UI
+
+### Deployment
+- Successfully deployed v2.2.0 to Azure Container Instances
+- Service available at: `dot-to-docx-converter-v2.eastus.azurecontainer.io:8080`
+- Swagger UI accessible at: `/swagger` endpoint
+
 ## [2.1.0] - 2025-09-18
 
 ### Added

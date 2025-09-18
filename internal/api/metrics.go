@@ -11,14 +11,14 @@ import (
 )
 
 type MetricsCollector struct {
-	mu               sync.RWMutex
-	totalProcessed   int64
-	totalFailed      int64
-	processingNow    int
+	mu                sync.RWMutex
+	totalProcessed    int64
+	totalFailed       int64
+	processingNow     int
 	avgProcessingTime float64
-	timeline         []TimelineData
-	queueStatus      QueueStatus
-	lastUpdated      time.Time
+	timeline          []TimelineData
+	queueStatus       QueueStatus
+	lastUpdated       time.Time
 }
 
 type TimelineData struct {
@@ -35,24 +35,24 @@ type QueueStatus struct {
 }
 
 type SystemMetrics struct {
-	CPUUsage         float64 `json:"cpu_usage"`
-	MemoryUsage      uint64  `json:"memory_usage"`
+	CPUUsage           float64 `json:"cpu_usage"`
+	MemoryUsage        uint64  `json:"memory_usage"`
 	MemoryUsagePercent float64 `json:"memory_usage_percent"`
-	WorkersActive    int     `json:"workers_active"`
-	WorkersTotal     int     `json:"workers_total"`
-	QueueSize        int     `json:"queue_size"`
+	WorkersActive      int     `json:"workers_active"`
+	WorkersTotal       int     `json:"workers_total"`
+	QueueSize          int     `json:"queue_size"`
 }
 
 type MetricsResponse struct {
-	ProcessingNow     int           `json:"processing"`
-	TotalProcessed    int64         `json:"total_processed"`
-	TotalFailed       int64         `json:"total_failed"`
-	SuccessRate       float64       `json:"success_rate"`
-	AvgProcessingTime float64       `json:"avg_processing_time"`
+	ProcessingNow     int            `json:"processing"`
+	TotalProcessed    int64          `json:"total_processed"`
+	TotalFailed       int64          `json:"total_failed"`
+	SuccessRate       float64        `json:"success_rate"`
+	AvgProcessingTime float64        `json:"avg_processing_time"`
 	Timeline          []TimelineData `json:"timeline"`
-	QueueStatus       QueueStatus   `json:"queue_status"`
-	SystemMetrics     SystemMetrics `json:"system"`
-	LastUpdated       time.Time     `json:"last_updated"`
+	QueueStatus       QueueStatus    `json:"queue_status"`
+	SystemMetrics     SystemMetrics  `json:"system"`
+	LastUpdated       time.Time      `json:"last_updated"`
 }
 
 var metricsCollector = &MetricsCollector{
@@ -119,7 +119,7 @@ func RecordProcessingComplete(duration time.Duration) {
 	if metricsCollector.avgProcessingTime == 0 {
 		metricsCollector.avgProcessingTime = duration.Seconds()
 	} else {
-		metricsCollector.avgProcessingTime = (metricsCollector.avgProcessingTime*0.9) + (duration.Seconds()*0.1)
+		metricsCollector.avgProcessingTime = (metricsCollector.avgProcessingTime * 0.9) + (duration.Seconds() * 0.1)
 	}
 }
 
@@ -149,12 +149,12 @@ func GetSystemMetrics() SystemMetrics {
 	}
 
 	return SystemMetrics{
-		CPUUsage:          cpuUsage,
-		MemoryUsage:       m.Alloc,
+		CPUUsage:           cpuUsage,
+		MemoryUsage:        m.Alloc,
 		MemoryUsagePercent: float64(m.Alloc) / float64(m.Sys) * 100,
-		WorkersActive:     metricsCollector.processingNow,
-		WorkersTotal:      10, // From config
-		QueueSize:         metricsCollector.queueStatus.Pending,
+		WorkersActive:      metricsCollector.processingNow,
+		WorkersTotal:       10, // From config
+		QueueSize:          metricsCollector.queueStatus.Pending,
 	}
 }
 

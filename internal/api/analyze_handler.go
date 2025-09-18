@@ -43,8 +43,8 @@ func AnalyzeHandler() gin.HandlerFunc {
 
 		// Return complexity analysis
 		c.JSON(http.StatusOK, gin.H{
-			"filename": header.Filename,
-			"size": header.Size,
+			"filename":          header.Filename,
+			"size":              header.Size,
 			"complexity_report": complexityReport,
 		})
 	}
@@ -153,13 +153,13 @@ func AnalyzeBatchHandler() gin.HandlerFunc {
 		c.JSON(http.StatusOK, gin.H{
 			"results": results,
 			"summary": gin.H{
-				"total_files": totalFiles,
+				"total_files":  totalFiles,
 				"needs_review": needsReview,
 				"complexity_distribution": gin.H{
 					"critical": criticalCount,
-					"high": highCount,
-					"medium": mediumCount,
-					"low": lowCount,
+					"high":     highCount,
+					"medium":   mediumCount,
+					"low":      lowCount,
 				},
 			},
 		})

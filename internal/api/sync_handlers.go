@@ -46,7 +46,7 @@ func ConvertSyncHandler(conv converter.Converter, maxFileSize int64, syncTimeout
 		// Check file size for sync processing
 		if header.Size > maxFileSize {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"error": fmt.Sprintf("file too large for synchronous conversion (max: %d MB)", maxFileSize/(1024*1024)),
+				"error":      fmt.Sprintf("file too large for synchronous conversion (max: %d MB)", maxFileSize/(1024*1024)),
 				"suggestion": "use async endpoint /api/v1/convert for large files",
 			})
 			return
@@ -119,8 +119,8 @@ func ConvertSyncHandler(conv converter.Converter, maxFileSize int64, syncTimeout
 			// Check if it was a timeout
 			if ctx.Err() == context.DeadlineExceeded {
 				c.JSON(http.StatusRequestTimeout, gin.H{
-					"error": "conversion timeout exceeded",
-					"timeout": timeout.Seconds(),
+					"error":      "conversion timeout exceeded",
+					"timeout":    timeout.Seconds(),
 					"suggestion": "use async endpoint /api/v1/convert for complex files",
 				})
 				return
@@ -128,7 +128,7 @@ func ConvertSyncHandler(conv converter.Converter, maxFileSize int64, syncTimeout
 
 			log.Errorf("Synchronous conversion failed: %v", conversionErr)
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"error": "conversion failed",
+				"error":   "conversion failed",
 				"details": conversionErr.Error(),
 			})
 			return
@@ -259,12 +259,12 @@ func ConvertSyncJSONHandler(conv converter.Converter, maxFileSize int64, syncTim
 
 		// Return JSON response with file info and complexity report
 		c.JSON(http.StatusOK, gin.H{
-			"success": true,
-			"conversion_id": conversionID,
-			"filename": outputFilename,
-			"size": len(convertedData),
-			"duration": duration.String(),
-			"download_url": fmt.Sprintf("/api/v1/sync/download/%s", conversionID),
+			"success":           true,
+			"conversion_id":     conversionID,
+			"filename":          outputFilename,
+			"size":              len(convertedData),
+			"duration":          duration.String(),
+			"download_url":      fmt.Sprintf("/api/v1/sync/download/%s", conversionID),
 			"complexity_report": complexityReport,
 		})
 	}

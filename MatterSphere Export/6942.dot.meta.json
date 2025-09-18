@@ -1,0 +1,251 @@
+{
+  "sourceFile": "6942.dot",
+  "conversionDate": "2025-09-18T19:00:38.126741+10:00",
+  "version": "2.1.0",
+  "format": "Modern (ZIP-based)",
+  "fileSize": 25675,
+  "complexity": {
+    "score": 0,
+    "level": "low"
+  },
+  "fields": {
+    "mergeFields": null,
+    "formulas": null,
+    "ifStatements": [
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 1180,
+        "context": "serve\"\u003e DOCVARIABLE \"ppartydesc\" \\* MERGEFORMAT \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 1477,
+        "context": "posed to apply before trial for any amendment.\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 1827,
+        "context": "er Interrogatories or to seek further Answers.\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 2180,
+        "context": "discovery or further inspection of documents\". \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 3274,
+        "context": "serve\"\u003e DOCVARIABLE \"ppartydesc\" \\* MERGEFORMAT \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 3580,
+        "context": "instrText\u003e} {\u003cw:instrText\u003eSCHEDULE OF PARTIES\" \"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 3949,
+        "context": "nstrText\u003eN\u003c/w:instrText\u003e} {\u003cw:instrText\u003eTIFFS\" \"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;!aa) is the trial to proceed without pleadings?\u0026quot; \\* MERGEFORMAT \"\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \"The trial is to proceed without pleadings.\" \"Pleadings are closed and it is not proposed to apply before trial for any amendment.\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003ePleadings are closed and it is not proposed to apply before trial for any amendment.\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRDefault=\"00697673\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003e[Particulars are not being sought.\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\"\u003e\u003cw:t\u003e][All particulars of the Defence/Statement of Claim that have been sought have been served XXXX (save as to damages, in so far as these are to be updated closer to trial) and it is not propose\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003ed to seek further particulars.]\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRDefault=\"00697673\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;!ab) are we not proposing to interrogate?\u0026quot;  \"\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \"It is not proposed to interrogate.\" \"Interrogatories have been served and Answers obtained and it is not proposed to seek to serve further Interrogatories or to seek further Answers.\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eInterrogatories have been served and Answers obtained and it is not proposed to seek to serve further Interrogatories or to seek further Answers.\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRDefault=\"00697673\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;!ac) are we not proposing to serve a Notice for discovery?\u0026quot; \\* MERGEFORMAT \"\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \"It is not proposed to serve a Notice for Discovery.\" \"Discovery has been obtained and inspection had and it is not proposed to seek further discovery or further inspection of documents\". \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eDiscovery has been obtained and inspection had and it is not proposed to seek further discovery or further inspection of documents\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00A658B3\" w:rsidRDefault=\"00A658B3\" w:rsidP=\"00A658B3\"/\u003e\u003cw:p w:rsidR=\"00A658B3\" w:rsidRDefault=\"00A658B3\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eAs for the trial itself:\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRDefault=\"00697673\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBCNL1\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"26\"/\u003e\u003c/w:numPr\u003e\u003cw:jc w:val=\"left\"/\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;!ad) is the proceeding defended?\u0026quot; \\* MERGEFORMAT \"\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00BD7E45\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003eThis proceeding is defended by \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;$$FILE.UDEXTFILLISTDEF.COLUMN1\u0026quot; \"\u003e\u003cw:r w:rsidR=\"00716272\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e.\" \"This proceeding is undefended.\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eThis proceeding is undefended.\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRDefault=\"009D3534\" w:rsidP=\"00A658B3\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBCNL1\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"26\"/\u003e\u003c/w:numPr\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003eThe \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"ppartydesc\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003eis ready to proceed to trial upon not less than 14 days notice.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00A658B3\" w:rsidRDefault=\"00A658B3\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBCNL1\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"11\"/\u003e\u003c/w:numPr\u003e\u003cw:jc w:val=\"left\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003eThe trial is to be conducted at the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\" w:rsidRPr=\"009A00CD\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\" w:rsidRPr=\"009A00CD\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select court;~ASSOC.CONTACT.NAME\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\" w:rsidRPr=\"009A00CD\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\" w:rsidRPr=\"009A00CD\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e situated at \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00BD7E45\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00BD7E45\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select court;~CONT.DEFAULTADDRESS.oneline\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00BD7E45\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00BD7E45\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003e.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00A658B3\" w:rsidRDefault=\"00A658B3\" w:rsidP=\"009D3534\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBCNL1\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"11\"/\u003e\u003c/w:numPr\u003e\u003cw:jc w:val=\"left\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003eThe trial can reasonably be expected to take \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"009D3534\"\u003e\u003cw:t\u003e[_____]\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e days and no longer.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00432CE8\" w:rsidRDefault=\"00432CE8\" w:rsidP=\"00432CE8\"/\u003e\u003cw:p w:rsidR=\"00FC7AE3\" w:rsidRDefault=\"00FC7AE3\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"009D3534\" w:rsidRPr=\"00D4611A\" w:rsidRDefault=\"009D3534\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00AA1C1D\" w:rsidRDefault=\"00AA1C1D\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eDATED\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003cw:t xml:space=\"preserve\"\u003eday of \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000A2D93\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000A2D93\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"#TODAY\" \\@ \"yyyy\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000A2D93\"\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000A2D93\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00AA1C1D\" w:rsidRDefault=\"00AA1C1D\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00AA1C1D\" w:rsidRDefault=\"00AA1C1D\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00AA1C1D\" w:rsidRDefault=\"00AA1C1D\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"3119\"/\u003e\u003cw:tab w:val=\"right\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00AA1C1D\" w:rsidRDefault=\"00AA1C1D\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"4536\"/\u003e\u003cw:tab w:val=\"right\" w:leader=\"dot\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00077069\" w:rsidRPr=\"00077069\" w:rsidRDefault=\"00077069\" w:rsidP=\"00077069\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00077069\"\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"00077069\"\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"#REGCOMPANYNAME\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"00077069\"\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"00077069\"\u003e\u003cw:rPr\u003e\u003cw:rFonts w:cs=\"Arial\"/\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"007549A4\" w:rsidRPr=\"007549A4\" w:rsidRDefault=\"007549A4\" w:rsidP=\"00AA1C1D\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"4536\"/\u003e\u003cw:tab w:val=\"right\" w:leader=\"dot\" w:pos=\"9072\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003eSolicitors for the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\" w:rsidRPr=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\" w:rsidRPr=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"ppartydesc\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\" w:rsidRPr=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\" w:rsidRPr=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00432CE8\" w:rsidRDefault=\"00432CE8\" w:rsidP=\"00432CE8\"/\u003e\u003cw:p w:rsidR=\"000A2D93\" w:rsidRDefault=\"00A658B3\" w:rsidP=\"00432CE8\"\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:bCs/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eFILED\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e on behalf of the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"ppartydesc\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003F0909\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003e.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"Schedule\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = P \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eSCHEDULE OF PARTIES\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"Schedule\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = C \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eSCHEDULE OF PLAI\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eN\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eTIFFS\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"Schedule\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = D \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003eSCHEDULE OF DEFENDANTS\" \"\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"002F3019\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:tbl\u003e\u003cw:tblPr\u003e\u003cw:tblStyle w:val=\"TableGrid\"/\u003e\u003cw:tblW w:w=\"0\" w:type=\"auto\"/\u003e\u003cw:tblBorders\u003e\u003cw:top w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:left w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:bottom w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:right w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:insideH w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:insideV w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003c/w:tblBorders\u003e\u003cw:tblLook w:val=\"04A0\" w:firstRow=\"1\" w:lastRow=\"0\" w:firstColumn=\"1\" w:lastColumn=\"0\" w:noHBand=\"0\" w:noVBand=\"1\"/\u003e\u003c/w:tblPr\u003e\u003cw:tblGrid\u003e\u003cw:gridCol w:w=\"6062\"/\u003e\u003cw:gridCol w:w=\"3224\"/\u003e\u003c/w:tblGrid\u003e\u003cw:tr w:rsidR=\"003F0909\" w:rsidTr=\"0024766F\"\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"6062\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRPr=\"00315003\" w:rsidRDefault=\"003F0909\" w:rsidP=\"0024766F\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:rPr\u003e\u003cw:rFonts w:ascii=\"Arial Bold\" w:hAnsi=\"Arial Bold\"/\u003e\u003cw:b/\u003e\u003cw:caps/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:bookmarkStart w:id=\"2\" w:name=\"DS_udDSCRTDOCPL\"/\u003e\u003cw:bookmarkEnd w:id=\"2\"/\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"3224\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRPr=\"00315003\" w:rsidRDefault=\"003F0909\" w:rsidP=\"0024766F\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003c/w:tbl\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"003F0909\"/\u003e\u003cw:tbl\u003e\u003cw:tblPr\u003e\u003cw:tblStyle w:val=\"TableGrid\"/\u003e\u003cw:tblW w:w=\"0\" w:type=\"auto\"/\u003e\u003cw:tblBorders\u003e\u003cw:top w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:left w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:bottom w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:right w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:insideH w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003cw:insideV w:val=\"none\" w:sz=\"0\" w:space=\"0\" w:color=\"auto\"/\u003e\u003c/w:tblBorders\u003e\u003cw:tblLook w:val=\"04A0\" w:firstRow=\"1\" w:lastRow=\"0\" w:firstColumn=\"1\" w:lastColumn=\"0\" w:noHBand=\"0\" w:noVBand=\"1\"/\u003e\u003c/w:tblPr\u003e\u003cw:tblGrid\u003e\u003cw:gridCol w:w=\"6062\"/\u003e\u003cw:gridCol w:w=\"3224\"/\u003e\u003c/w:tblGrid\u003e\u003cw:tr w:rsidR=\"003F0909\" w:rsidTr=\"0024766F\"\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"6062\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRPr=\"00315003\" w:rsidRDefault=\"003F0909\" w:rsidP=\"0024766F\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:rPr\u003e\u003cw:rFonts w:ascii=\"Arial Bold\" w:hAnsi=\"Arial Bold\"/\u003e\u003cw:b/\u003e\u003cw:caps/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:bookmarkStart w:id=\"3\" w:name=\"DS_udDSCRTDOCDEF\"/\u003e\u003cw:bookmarkEnd w:id=\"3\"/\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"3224\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRPr=\"00315003\" w:rsidRDefault=\"003F0909\" w:rsidP=\"0024766F\"\u003e\u003cw:pPr\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"left\" w:pos=\"851\"/\u003e\u003c/w:tabs\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003c/w:tbl\u003e\u003cw:p w:rsidR=\"003F0909\" w:rsidRDefault=\"003F0909\" w:rsidP=\"00432CE8\"/\u003e\u003cw:sectPr w:rsidR=\"003F0909\" w:rsidSect=\"007179BB\"\u003e\u003cw:headerReference w:type=\"even\" r:id=\"rId7\"/\u003e\u003cw:headerReference w:type=\"default\" r:id=\"rId8\"/\u003e\u003cw:footerReference w:type=\"even\" r:id=\"rId9\"/\u003e\u003cw:footerReference w:type=\"default\" r:id=\"rId10\"/\u003e\u003cw:headerReference w:type=\"first\" r:id=\"rId11\"/\u003e\u003cw:footerReference w:type=\"first\" r:id=\"rId12\"/\u003e\u003cw:pgSz w:w=\"11906\" w:h=\"16838\" w:code=\"9\"/\u003e\u003cw:pgMar w:top=\"1701\" w:right=\"1418\" w:bottom=\"1418\" w:left=\"1418\" w:header=\"851\" w:footer=\"851\" w:gutter=\"0\"/\u003e\u003cw:cols w:space=\"708\"/\u003e\u003cw:titlePg/\u003e\u003cw:docGrid w:linePitch=\"360\"/\u003e\u003c/w:sectPr\u003e\u003c/w:body\u003e\u003c/w:document\u003e}\n{",
+        "type": "IF",
+        "position": 4352,
+        "context": "trText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e...",
+        "suggestedMapping": "{{#if condition}}"
+      }
+    ],
+    "docProperties": null,
+    "docVariables": null,
+    "otherFields": [
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 1088,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 2567,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 2659,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 2787,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#TODAY\"",
+        "type": "DOCVARIABLE",
+        "position": 2924,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#REGCOMPANYNAME\"",
+        "type": "DOCVARIABLE",
+        "position": 3007,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 3090,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 3182,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 3329,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 3635,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 4004,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;!aa)",
+        "type": "DOCVARIABLE",
+        "position": 4398,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;!ab)",
+        "type": "DOCVARIABLE",
+        "position": 5722,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;!ac)",
+        "type": "DOCVARIABLE",
+        "position": 6684,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;!ad)",
+        "type": "DOCVARIABLE",
+        "position": 8019,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;$$FILE.UDEXTFILLISTDEF.COLUMN1\u0026quot;",
+        "type": "DOCVARIABLE",
+        "position": 8385,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 9261,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 10310,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;ORGANISATION+COURT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 10994,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#TODAY\"",
+        "type": "DOCVARIABLE",
+        "position": 12728,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#REGCOMPANYNAME\"",
+        "type": "DOCVARIABLE",
+        "position": 14182,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 15208,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"ppartydesc\"",
+        "type": "DOCVARIABLE",
+        "position": 16080,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 16962,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 17998,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"Schedule\"",
+        "type": "DOCVARIABLE",
+        "position": 19176,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"PrecedentTitle\"",
+        "type": "DOCVARIABLE",
+        "position": 24308,
+        "suggestedMapping": "{{variables.custom}}"
+      }
+    ]
+  },
+  "conversionNotes": [
+    "Complex conditional logic detected - review branching after conversion"
+  ],
+  "statistics": {
+    "totalFields": 35,
+    "mappableFields": 0,
+    "complexFields": 8,
+    "extractedTextLength": 24433,
+    "tableCount": 0,
+    "imageCount": 0,
+    "estimatedSuccessRate": 85
+  }
+}

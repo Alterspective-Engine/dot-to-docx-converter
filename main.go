@@ -24,7 +24,6 @@ import (
 //go:embed web/*
 var webFS embed.FS
 
-
 func main() {
 	// Initialize configuration
 	cfg := config.Load()
@@ -144,7 +143,7 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage,
 	// Static pages and documentation
 	router.GET("/", api.ServeLandingPage())
 	router.GET("/swagger", api.ServeSwaggerUI())
-	router.GET("/api/v1/openapi.yaml", api.ServeOpenAPISpec())
+	router.GET("/api/v1/openapi.yaml", api.ServeOpenAPISpec(webFS))
 
 	// Version and changelog endpoints
 	router.GET("/api/v1/version", api.VersionHandler())
@@ -182,6 +181,27 @@ func setupRouter(cfg *config.Config, queue queue.Queue, storage storage.Storage,
 
 		// Download converted file
 		v1.GET("/download/:id", api.DownloadFile(storage))
+
+		// NEW: Sharedo Migration System Endpoints
+		migration := v1.Group("/migration")
+		{
+			// Document analysis for migration
+			migration.POST("/analyze", api.MigrationAnalyzeHandler())
+
+			// Field mapping services
+			migration.POST("/fields/map", api.FieldMappingHandler())
+			migration.POST("/fields/learn", api.LearnMappingHandler())
+
+			// Content block generation
+			migration.POST("/blocks/generate", api.ContentBlockHandler())
+
+			// Full migration pipeline
+			migration.POST("/pipeline", api.MigrationPipelineHandler())
+
+			// System information
+			migration.GET("/plan", api.MigrationPlanHandler())
+			migration.GET("/stats", api.MigrationStatsHandler())
+		}
 	}
 
 	return router

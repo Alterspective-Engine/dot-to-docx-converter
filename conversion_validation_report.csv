@@ -1,0 +1,101 @@
+Filename,FileSize,Format,ComplexityScore,ComplexityLevel,HasMergeFields,HasFormulas,HasMacros,HasTables,HasIF,ExtractedLength,ConversionStatus,Issues,Recommendations
+1435.dot,22246,Modern (ZIP),0,low,false,false,false,false,false,17,failed,Very limited text extracted,
+6942.dot,25675,Modern (ZIP),0,low,false,false,false,false,true,24433,success,,
+3261.dot,26582,Modern (ZIP),0,low,false,false,false,false,true,53400,success,,
+3302.dot,28465,Modern (ZIP),0,low,false,false,false,false,true,67973,success,,
+3282.dot,29584,Modern (ZIP),0,low,false,false,false,false,true,101368,success,,
+6580.dot,30274,Modern (ZIP),0,low,false,false,false,false,true,80494,success,,
+3420.dot,32497,Modern (ZIP),0,low,false,false,false,false,true,54354,success,,
+3438.dot,34304,Legacy (OLE),0,low,false,false,false,false,false,2393,success,,Legacy format - extra validation recommended
+3414.dot,45056,Legacy (OLE),0,low,false,false,false,false,false,2635,success,,Legacy format - extra validation recommended
+3083.dot,47104,Legacy (OLE),0,low,false,false,false,false,false,3791,success,,Legacy format - extra validation recommended
+6493.dot,50176,Legacy (OLE),0,low,false,false,false,false,false,3071,success,,Legacy format - extra validation recommended
+6497.dot,50176,Legacy (OLE),0,low,false,false,false,false,false,3071,success,,Legacy format - extra validation recommended
+3506.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3595,success,,Legacy format - extra validation recommended
+3206.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3171,success,,Legacy format - extra validation recommended
+3105.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3352,success,,Legacy format - extra validation recommended
+3425.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3143,success,,Legacy format - extra validation recommended
+3135.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3283,success,,Legacy format - extra validation recommended
+3265.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3150,success,,Legacy format - extra validation recommended
+3222.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3200,success,,Legacy format - extra validation recommended
+6739.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3411,success,,Legacy format - extra validation recommended
+6743.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3592,success,,Legacy format - extra validation recommended
+2757.dot,51200,Legacy (OLE),0,low,false,false,false,false,false,3353,success,,Legacy format - extra validation recommended
+3357.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3859,success,,Legacy format - extra validation recommended
+2711.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3648,success,,Legacy format - extra validation recommended
+3502.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3606,success,,Legacy format - extra validation recommended
+3512.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3658,success,,Legacy format - extra validation recommended
+3125.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3758,success,,Legacy format - extra validation recommended
+3026.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3774,success,,Legacy format - extra validation recommended
+3266.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3718,success,,Legacy format - extra validation recommended
+3103.dot,51712,Legacy (OLE),0,low,false,false,false,false,false,3768,success,,Legacy format - extra validation recommended
+3494.dot,52224,Legacy (OLE),0,low,false,false,false,false,false,3841,success,,Legacy format - extra validation recommended
+2921.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,3901,success,,Legacy format - extra validation recommended
+2964.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4200,success,,Legacy format - extra validation recommended
+3121.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4235,success,,Legacy format - extra validation recommended
+6700.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4186,success,,Legacy format - extra validation recommended
+3399.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,3909,success,,Legacy format - extra validation recommended
+3091.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4315,success,,Legacy format - extra validation recommended
+3086.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,3930,success,,Legacy format - extra validation recommended
+3500.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4364,success,,Legacy format - extra validation recommended
+3074.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,3982,success,,Legacy format - extra validation recommended
+6741.dot,52736,Legacy (OLE),0,low,false,false,false,false,false,4198,success,,Legacy format - extra validation recommended
+3374.dot,53248,Legacy (OLE),0,low,false,false,false,false,false,4376,success,,Legacy format - extra validation recommended
+3077.dot,53248,Legacy (OLE),0,low,false,false,false,false,false,4312,success,,Legacy format - extra validation recommended
+3381.dot,53248,Legacy (OLE),0,low,false,false,false,false,false,4293,success,,Legacy format - extra validation recommended
+6566.dot,53248,Legacy (OLE),0,low,false,false,false,false,false,4188,success,,Legacy format - extra validation recommended
+3342.dot,53760,Legacy (OLE),0,low,false,false,false,false,false,5285,success,,Legacy format - extra validation recommended
+3112.dot,53760,Legacy (OLE),0,low,false,false,false,false,false,4869,success,,Legacy format - extra validation recommended
+3100.dot,54272,Legacy (OLE),0,low,false,false,false,false,false,5550,success,,Legacy format - extra validation recommended
+3076.dot,54272,Legacy (OLE),0,low,false,false,false,false,false,4688,success,,Legacy format - extra validation recommended
+3383.dot,54272,Legacy (OLE),0,low,false,false,false,false,false,4564,success,,Legacy format - extra validation recommended
+2739.dot,54272,Legacy (OLE),0,low,false,false,false,false,false,4152,success,,Legacy format - extra validation recommended
+3044.dot,54784,Legacy (OLE),0,low,false,false,false,false,false,4736,success,,Legacy format - extra validation recommended
+3318.dot,55296,Legacy (OLE),0,low,false,false,false,false,false,5882,success,,Legacy format - extra validation recommended
+3099.dot,55296,Legacy (OLE),0,low,false,false,false,false,false,5717,success,,Legacy format - extra validation recommended
+2992.dot,55808,Legacy (OLE),0,low,false,false,false,false,false,5387,success,,Legacy format - extra validation recommended
+3490.dot,56320,Legacy (OLE),0,low,false,false,false,false,false,6698,success,,Legacy format - extra validation recommended
+3067.dot,57344,Legacy (OLE),0,low,false,false,false,false,false,4225,success,,Legacy format - extra validation recommended
+2649.dot,58368,Legacy (OLE),0,low,false,false,false,false,false,7362,success,,Legacy format - extra validation recommended
+3104.dot,58368,Legacy (OLE),0,low,false,false,false,false,false,4611,success,,Legacy format - extra validation recommended
+2738.dot,59392,Legacy (OLE),0,low,false,false,false,false,false,6183,success,,Legacy format - extra validation recommended
+17548.dot,60416,Legacy (OLE),0,low,false,false,false,false,false,8188,success,,Legacy format - extra validation recommended
+3277.dot,61952,Legacy (OLE),0,low,false,false,false,false,false,5221,success,,Legacy format - extra validation recommended
+6526.dot,65536,Legacy (OLE),0,low,false,false,false,false,false,11264,success,,Legacy format - extra validation recommended
+17549.dot,71168,Legacy (OLE),0,low,false,false,false,false,false,12918,success,,Legacy format - extra validation recommended
+8052.dot,76800,Legacy (OLE),0,low,false,false,false,false,false,5163,success,,Legacy format - extra validation recommended
+3317.dot,82944,Legacy (OLE),0,low,false,false,false,false,false,20833,success,,Legacy format - extra validation recommended
+6929.dot,92160,Legacy (OLE),0,low,false,false,false,false,false,7489,success,,Legacy format - extra validation recommended
+3518.dot,119808,Legacy (OLE),0,low,false,false,false,false,false,32466,success,,Legacy format - extra validation recommended
+8904.dot,130560,Legacy (OLE),0,low,false,false,false,false,false,12643,success,,Legacy format - extra validation recommended
+7508.dot,138240,Legacy (OLE),0,low,false,false,false,false,false,5271,success,,Legacy format - extra validation recommended
+2753.dot,139264,Legacy (OLE),0,low,false,false,false,false,false,7149,success,,Legacy format - extra validation recommended
+7704.dot,139264,Legacy (OLE),0,low,false,false,false,false,false,4816,success,,Legacy format - extra validation recommended
+7404.dot,139776,Legacy (OLE),0,low,false,false,false,false,false,5253,success,,Legacy format - extra validation recommended
+8964.dot,140288,Legacy (OLE),0,low,false,false,false,false,false,5292,success,,Legacy format - extra validation recommended
+9178.dot,140800,Legacy (OLE),0,low,false,false,false,false,false,6026,success,,Legacy format - extra validation recommended
+3436.dot,141312,Legacy (OLE),0,low,false,false,false,false,false,5540,success,,Legacy format - extra validation recommended
+8941.dot,141824,Legacy (OLE),0,low,false,false,false,false,false,5345,success,,Legacy format - extra validation recommended
+17598.dot,142848,Legacy (OLE),0,low,false,false,false,false,false,7141,success,,Legacy format - extra validation recommended
+8185.dot,143360,Legacy (OLE),0,low,false,false,false,false,false,6482,success,,Legacy format - extra validation recommended
+9935.dot,144384,Legacy (OLE),0,low,false,false,false,false,false,6016,success,,Legacy format - extra validation recommended
+18497.dot,144896,Legacy (OLE),0,low,false,false,false,false,false,6580,success,,Legacy format - extra validation recommended
+17560.dot,145920,Legacy (OLE),0,low,false,false,false,false,false,7057,success,,Legacy format - extra validation recommended
+18294.dot,146432,Legacy (OLE),0,low,false,false,false,false,false,7425,success,,Legacy format - extra validation recommended
+17634.dot,147968,Legacy (OLE),0,low,false,false,false,false,false,6438,success,,Legacy format - extra validation recommended
+19541.dot,149504,Legacy (OLE),0,low,false,false,false,false,false,7658,success,,Legacy format - extra validation recommended
+9179.dot,152576,Legacy (OLE),0,low,false,false,false,false,false,6157,success,,Legacy format - extra validation recommended
+15028.dot,156160,Legacy (OLE),0,low,false,false,false,false,false,12161,success,,Legacy format - extra validation recommended
+3198.dot,161280,Legacy (OLE),0,low,false,false,false,false,false,7595,success,,Legacy format - extra validation recommended
+3153.dot,168960,Legacy (OLE),0,low,false,false,false,false,false,10436,success,,Legacy format - extra validation recommended
+29885.dot,174080,Legacy (OLE),0,low,false,false,false,false,false,5477,success,,Legacy format - extra validation recommended
+18612.dot,179712,Legacy (OLE),0,low,false,false,false,false,false,5055,success,,Legacy format - extra validation recommended
+19444.dot,185856,Legacy (OLE),0,low,false,false,false,false,false,19407,success,,Legacy format - extra validation recommended
+18621.dot,192000,Legacy (OLE),0,low,false,false,false,false,false,7169,success,,Legacy format - extra validation recommended
+29957.dot,243712,Legacy (OLE),0,low,false,false,false,false,false,10876,success,,Legacy format - extra validation recommended
+9932.dot,336896,Legacy (OLE),0,low,false,false,false,false,false,35415,success,,Legacy format - extra validation recommended
+3547.dot,429568,Legacy (OLE),5,low,false,true,false,false,false,100539,needs_review,"Valid formulas and calculations detected (1 valid, 0 invalid)",Test formula calculations after conversion|Legacy format - extra validation recommended
+2593.dot,436736,Legacy (OLE),5,low,false,true,false,false,false,99156,needs_review,"Valid formulas and calculations detected (1 valid, 0 invalid)",Test formula calculations after conversion|Legacy format - extra validation recommended
+2736.dot,455680,Legacy (OLE),5,low,false,true,false,false,false,111971,needs_review,"Valid formulas and calculations detected (1 valid, 0 invalid)",Test formula calculations after conversion|Legacy format - extra validation recommended
+19543.dot,579072,Legacy (OLE),5,low,false,true,false,false,false,107259,needs_review,"Valid formulas and calculations detected (1 valid, 0 invalid)",Test formula calculations after conversion|Legacy format - extra validation recommended
+19534.dot,703488,Legacy (OLE),5,low,false,true,false,false,false,139374,needs_review,"Valid formulas and calculations detected (1 valid, 0 invalid)",Test formula calculations after conversion|Legacy format - extra validation recommended

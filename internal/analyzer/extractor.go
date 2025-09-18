@@ -17,9 +17,9 @@ type DocumentFormat int
 const (
 	FormatUnknown DocumentFormat = iota
 	FormatPlainText
-	FormatZipBased  // Modern Word 2007+ format (DOCX/DOTX)
-	FormatOLEBased  // Legacy Word format (DOC/DOT)
-	FormatRTF       // Rich Text Format
+	FormatZipBased // Modern Word 2007+ format (DOCX/DOTX)
+	FormatOLEBased // Legacy Word format (DOC/DOT)
+	FormatRTF      // Rich Text Format
 )
 
 // DocumentExtractor handles document format detection and text extraction
@@ -433,15 +433,15 @@ func (e *DocumentExtractor) ExtractMetadata(content []byte) map[string]string {
 func (e *DocumentExtractor) extractXMLMetadata(xmlContent string, metadata map[string]string) {
 	// Extract common metadata fields
 	patterns := map[string]*regexp.Regexp{
-		"title":       regexp.MustCompile(`<dc:title>([^<]+)</dc:title>`),
-		"creator":     regexp.MustCompile(`<dc:creator>([^<]+)</dc:creator>`),
-		"description": regexp.MustCompile(`<dc:description>([^<]+)</dc:description>`),
-		"subject":     regexp.MustCompile(`<dc:subject>([^<]+)</dc:subject>`),
-		"keywords":    regexp.MustCompile(`<cp:keywords>([^<]+)</cp:keywords>`),
+		"title":          regexp.MustCompile(`<dc:title>([^<]+)</dc:title>`),
+		"creator":        regexp.MustCompile(`<dc:creator>([^<]+)</dc:creator>`),
+		"description":    regexp.MustCompile(`<dc:description>([^<]+)</dc:description>`),
+		"subject":        regexp.MustCompile(`<dc:subject>([^<]+)</dc:subject>`),
+		"keywords":       regexp.MustCompile(`<cp:keywords>([^<]+)</cp:keywords>`),
 		"lastModifiedBy": regexp.MustCompile(`<cp:lastModifiedBy>([^<]+)</cp:lastModifiedBy>`),
-		"revision":    regexp.MustCompile(`<cp:revision>([^<]+)</cp:revision>`),
-		"application": regexp.MustCompile(`<Application>([^<]+)</Application>`),
-		"appVersion":  regexp.MustCompile(`<AppVersion>([^<]+)</AppVersion>`),
+		"revision":       regexp.MustCompile(`<cp:revision>([^<]+)</cp:revision>`),
+		"application":    regexp.MustCompile(`<Application>([^<]+)</Application>`),
+		"appVersion":     regexp.MustCompile(`<AppVersion>([^<]+)</AppVersion>`),
 	}
 
 	for key, pattern := range patterns {
@@ -497,7 +497,7 @@ func (r *binaryReader) readUint32() (uint32, error) {
 
 // WordDocumentStream represents the main document stream in OLE files
 type WordDocumentStream struct {
-	Text      string
+	Text       string
 	FieldCodes []string
 	Tables     int
 }

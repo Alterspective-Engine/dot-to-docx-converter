@@ -24,16 +24,16 @@ var (
 
 // Job represents a conversion job
 type Job struct {
-	ID          string        `json:"id"`
-	InputPath   string        `json:"input_path"`
-	OutputPath  string        `json:"output_path"`
-	Status      string        `json:"status"`
-	Priority    int           `json:"priority"`
-	CreatedAt   time.Time     `json:"created_at"`
-	StartedAt   *time.Time    `json:"started_at,omitempty"`
-	CompletedAt *time.Time    `json:"completed_at,omitempty"`
-	Duration    time.Duration `json:"duration,omitempty"`
-	Error       string        `json:"error,omitempty"`
+	ID          string            `json:"id"`
+	InputPath   string            `json:"input_path"`
+	OutputPath  string            `json:"output_path"`
+	Status      string            `json:"status"`
+	Priority    int               `json:"priority"`
+	CreatedAt   time.Time         `json:"created_at"`
+	StartedAt   *time.Time        `json:"started_at,omitempty"`
+	CompletedAt *time.Time        `json:"completed_at,omitempty"`
+	Duration    time.Duration     `json:"duration,omitempty"`
+	Error       string            `json:"error,omitempty"`
 	Metadata    map[string]string `json:"metadata,omitempty"`
 }
 

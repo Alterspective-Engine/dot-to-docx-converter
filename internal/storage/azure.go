@@ -14,9 +14,9 @@ import (
 
 // AzureStorage implements Storage using Azure Blob Storage
 type AzureStorage struct {
-	client       *azblob.Client
+	client        *azblob.Client
 	containerName string
-	localCache   string
+	localCache    string
 }
 
 // NewAzureStorage creates a new Azure Blob Storage instance

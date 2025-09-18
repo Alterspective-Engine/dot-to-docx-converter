@@ -1,0 +1,19 @@
+DOCUMENT CATALOG SUMMARY REPORT
+======================================================================
+
+Analysis Date: 2025-09-18T19:41:51+10:00
+Documents Analyzed: 150
+Processing Time: 152.7026ms
+
+KEY FINDINGS:
+- Unique Fields: 38
+- Automation Potential: 92.7%
+- Documents Needing Review: 131
+- Content Blocks Found: 2
+- Field Merge Opportunities: 1
+
+
+RECOMMENDATIONS:
+- Create 2 reusable content blocks for headers/footers
+- Standardize 31 field variants into 1 primary fields
+- 131 documents require manual review before migration

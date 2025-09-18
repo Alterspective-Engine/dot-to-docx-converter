@@ -31,17 +31,17 @@ type BatchConvertRequest struct {
 
 // JobResponse represents a job response
 type JobResponse struct {
-	JobID           string                       `json:"job_id"`
-	Status          string                       `json:"status"`
-	InputPath       string                       `json:"input_path"`
-	OutputPath      string                       `json:"output_path,omitempty"`
-	CreatedAt       time.Time                    `json:"created_at"`
-	StartedAt       *time.Time                   `json:"started_at,omitempty"`
-	CompletedAt     *time.Time                   `json:"completed_at,omitempty"`
-	Duration        string                       `json:"duration,omitempty"`
-	Error           string                       `json:"error,omitempty"`
-	DownloadURL     string                       `json:"download_url,omitempty"`
-	ComplexityReport *analyzer.ComplexityReport  `json:"complexity_report,omitempty"`
+	JobID            string                     `json:"job_id"`
+	Status           string                     `json:"status"`
+	InputPath        string                     `json:"input_path"`
+	OutputPath       string                     `json:"output_path,omitempty"`
+	CreatedAt        time.Time                  `json:"created_at"`
+	StartedAt        *time.Time                 `json:"started_at,omitempty"`
+	CompletedAt      *time.Time                 `json:"completed_at,omitempty"`
+	Duration         string                     `json:"duration,omitempty"`
+	Error            string                     `json:"error,omitempty"`
+	DownloadURL      string                     `json:"download_url,omitempty"`
+	ComplexityReport *analyzer.ComplexityReport `json:"complexity_report,omitempty"`
 }
 
 // ConvertHandler handles single file conversion
@@ -126,11 +126,11 @@ func ConvertHandler(q queue.Queue, s storage.Storage) gin.HandlerFunc {
 
 		// Return job response
 		response := JobResponse{
-			JobID:           job.ID,
-			Status:          job.Status,
-			InputPath:       job.InputPath,
-			OutputPath:      job.OutputPath,
-			CreatedAt:       job.CreatedAt,
+			JobID:            job.ID,
+			Status:           job.Status,
+			InputPath:        job.InputPath,
+			OutputPath:       job.OutputPath,
+			CreatedAt:        job.CreatedAt,
 			ComplexityReport: complexityReport,
 		}
 
@@ -181,12 +181,12 @@ func BatchConvertHandler(q queue.Queue, s storage.Storage) gin.HandlerFunc {
 
 			// Create job
 			job := &queue.Job{
-				ID:        jobID,
-				InputPath: inputPath,
+				ID:         jobID,
+				InputPath:  inputPath,
 				OutputPath: outputPath,
-				Status:    queue.StatusPending,
-				Priority:  req.Priority,
-				CreatedAt: time.Now(),
+				Status:     queue.StatusPending,
+				Priority:   req.Priority,
+				CreatedAt:  time.Now(),
 				Metadata: map[string]string{
 					"batch_id": batchID,
 					"filename": file,

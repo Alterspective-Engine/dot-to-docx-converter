@@ -63,8 +63,8 @@ type PatternRegistry struct {
 	IFFieldFull  *regexp.Regexp
 
 	// Merge field patterns
-	MergeFields        []*regexp.Regexp
-	ComplexMergeField  *regexp.Regexp
+	MergeFields       []*regexp.Regexp
+	ComplexMergeField *regexp.Regexp
 
 	// Formula patterns
 	Formulas []*regexp.Regexp
@@ -275,21 +275,21 @@ func (m *PatternMatcher) MatchPatterns(
 
 // ComplexityReport contains metrics about document complexity
 type ComplexityReport struct {
-	Score              int                `json:"complexity_score"`
-	Level              string             `json:"complexity_level"` // low, medium, high, critical
-	NeedsReview        bool               `json:"needs_human_review"`
-	NestedIfDepth      int                `json:"nested_if_depth"`
-	TotalIfStatements  int                `json:"total_if_statements"`
-	TotalMergeFields   int                `json:"total_merge_fields"`
-	ComplexMergeFields []string           `json:"complex_merge_fields"`
-	Macros             []string           `json:"macros_found"`
-	Formulas           []string           `json:"formulas_found"`
-	Issues             []ComplexityIssue  `json:"potential_issues"`
-	Recommendations    []string           `json:"recommendations"`
-	ParseErrors        []string           `json:"parse_errors,omitempty"`
-	FieldCodes         []string           `json:"field_codes,omitempty"`
-	ValidFormulas      int                `json:"valid_formulas_count"`
-	InvalidFormulas    int                `json:"invalid_formulas_count"`
+	Score              int               `json:"complexity_score"`
+	Level              string            `json:"complexity_level"` // low, medium, high, critical
+	NeedsReview        bool              `json:"needs_human_review"`
+	NestedIfDepth      int               `json:"nested_if_depth"`
+	TotalIfStatements  int               `json:"total_if_statements"`
+	TotalMergeFields   int               `json:"total_merge_fields"`
+	ComplexMergeFields []string          `json:"complex_merge_fields"`
+	Macros             []string          `json:"macros_found"`
+	Formulas           []string          `json:"formulas_found"`
+	Issues             []ComplexityIssue `json:"potential_issues"`
+	Recommendations    []string          `json:"recommendations"`
+	ParseErrors        []string          `json:"parse_errors,omitempty"`
+	FieldCodes         []string          `json:"field_codes,omitempty"`
+	ValidFormulas      int               `json:"valid_formulas_count"`
+	InvalidFormulas    int               `json:"invalid_formulas_count"`
 }
 
 // ComplexityIssue represents a specific complexity concern

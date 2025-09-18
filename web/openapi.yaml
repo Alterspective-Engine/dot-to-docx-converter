@@ -1,0 +1,550 @@
+openapi: 3.0.3
+info:
+  title: DOT to DOCX Converter with Sharedo Migration
+  description: |
+    Convert DOT template files to DOCX format with intelligent Sharedo migration capabilities.
+
+    ## Features
+    - **DOT to DOCX Conversion**: Traditional template conversion
+    - **Sharedo Migration System**: Intelligent field mapping and content block generation
+    - **Document Analysis**: Extract fields, patterns, and metadata
+    - **Learning System**: Improves mapping accuracy through feedback
+    - **Async/Sync Processing**: Queue-based or immediate conversion
+
+    ## Migration Capabilities
+    - Field extraction and categorization
+    - Pattern recognition and content blocks
+    - Intelligent field mapping with AI
+    - Pipeline orchestration
+    - Quality validation
+  version: 2.0.0
+  contact:
+    name: Alterspective
+    email: igor@alterspective.com.au
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+  - url: http://dot-to-docx-converter-v2.australiaeast.azurecontainer.io:8080
+    description: Azure deployment
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      tags: [System]
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  service:
+                    type: string
+                    example: dot-to-docx-converter
+                  status:
+                    type: string
+                    example: healthy
+                  version:
+                    type: string
+                    example: "2.0.0"
+
+  /api/v1/convert:
+    post:
+      summary: Convert DOT to DOCX (Async)
+      tags: [Conversion]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: DOT file to convert
+      responses:
+        '202':
+          description: Conversion job created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: Job identifier
+                  status:
+                    type: string
+                    example: queued
+
+  /api/v1/convert/sync:
+    post:
+      summary: Convert DOT to DOCX (Sync)
+      tags: [Conversion]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: DOT file to convert
+      responses:
+        '200':
+          description: Converted DOCX file
+          content:
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+              schema:
+                type: string
+                format: binary
+
+  # NEW: Sharedo Migration Endpoints
+  /api/v1/migration/analyze:
+    post:
+      summary: Analyze documents for Sharedo migration
+      tags: [Migration]
+      description: |
+        Analyzes documents to extract fields, identify patterns, and assess migration complexity.
+        Provides comprehensive analysis including field categorization, content blocks, and recommendations.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      filename:
+                        type: string
+                        example: "template.dot"
+                      content:
+                        type: string
+                        description: Document text content
+                      metadata:
+                        type: object
+                        additionalProperties: true
+                options:
+                  type: object
+                  properties:
+                    enable_ai:
+                      type: boolean
+                      default: false
+                    confidence_threshold:
+                      type: number
+                      default: 0.75
+                    include_samples:
+                      type: boolean
+                      default: true
+      responses:
+        '200':
+          description: Analysis results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  catalog:
+                    type: object
+                    description: Complete document analysis
+                  report:
+                    type: string
+                    description: Human-readable analysis report
+
+  /api/v1/migration/fields/map:
+    post:
+      summary: Map fields to Sharedo format
+      tags: [Migration]
+      description: |
+        Maps legacy field names to Sharedo format with confidence scoring.
+        Provides alternative suggestions and learning recommendations.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fields:
+                  type: array
+                  items:
+                    type: string
+                  example: ["ClientName", "MatterRef", "Date"]
+                context:
+                  type: object
+                  properties:
+                    documentType:
+                      type: string
+                      example: "legal"
+                    jurisdiction:
+                      type: string
+                      example: "NSW"
+      responses:
+        '200':
+          description: Field mapping results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  mappings:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        original:
+                          type: string
+                        mapped:
+                          type: string
+                        confidence:
+                          type: number
+                        requires_review:
+                          type: boolean
+                        alternatives:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              suggestion:
+                                type: string
+                              confidence:
+                                type: number
+                              rationale:
+                                type: string
+
+  /api/v1/migration/fields/learn:
+    post:
+      summary: Teach field mapping
+      tags: [Migration]
+      description: |
+        Teaches the system correct field mappings to improve future accuracy.
+        Used for continuous learning and refinement of mapping intelligence.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                original:
+                  type: string
+                  example: "ClientName"
+                corrected:
+                  type: string
+                  example: "{{client.fullName}}"
+                confidence:
+                  type: number
+                  default: 0.9
+                  minimum: 0
+                  maximum: 1
+      responses:
+        '200':
+          description: Learning successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+
+  /api/v1/migration/blocks/generate:
+    post:
+      summary: Generate reusable content blocks
+      tags: [Migration]
+      description: |
+        Analyzes documents to identify common patterns and generates reusable Sharedo content blocks.
+        Optimizes template structure for better maintainability.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      filename:
+                        type: string
+                      content:
+                        type: string
+                      metadata:
+                        type: object
+                options:
+                  type: object
+                  properties:
+                    min_frequency:
+                      type: integer
+                      default: 3
+                      description: Minimum occurrence count for block creation
+                    min_similarity:
+                      type: number
+                      default: 0.8
+                      description: Minimum similarity threshold
+      responses:
+        '200':
+          description: Generated content blocks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  blocks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        template:
+                          type: string
+                        variables:
+                          type: array
+                          items:
+                            type: string
+                        category:
+                          type: string
+                        usage_count:
+                          type: integer
+
+  /api/v1/migration/pipeline:
+    post:
+      summary: Execute migration pipeline
+      tags: [Migration]
+      description: |
+        Runs the complete migration pipeline from analysis to final Sharedo templates.
+        Orchestrates all migration steps with error handling and progress tracking.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input_path:
+                  type: string
+                  example: "./templates"
+                output_path:
+                  type: string
+                  example: "./sharedo_output"
+                options:
+                  type: object
+                  properties:
+                    worker_count:
+                      type: integer
+                      default: 10
+                    enable_ai:
+                      type: boolean
+                      default: false
+                    validation_mode:
+                      type: string
+                      enum: [strict, normal, lenient]
+                      default: normal
+      responses:
+        '202':
+          description: Pipeline started
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  config:
+                    type: object
+
+  /api/v1/migration/plan:
+    get:
+      summary: Get implementation plan
+      tags: [Migration]
+      description: |
+        Returns the comprehensive implementation plan with quality rubrics,
+        priorities, timeline, and current system assessment.
+      responses:
+        '200':
+          description: Implementation plan details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  quality_score:
+                    type: number
+                    description: Current overall quality score (0-100)
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+                  rubrics:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        category:
+                          type: string
+                        current_score:
+                          type: integer
+                        target_score:
+                          type: integer
+                        weight:
+                          type: number
+                        gaps:
+                          type: array
+                          items:
+                            type: string
+                        actions:
+                          type: array
+                          items:
+                            type: string
+
+  /api/v1/migration/stats:
+    get:
+      summary: Get migration system statistics
+      tags: [Migration]
+      description: |
+        Returns current system statistics including learned mappings,
+        content blocks, and system capabilities.
+      responses:
+        '200':
+          description: System statistics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  stats:
+                    type: object
+                    properties:
+                      field_mapper:
+                        type: object
+                        properties:
+                          total_rules:
+                            type: integer
+                          learned_mappings:
+                            type: integer
+                          confidence_threshold:
+                            type: number
+                          avg_confidence:
+                            type: number
+                      content_blocks:
+                        type: object
+                        properties:
+                          generated_count:
+                            type: integer
+                          total_patterns:
+                            type: integer
+                      system_version:
+                        type: string
+                      capabilities:
+                        type: array
+                        items:
+                          type: string
+
+  /api/v1/jobs/{id}:
+    get:
+      summary: Get job status
+      tags: [Jobs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                  status:
+                    type: string
+                    enum: [queued, processing, completed, failed]
+                  progress:
+                    type: number
+                  result:
+                    type: object
+
+  /api/v1/metrics:
+    get:
+      summary: Get system metrics
+      tags: [System]
+      responses:
+        '200':
+          description: System metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processing:
+                    type: integer
+                  total_processed:
+                    type: integer
+                  success_rate:
+                    type: number
+                  system:
+                    type: object
+                    properties:
+                      cpu_usage:
+                        type: number
+                      memory_usage:
+                        type: integer
+                      workers_active:
+                        type: integer
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        details:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+
+tags:
+  - name: System
+    description: System health and monitoring
+  - name: Conversion
+    description: DOT to DOCX conversion operations
+  - name: Migration
+    description: Sharedo migration system
+  - name: Jobs
+    description: Job management and status tracking

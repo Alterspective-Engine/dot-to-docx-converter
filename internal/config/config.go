@@ -18,8 +18,8 @@ type Config struct {
 	MaxFileSize                  int64
 	ConversionTimeout            time.Duration
 	LogLevel                     string
-	EnhancedAccuracy             bool  // Enable enhanced accuracy for legal documents
-	SyncMaxFileSize              int64 // Max file size for synchronous conversion (in bytes)
+	EnhancedAccuracy             bool          // Enable enhanced accuracy for legal documents
+	SyncMaxFileSize              int64         // Max file size for synchronous conversion (in bytes)
 	SyncTimeout                  time.Duration // Timeout for synchronous conversions
 }
 
@@ -34,8 +34,8 @@ func Load() *Config {
 		MaxFileSize:                  getEnvAsInt64("MAX_FILE_SIZE", 50) * 1024 * 1024, // MB to bytes
 		ConversionTimeout:            time.Duration(getEnvAsInt("CONVERSION_TIMEOUT", 60)) * time.Second,
 		LogLevel:                     getEnv("LOG_LEVEL", "info"),
-		EnhancedAccuracy:             getEnvAsBool("ENHANCED_ACCURACY", true),  // Default to true for legal documents
-		SyncMaxFileSize:              getEnvAsInt64("SYNC_MAX_FILE_SIZE", 10) * 1024 * 1024, // Default 10MB for sync
+		EnhancedAccuracy:             getEnvAsBool("ENHANCED_ACCURACY", true),                      // Default to true for legal documents
+		SyncMaxFileSize:              getEnvAsInt64("SYNC_MAX_FILE_SIZE", 10) * 1024 * 1024,        // Default 10MB for sync
 		SyncTimeout:                  time.Duration(getEnvAsInt("SYNC_TIMEOUT", 30)) * time.Second, // Default 30s
 	}
 

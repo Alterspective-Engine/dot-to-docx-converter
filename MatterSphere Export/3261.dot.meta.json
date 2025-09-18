@@ -1,0 +1,576 @@
+{
+  "sourceFile": "3261.dot",
+  "conversionDate": "2025-09-18T19:00:38.1562827+10:00",
+  "version": "2.1.0",
+  "format": "Modern (ZIP-based)",
+  "fileSize": 26582,
+  "complexity": {
+    "score": 0,
+    "level": "low"
+  },
+  "fields": {
+    "mergeFields": null,
+    "formulas": null,
+    "ifStatements": [
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 3080,
+        "context": "of this affidavit;~CONT.DEFAULTADDRESS.LINE1\"  \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 3778,
+        "context": "instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 4631,
+        "context": "of this affidavit;~CONT.DEFAULTADDRESS.LINE4\"  \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 4964,
+        "context": "trText xml:space=\"preserve\"\u003e = \"VIC\" \"Victoria\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 5304,
+        "context": "xml:space=\"preserve\"\u003e = \"NSW\" \"New South Wales\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 5639,
+        "context": "Text xml:space=\"preserve\"\u003e = \"QLD\" \"Queensland\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 5978,
+        "context": "xml:space=\"preserve\"\u003e = \"SA\" \"South Australia\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 6319,
+        "context": "ml:space=\"preserve\"\u003e = \"NT\" \"Northern Territory\"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 6660,
+        "context": "ml:space=\"preserve\"\u003e = \"WA\" \"Western Australia\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 6993,
+        "context": "trText xml:space=\"preserve\"\u003e = \"TAS\" \"Tasmania\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 7346,
+        "context": "eserve\"\u003e = \"ACT\" \"Australian Capital Territory\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 7840,
+        "context": "eserve\"\u003e\" \u003c/w:instrText\u003e} {\u003cw:instrText\u003e\"affirm\"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 8101,
+        "context": "w:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 8274,
+        "context": "w:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 8759,
+        "context": "nstrText\u003e} {\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 9092,
+        "context": "trText xml:space=\"preserve\"\u003e = \"VIC\" \"Victoria\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 9432,
+        "context": "xml:space=\"preserve\"\u003e = \"NSW\" \"New South Wales\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 9767,
+        "context": "Text xml:space=\"preserve\"\u003e = \"QLD\" \"Queensland\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 10106,
+        "context": "xml:space=\"preserve\"\u003e = \"SA\" \"South Australia\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 10447,
+        "context": "ml:space=\"preserve\"\u003e = \"NT\" \"Northern Territory\"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 10788,
+        "context": "ml:space=\"preserve\"\u003e = \"WA\" \"Western Australia\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 11121,
+        "context": "trText xml:space=\"preserve\"\u003e = \"TAS\" \"Tasmania\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 11556,
+        "context": "space=\"preserve\"\u003e DOCVARIABLE \"#TODAY\" \\@ \"yyyy\"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 11803,
+        "context": "w:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 12049,
+        "context": "DULE OF PARTIES\u003c/w:instrText\u003e} {\u003cw:instrText\u003e\" \"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e} {",
+        "type": "IF",
+        "position": 12349,
+        "context": "Text\u003ePLAINTIFFS\u003c/w:instrText\u003e} {\u003cw:instrText\u003e\" \"\u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve...",
+        "suggestedMapping": "{{#if condition}}"
+      },
+      {
+        "original": "IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE2\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText\u003e\u0026gt; 0 \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE2\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e, \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:lang w:val=\"en-US\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003e\" \"\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE3\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText\u003e\u0026gt; 0 \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE3\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e, \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:lang w:val=\"en-US\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003e\" \"\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE4\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"009D1874\"\u003e\u003cw:t xml:space=\"preserve\"\u003ein the State of \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"VIC\" \"Victoria\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"NSW\" \"New South Wales\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"QLD\" \"Queensland\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"SA\" \"South Australia\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"NT\" \"Northern Territory\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"WA\" \"Western Australia\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"TAS\" \"Tasmania\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"ACT\" \"Australian Capital Territory\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"009D1874\"\u003e\u003cw:t xml:space=\"preserve\"\u003e, \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003ethe abovenamed Plaintiff, \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!sworn_affir\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003emed (y=sworn \u0026amp; n=affirmed)\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00736244\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00736244\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:instrText\u003e\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00736244\"\u003e\u003cw:instrText\u003emake oath and say\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00736244\"\u003e\u003cw:instrText\u003e\"affirm\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"00736244\"\u003e\u003cw:rPr\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003emake oath and say\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"008F2249\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"009D1874\"\u003e\u003cw:t\u003e:\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eI have in my possession, custody or power the documents relating to the questions in the proceeding enumerated in the First and Second Parts of the First Schedule hereto.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003eThe documents set forth in the Second Part of the First Schedule hereto are privileged from production as documents which have come into existence solely for the purposes of and in connection with the prosecution of this action, and I object to produce them. \u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eI have had, but no longer have, in my possession, custody or power the documents relating to the questions in the proceeding set forth in the Second Schedule hereto and that such documents are now in the possession or power of the persons mentioned in the Second Schedule.  Each document was last in my possession or power on the dates referred to in the Second Schedule.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eTo the best of my knowledge, information and belief neither I nor my Solicitor nor any other person on my behalf have now or have ever had in our possession, custody or power any documents relating to any question in the proceeding other than the documents enumerated in the said First and Second Schedules hereto.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:keepLines/\u003e\u003cw:spacing w:before=\"240\" w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eFIRST SCHEDULE (First Part)\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"24\"/\u003e\u003c/w:numPr\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:ind w:left=\"850\" w:hanging=\"850\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eLetters from the Solicitors for the Defendant\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"dcount\" \\* MERGEFORMAT \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e to my Solicitors.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:ind w:left=\"850\" w:hanging=\"850\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eCopy letters from my Solicitors to the Solicitors for the Defendant\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;dcount\u0026quot; \\* MERGEFORMAT \"\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e. \u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:ind w:left=\"850\" w:hanging=\"850\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eCourt documents common to the parties to this action.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"MBC1\"/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:ind w:left=\"850\" w:hanging=\"850\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003e[_____]\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:keepLines/\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:lastRenderedPageBreak/\u003e\u003cw:t\u003eFIRST SCHEDULE (Second Part)\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eLetters, notes and memoranda of communications between myself and my Solicitors, medical reports, briefs to Counsel, proofs of witnesses, file notes and office memoranda, and accounts for the disbursements of my Solicitors.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:keepLines/\u003e\u003cw:spacing w:before=\"240\" w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003cw:jc w:val=\"center\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eSECOND SCHEDULE\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:pStyle w:val=\"TableofAuthorities\"/\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"26\"/\u003e\u003c/w:numPr\u003e\u003cw:spacing w:before=\"240\" w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eThe originals of the copy item(s) numbered [_____] herein are now I believe in the possession of their respective addressee(s).  They were last in my possession or power on the dates which they respectively bear.[\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"26\"/\u003e\u003c/w:numPr\u003e\u003cw:spacing w:before=\"240\" w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eThe taxation returns and original group certificates relating to my employment since I commenced my working life in Australia now I believe in the possession of the Deputy Commissioner of Taxation.  They were last in my possession or power on the date when they were lodged with the Deputy Commissioner after each relevant year.]\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:pPr\u003e\u003cw:numPr\u003e\u003cw:ilvl w:val=\"0\"/\u003e\u003cw:numId w:val=\"26\"/\u003e\u003c/w:numPr\u003e\u003cw:spacing w:before=\"240\" w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003e[_____]\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eThe contents of this affidavit are true and correct and I make it knowing that a person making a false affidavit may be prosecuted for the offence of perjury.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"/\u003e\u003cw:tbl\u003e\u003cw:tblPr\u003e\u003cw:tblW w:w=\"0\" w:type=\"auto\"/\u003e\u003cw:tblLook w:val=\"0000\" w:firstRow=\"0\" w:lastRow=\"0\" w:firstColumn=\"0\" w:lastColumn=\"0\" w:noHBand=\"0\" w:noVBand=\"0\"/\u003e\u003c/w:tblPr\u003e\u003cw:tblGrid\u003e\u003cw:gridCol w:w=\"4497\"/\u003e\u003cw:gridCol w:w=\"4748\"/\u003e\u003c/w:tblGrid\u003e\u003cw:tr w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidTr=\"00B85BCC\"\u003e\u003cw:trPr\u003e\u003cw:cantSplit/\u003e\u003c/w:trPr\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4497\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:spacing w:line=\"360\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!sworn_\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003eaffirmed (y=sworn \u0026amp; n=affirmed)\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"008A5710\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"y\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eSWORN\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText\u003e\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eAFFIRMED\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003cw:noProof/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eAFFIRMED\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidRPr=\"00542225\"\u003e\u003cw:t xml:space=\"preserve\"\u003e at \u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00283764\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:spacing w:line=\"360\" w:lineRule=\"auto\"/\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00542225\"\u003e\u003cw:t xml:space=\"preserve\"\u003ein the State of \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"VIC\" \"Victoria\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"NSW\" \"New South Wales\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"QLD\" \"Queensland\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"SA\" \"South Australia\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"NT\" \"Northern Territory\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"WA\" \"Western Australia\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"TAS\" \"Tasmania\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select deponent of this affidavit;~CONT.DEFAULTADDRESS.LINE5\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = \"ACT\" \"Australian Capital Territory\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"006A7943\"\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00997F32\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"right\" w:pos=\"3969\"/\u003e\u003c/w:tabs\u003e\u003cw:spacing w:line=\"360\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t\u003eon\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"003A7C90\"\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"#TODAY\" \\@ \"yyyy\"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4748\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"right\" w:leader=\"dot\" w:pos=\"4277\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003cw:tr w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidTr=\"00B85BCC\"\u003e\u003cw:trPr\u003e\u003cw:cantSplit/\u003e\u003c/w:trPr\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4497\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:jc w:val=\"right\"/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00542225\"\u003e\u003cw:t\u003eBefore me\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003e,\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4748\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003cw:tr w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidTr=\"00B85BCC\"\u003e\u003cw:trPr\u003e\u003cw:cantSplit/\u003e\u003c/w:trPr\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4497\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003cw:tabs\u003e\u003cw:tab w:val=\"right\" w:leader=\"dot\" w:pos=\"3974\"/\u003e\u003c/w:tabs\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:tab/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4748\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003cw:tr w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidTr=\"00B85BCC\"\u003e\u003cw:trPr\u003e\u003cw:cantSplit/\u003e\u003c/w:trPr\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4497\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:keepNext/\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"00B85BCC\"\u003e\u003cw:r\u003e\u003cw:t\u003eon\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"4748\" w:type=\"dxa\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidDel=\"00B25E39\" w:rsidRDefault=\"00736244\" w:rsidP=\"00B85BCC\"/\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003c/w:tbl\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"00542225\" w:rsidRDefault=\"00736244\" w:rsidP=\"00736244\"/\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRDefault=\"00736244\" w:rsidP=\"006A7943\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:line=\"480\" w:lineRule=\"auto\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003eA person authorised under section 19(1) of the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eOaths and Affirmations Act 2018\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e to take an affidavit.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"00486C39\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"/\u003e\u003cw:p w:rsidR=\"00736244\" w:rsidRPr=\"009D1874\" w:rsidRDefault=\"00736244\" w:rsidP=\"00486C39\"/\u003e\u003cw:p w:rsidR=\"006B4A7C\" w:rsidRDefault=\"00486C39\" w:rsidP=\"00486C39\"\u003e\u003cw:r w:rsidRPr=\"009D1874\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:t\u003eFILED\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t xml:space=\"preserve\"\u003e on behalf of the \u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:t\u003ePlaintiff\u003c/w:t\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e DOCVARIABLE \"PCOUNT\"  \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"separate\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u0026gt; 1 \"s\" \"\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r w:rsidR=\"000F2503\"\u003e\u003cw:rPr\u003e\u003cw:szCs w:val=\"22\"/\u003e\u003c/w:rPr\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:t\u003e.\u003c/w:t\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"00486C39\"/\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;Schedule\u0026quot;  \"\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = P \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:r\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"center\"/\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00AB4B45\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eSCHEDULE OF PARTIES\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText\u003e\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;Schedule\u0026quot;  \"\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = C \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"center\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"center\"/\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00AB4B45\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003eSCHEDULE OF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003ePLAINTIFFS\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText\u003e\" \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"begin\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e IF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:fldSimple w:instr=\" DOCVARIABLE \u0026quot;Schedule\u0026quot;  \"\u003e\u003cw:r w:rsidR=\"0009574F\"\u003e\u003cw:instrText xml:space=\"preserve\"\u003e \u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:fldSimple\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e = D \"\u003c/w:instrText\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"center\"/\u003e\u003c/w:pPr\u003e\u003cw:r\u003e\u003cw:br w:type=\"page\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:pPr\u003e\u003cw:jc w:val=\"center\"/\u003e\u003c/w:pPr\u003e\u003cw:r w:rsidRPr=\"00AB4B45\"\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText xml:space=\"preserve\"\u003eSCHEDULE OF \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003cw:instrText\u003eDEFENDANTS\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \"\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r\u003e\u003cw:fldChar w:fldCharType=\"end\"/\u003e\u003c/w:r\u003e\u003c/w:p\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"/\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"/\u003e\u003cw:tbl\u003e\u003cw:tblPr\u003e\u003cw:tblW w:w=\"0\" w:type=\"auto\"/\u003e\u003cw:tblLook w:val=\"04A0\" w:firstRow=\"1\" w:lastRow=\"0\" w:firstColumn=\"1\" w:lastColumn=\"0\" w:noHBand=\"0\" w:noVBand=\"1\"/\u003e\u003c/w:tblPr\u003e\u003cw:tblGrid\u003e\u003cw:gridCol w:w=\"5920\"/\u003e\u003cw:gridCol w:w=\"3366\"/\u003e\u003c/w:tblGrid\u003e\u003cw:tr w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidTr=\"0009574F\"\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"5920\" w:type=\"dxa\"/\u003e\u003cw:shd w:val=\"clear\" w:color=\"auto\" w:fill=\"auto\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidRDefault=\"000F2503\" w:rsidP=\"0009574F\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:rPr\u003e\u003cw:rFonts w:ascii=\"Arial Bold\" w:hAnsi=\"Arial Bold\"/\u003e\u003cw:b/\u003e\u003cw:caps/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:bookmarkStart w:id=\"1\" w:name=\"DS_udDSCRTDOCPL\"/\u003e\u003cw:bookmarkEnd w:id=\"1\"/\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"3366\" w:type=\"dxa\"/\u003e\u003cw:shd w:val=\"clear\" w:color=\"auto\" w:fill=\"auto\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidRDefault=\"000F2503\" w:rsidP=\"0009574F\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003c/w:tbl\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"\u003e\u003cw:bookmarkStart w:id=\"2\" w:name=\"LASTCURSORPOSITION\"/\u003e\u003cw:bookmarkEnd w:id=\"2\"/\u003e\u003c/w:p\u003e\u003cw:tbl\u003e\u003cw:tblPr\u003e\u003cw:tblW w:w=\"0\" w:type=\"auto\"/\u003e\u003cw:tblLook w:val=\"04A0\" w:firstRow=\"1\" w:lastRow=\"0\" w:firstColumn=\"1\" w:lastColumn=\"0\" w:noHBand=\"0\" w:noVBand=\"1\"/\u003e\u003c/w:tblPr\u003e\u003cw:tblGrid\u003e\u003cw:gridCol w:w=\"5920\"/\u003e\u003cw:gridCol w:w=\"3366\"/\u003e\u003c/w:tblGrid\u003e\u003cw:tr w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidTr=\"0009574F\"\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"5920\" w:type=\"dxa\"/\u003e\u003cw:shd w:val=\"clear\" w:color=\"auto\" w:fill=\"auto\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidRDefault=\"000F2503\" w:rsidP=\"0009574F\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:rPr\u003e\u003cw:rFonts w:ascii=\"Arial Bold\" w:hAnsi=\"Arial Bold\"/\u003e\u003cw:b/\u003e\u003cw:caps/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003cw:bookmarkStart w:id=\"3\" w:name=\"DS_udDSCRTDOCDEF\"/\u003e\u003cw:bookmarkEnd w:id=\"3\"/\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003cw:tc\u003e\u003cw:tcPr\u003e\u003cw:tcW w:w=\"3366\" w:type=\"dxa\"/\u003e\u003cw:shd w:val=\"clear\" w:color=\"auto\" w:fill=\"auto\"/\u003e\u003c/w:tcPr\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRPr=\"0009574F\" w:rsidRDefault=\"000F2503\" w:rsidP=\"0009574F\"\u003e\u003cw:pPr\u003e\u003cw:spacing w:after=\"240\"/\u003e\u003cw:jc w:val=\"right\"/\u003e\u003cw:rPr\u003e\u003cw:b/\u003e\u003c/w:rPr\u003e\u003c/w:pPr\u003e\u003c/w:p\u003e\u003c/w:tc\u003e\u003c/w:tr\u003e\u003c/w:tbl\u003e\u003cw:p w:rsidR=\"000F2503\" w:rsidRDefault=\"000F2503\" w:rsidP=\"000F2503\"/\u003e\u003cw:sectPr w:rsidR=\"000F2503\" w:rsidSect=\"007179BB\"\u003e\u003cw:headerReference w:type=\"even\" r:id=\"rId7\"/\u003e\u003cw:headerReference w:type=\"default\" r:id=\"rId8\"/\u003e\u003cw:footerReference w:type=\"even\" r:id=\"rId9\"/\u003e\u003cw:footerReference w:type=\"default\" r:id=\"rId10\"/\u003e\u003cw:headerReference w:type=\"first\" r:id=\"rId11\"/\u003e\u003cw:footerReference w:type=\"first\" r:id=\"rId12\"/\u003e\u003cw:pgSz w:w=\"11906\" w:h=\"16838\" w:code=\"9\"/\u003e\u003cw:pgMar w:top=\"1701\" w:right=\"1418\" w:bottom=\"1418\" w:left=\"1418\" w:header=\"851\" w:footer=\"851\" w:gutter=\"0\"/\u003e\u003cw:cols w:space=\"708\"/\u003e\u003cw:titlePg/\u003e\u003cw:docGrid w:linePitch=\"360\"/\u003e\u003c/w:sectPr\u003e\u003c/w:body\u003e\u003c/w:document\u003e}\n- 2 - {",
+        "type": "IF",
+        "position": 12743,
+        "context": "trText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e} {\u003cw:instrText xml:space=\"preserve\"\u003e\" \u003c/w:instrText\u003e...",
+        "suggestedMapping": "{{#if client.type}}"
+      }
+    ],
+    "docProperties": null,
+    "docVariables": null,
+    "otherFields": [
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 2616,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 2774,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 2925,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 3135,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 3432,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 3833,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 4130,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 4476,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 4686,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 5019,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 5359,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 5694,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 6033,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 6374,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 6715,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 7048,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!sworn_affir\u003c/w:instrText\u003e}",
+        "type": "DOCVARIABLE",
+        "position": 7401,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"dcount\"",
+        "type": "DOCVARIABLE",
+        "position": 7895,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!sworn_\u003c/w:instrText\u003e}",
+        "type": "DOCVARIABLE",
+        "position": 8329,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 8814,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 9147,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 9487,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 9822,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 10161,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 10502,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 10843,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 11176,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#TODAY\"",
+        "type": "DOCVARIABLE",
+        "position": 11474,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"PCOUNT\"",
+        "type": "DOCVARIABLE",
+        "position": 11611,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 12959,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 13729,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 14710,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 15480,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 16353,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 17236,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 18171,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 19113,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 20050,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 20991,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 21934,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 22877,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 23812,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!sworn_affir\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r",
+        "type": "DOCVARIABLE",
+        "position": 24836,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"dcount\"",
+        "type": "DOCVARIABLE",
+        "position": 28558,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;dcount\u0026quot;",
+        "type": "DOCVARIABLE",
+        "position": 29490,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!sworn_\u003c/w:instrText\u003e\u003c/w:r\u003e\u003cw:r",
+        "type": "DOCVARIABLE",
+        "position": 33706,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 35172,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 36107,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 37049,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 37986,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 38927,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 39870,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 40813,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"!ASSOC;INDIVIDUAL+CLIENT;1;select",
+        "type": "DOCVARIABLE",
+        "position": 41748,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"#TODAY\"",
+        "type": "DOCVARIABLE",
+        "position": 42730,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \"PCOUNT\"",
+        "type": "DOCVARIABLE",
+        "position": 47008,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;Schedule\u0026quot;",
+        "type": "DOCVARIABLE",
+        "position": 47887,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;Schedule\u0026quot;",
+        "type": "DOCVARIABLE",
+        "position": 48571,
+        "suggestedMapping": "{{variables.custom}}"
+      },
+      {
+        "original": "DOCVARIABLE \u0026quot;Schedule\u0026quot;",
+        "type": "DOCVARIABLE",
+        "position": 49375,
+        "suggestedMapping": "{{variables.custom}}"
+      }
+    ]
+  },
+  "conversionNotes": [
+    "Complex conditional logic detected - review branching after conversion"
+  ],
+  "statistics": {
+    "totalFields": 86,
+    "mappableFields": 0,
+    "complexFields": 27,
+    "extractedTextLength": 53400,
+    "tableCount": 0,
+    "imageCount": 0,
+    "estimatedSuccessRate": 85
+  }
+}
